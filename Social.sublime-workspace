@@ -1,0 +1,3471 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getContent() : String"
+			],
+			[
+				"c",
+				"close"
+			],
+			[
+				"moda",
+				"showModal"
+			],
+			[
+				"LayoutProps",
+				"LayoutProps"
+			],
+			[
+				"flex-",
+				"flex-grow"
+			],
+			[
+				"he",
+				"headers?"
+			],
+			[
+				"fail",
+				"fail"
+			],
+			[
+				"Authentication",
+				"Authentication"
+			],
+			[
+				"a",
+				"com.social.api.service"
+			],
+			[
+				"Entity",
+				"Entity"
+			],
+			[
+				"objec",
+				"object-position"
+			],
+			[
+				"first",
+				":first-child"
+			],
+			[
+				"Vec",
+				"Vec4"
+			],
+			[
+				"Vec3",
+				"Vec3"
+			],
+			[
+				"FRONT",
+				"FRONT_FACE"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"rgb",
+				"rgb relative"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"request",
+				"requestAnimationFrame"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"Mat",
+				"Mat4"
+			],
+			[
+				"uniform4f",
+				"uniformMatrix4fv"
+			],
+			[
+				"cons",
+				"constructor"
+			],
+			[
+				"fra",
+				"fragmentSource"
+			],
+			[
+				"vert",
+				"vertexSource"
+			],
+			[
+				"box-s",
+				"box-sizing"
+			],
+			[
+				"pa",
+				"\"paths\""
+			],
+			[
+				"re",
+				"resolve"
+			],
+			[
+				"ali",
+				"alias?"
+			],
+			[
+				"sin",
+				"sinf"
+			],
+			[
+				"t",
+				"tups"
+			],
+			[
+				"hash",
+				"HashMap"
+			],
+			[
+				"bin",
+				"binary_search"
+			],
+			[
+				"Op",
+				"OpSum"
+			],
+			[
+				"Token",
+				"TokenType"
+			],
+			[
+				"User",
+				"UserManager"
+			],
+			[
+				"stat",
+				"staticmethod"
+			],
+			[
+				"o",
+				"open_func"
+			],
+			[
+				"gra",
+				"grapher"
+			],
+			[
+				"_r",
+				"_running"
+			],
+			[
+				"func",
+				"func_name"
+			],
+			[
+				"input",
+				"Input"
+			],
+			[
+				"_funcs",
+				"_list_funcs"
+			],
+			[
+				"ci",
+				"cifrar(String text) : String"
+			],
+			[
+				"ne",
+				"nextLine() : String"
+			],
+			[
+				"p",
+				"public"
+			],
+			[
+				"incr",
+				"increment_counter"
+			],
+			[
+				"log",
+				"logout"
+			],
+			[
+				"F",
+				"Function"
+			],
+			[
+				"get_",
+				"get_str"
+			],
+			[
+				"user",
+				"user_path"
+			],
+			[
+				"use",
+				"username"
+			],
+			[
+				"_uesr",
+				"_user_path"
+			],
+			[
+				"_user",
+				"_user_path"
+			],
+			[
+				"create",
+				"_create_dir"
+			],
+			[
+				"_use",
+				"_username"
+			],
+			[
+				"callab",
+				"Callable"
+			],
+			[
+				"U",
+				"UserManager"
+			],
+			[
+				"wri",
+				"write"
+			],
+			[
+				"File",
+				"FileNotFoundError"
+			],
+			[
+				"split",
+				"splitlines"
+			],
+			[
+				"dist",
+				"distances"
+			],
+			[
+				"gr",
+				"grapher"
+			],
+			[
+				"_a",
+				"_auth"
+			],
+			[
+				"ran",
+				"randint"
+			],
+			[
+				"total",
+				"total_dirs"
+			],
+			[
+				"files",
+				"total_files"
+			],
+			[
+				"ini",
+				"__init__"
+			],
+			[
+				"has",
+				"has_args"
+			],
+			[
+				"usr",
+				"username"
+			],
+			[
+				"lo",
+				"logout"
+			],
+			[
+				"has_",
+				"has_flags_between"
+			],
+			[
+				"sub",
+				"sub_entry"
+			],
+			[
+				"upda",
+				"update_entry"
+			],
+			[
+				"all",
+				"allowed"
+			],
+			[
+				"ex",
+				"extract_parent"
+			],
+			[
+				"conten",
+				"set_content"
+			],
+			[
+				"tim",
+				"timestamp"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"da",
+				"datetime"
+			],
+			[
+				"dat",
+				"datetime"
+			],
+			[
+				"__",
+				"__init__"
+			],
+			[
+				"d",
+				"directory"
+			],
+			[
+				"extr",
+				"_extract_parent"
+			],
+			[
+				"dir",
+				"directory"
+			],
+			[
+				"w",
+				"write"
+			],
+			[
+				"r",
+				"reverse"
+			],
+			[
+				"isd",
+				"is_directory="
+			],
+			[
+				"is",
+				"isinstance"
+			],
+			[
+				"tre",
+				"tree_node"
+			],
+			[
+				"rs",
+				"rstrip"
+			],
+			[
+				"TextIO",
+				"TextIOWrapper"
+			],
+			[
+				"get_c",
+				"get_current_username"
+			],
+			[
+				"sess",
+				"session_is_active"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"eval",
+				"evaluateExpression"
+			],
+			[
+				"Function",
+				"FunctionCallExpression"
+			],
+			[
+				"Ex",
+				"ExpressionType"
+			],
+			[
+				"Expression",
+				"ExpressionType"
+			],
+			[
+				"Binary",
+				"BinaryExpression"
+			],
+			[
+				"Expre",
+				"ExpressionType"
+			],
+			[
+				"FunctionC",
+				"FunctionCallExpression"
+			],
+			[
+				"Const",
+				"ConstantExpression"
+			],
+			[
+				"Par",
+				"ParenClose"
+			],
+			[
+				"INter",
+				"InternalResult"
+			],
+			[
+				"Paren",
+				"ParenOpen"
+			],
+			[
+				"Express",
+				"ExpressionType"
+			],
+			[
+				"Inter",
+				"InternalResult"
+			],
+			[
+				"Exp",
+				"ExpressionType"
+			],
+			[
+				"__re",
+				"__repr__"
+			],
+			[
+				"_",
+				"__init__"
+			],
+			[
+				"def",
+				"defs\tMethod"
+			],
+			[
+				"print",
+				"printStackTrace() : void"
+			],
+			[
+				"stack",
+				"getStackTrace() : StackTraceElement[]"
+			],
+			[
+				"Usua",
+				"UsuarioInactivoException"
+			],
+			[
+				"in",
+				"iniciarSesion(String contraseña) : void"
+			],
+			[
+				"va",
+				"variable"
+			],
+			[
+				"e",
+				"equals(Object anObject) : boolean"
+			],
+			[
+				"printf",
+				"printf"
+			],
+			[
+				"ac",
+				"actualizar() : void"
+			],
+			[
+				"A",
+				"ArrayList<>()()"
+			],
+			[
+				"next",
+				"nextLine() : String"
+			],
+			[
+				"mve",
+				"mover_der() : void"
+			],
+			[
+				"im",
+				"imprimir"
+			],
+			[
+				"m",
+				"mifunc"
+			],
+			[
+				"cl",
+				"close() : void"
+			],
+			[
+				"Carrito",
+				"CarritoVacioException"
+			],
+			[
+				"Produ",
+				"ProductoNoDisponibleException"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "api/src/main/java/com/social/api/entity/Post.java",
+			"settings":
+			{
+				"buffer_size": 1923,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					18,
+					1,
+					"insert",
+					{
+						"characters": "posts"
+					},
+					"BQAAAFYAAAAAAAAAVwAAAAAAAAAFAAAAdXNlcnNXAAAAAAAAAFgAAAAAAAAAAAAAAFgAAAAAAAAAWQAAAAAAAAAAAAAAWQAAAAAAAABaAAAAAAAAAAAAAABaAAAAAAAAAFsAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAVgAAAAAAAABbAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					21,
+					1,
+					"insert",
+					{
+						"characters": "Post"
+					},
+					"BAAAAGsAAAAAAAAAbAAAAAAAAAAEAAAAVXNlcmwAAAAAAAAAbQAAAAAAAAAAAAAAbQAAAAAAAABuAAAAAAAAAAAAAABuAAAAAAAAAG8AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAbwAAAAAAAABrAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					58,
+					3,
+					"cut",
+					null,
+					"AwAAAJwAAAAAAAAAnAAAAAAAAAAZAAAAICBAQ29sdW1uKHVuaXF1ZSA9IHRydWUpCpwAAAAAAAAAnAAAAAAAAAAbAAAAICBwcml2YXRlIFN0cmluZyB1c2VybmFtZTsKnAAAAAAAAACcAAAAAAAAAAEAAAAK",
+					"AQAAAAAAAAABAAAAtAAAAAAAAAC0AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					63,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAALcAAAAAAAAA0gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAArwAAAAAAAACvAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					73,
+					1,
+					"insert",
+					{
+						"characters": "title"
+					},
+					"BQAAAK0AAAAAAAAArgAAAAAAAAAIAAAAcGFzc3dvcmSuAAAAAAAAAK8AAAAAAAAAAAAAAK8AAAAAAAAAsAAAAAAAAAAAAAAAsAAAAAAAAACxAAAAAAAAAAAAAACxAAAAAAAAALIAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAArQAAAAAAAAC1AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					77,
+					1,
+					"insert",
+					{
+						"characters": "content"
+					},
+					"BwAAAMUAAAAAAAAAxgAAAAAAAAAIAAAAcGFzc3dvcmTGAAAAAAAAAMcAAAAAAAAAAAAAAMcAAAAAAAAAyAAAAAAAAAAAAAAAyAAAAAAAAADJAAAAAAAAAAAAAADJAAAAAAAAAMoAAAAAAAAAAAAAAMoAAAAAAAAAywAAAAAAAAAAAAAAywAAAAAAAADMAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAxQAAAAAAAADNAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					88,
+					1,
+					"cut",
+					null,
+					"AQAAAM0AAAAAAAAAzQAAAAAAAAAcAQAACgogIHB1YmxpYyBTdHJpbmcgZ2V0VXNlcm5hbWUoKQogIHsKICAgIHJldHVybiB1c2VybmFtZTsKICB9CgogIHB1YmxpYyBTdHJpbmcgZ2V0UGFzc3dvcmQoKQogIHsKICAgIHJldHVybiBwYXNzd29yZDsKICB9CgogIHB1YmxpYyB2b2lkIHNldFVzZXJuYW1lKFN0cmluZyB1c2VybmFtZSkKICB7CiAgICB0aGlzLnVzZXJuYW1lID0gdXNlcm5hbWU7CiAgfQoKICBwdWJsaWMgdm9pZCBzZXRQYXNzd29yZChTdHJpbmcgcGFzc3dvcmQpCiAgewogICAgdGhpcy5wYXNzd29yZCA9IHBhc3N3b3JkOwogIH0",
+					"AQAAAAAAAAABAAAA6QEAAAAAAADNAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					89,
+					1,
+					"insert",
+					{
+						"characters": "\n\nf"
+					},
+					"BAAAAM0AAAAAAAAA0AAAAAAAAAAAAAAA0AAAAAAAAADTAAAAAAAAAAAAAADOAAAAAAAAAM4AAAAAAAAAAgAAACAg0QAAAAAAAADSAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAzQAAAAAAAADNAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					90,
+					1,
+					"left_delete",
+					null,
+					"AQAAANEAAAAAAAAA0QAAAAAAAAABAAAAZg",
+					"AQAAAAAAAAABAAAA0gAAAAAAAADSAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					91,
+					1,
+					"insert",
+					{
+						"characters": "get"
+					},
+					"AwAAANEAAAAAAAAA0gAAAAAAAAAAAAAA0gAAAAAAAADTAAAAAAAAAAAAAADTAAAAAAAAANQAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA0QAAAAAAAADRAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					95,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":308,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							53,
+							91,
+							1
+						],
+						"trigger": "getTitle() : String"
+					},
+					"BAAAANMAAAAAAAAA0wAAAAAAAAABAAAAdNIAAAAAAAAA0gAAAAAAAAABAAAAZdEAAAAAAAAA0QAAAAAAAAABAAAAZ9EAAAAAAAAABQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA1AAAAAAAAADUAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					97,
+					1,
+					"insert",
+					{
+						"characters": "\n\nset"
+					},
+					"BgAAAAUBAAAAAAAACAEAAAAAAAAAAAAACAEAAAAAAAALAQAAAAAAAAAAAAAGAQAAAAAAAAYBAAAAAAAAAgAAACAgCQEAAAAAAAAKAQAAAAAAAAAAAAAKAQAAAAAAAAsBAAAAAAAAAAAAAAsBAAAAAAAADAEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAABQEAAAAAAAAFAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					98,
+					3,
+					"left_delete",
+					null,
+					"AwAAAAsBAAAAAAAACwEAAAAAAAABAAAAdAoBAAAAAAAACgEAAAAAAAABAAAAZQkBAAAAAAAACQEAAAAAAAABAAAAcw",
+					"AQAAAAAAAAABAAAADAEAAAAAAAAMAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					99,
+					1,
+					"insert",
+					{
+						"characters": "get"
+					},
+					"AwAAAAkBAAAAAAAACgEAAAAAAAAAAAAACgEAAAAAAAALAQAAAAAAAAAAAAALAQAAAAAAAAwBAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAACQEAAAAAAAAJAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					102,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":306,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							57,
+							99,
+							1
+						],
+						"trigger": "getContent() : String"
+					},
+					"BAAAAAsBAAAAAAAACwEAAAAAAAABAAAAdAoBAAAAAAAACgEAAAAAAAABAAAAZQkBAAAAAAAACQEAAAAAAAABAAAAZwkBAAAAAAAAQQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAADAEAAAAAAAAMAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					104,
+					1,
+					"insert",
+					{
+						"characters": "\n\nset"
+					},
+					"BgAAAEEBAAAAAAAARAEAAAAAAAAAAAAARAEAAAAAAABHAQAAAAAAAAAAAABCAQAAAAAAAEIBAAAAAAAAAgAAACAgRQEAAAAAAABGAQAAAAAAAAAAAABGAQAAAAAAAEcBAAAAAAAAAAAAAEcBAAAAAAAASAEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAQQEAAAAAAABBAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					105,
+					1,
+					"insert",
+					{
+						"characters": "T"
+					},
+					"AQAAAEgBAAAAAAAASQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAASAEAAAAAAABIAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					106,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":3046,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							59,
+							104,
+							4
+						],
+						"trigger": "setTitle(String title) : void"
+					},
+					"BQAAAEgBAAAAAAAASAEAAAAAAAABAAAAVEcBAAAAAAAARwEAAAAAAAABAAAAdEYBAAAAAAAARgEAAAAAAAABAAAAZUUBAAAAAAAARQEAAAAAAAABAAAAc0UBAAAAAAAAiQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAASQEAAAAAAABJAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					108,
+					1,
+					"insert",
+					{
+						"characters": "\n\nsetC"
+					},
+					"BwAAAIkBAAAAAAAAjAEAAAAAAAAAAAAAjAEAAAAAAACPAQAAAAAAAAAAAACKAQAAAAAAAIoBAAAAAAAAAgAAACAgjQEAAAAAAACOAQAAAAAAAAAAAACOAQAAAAAAAI8BAAAAAAAAAAAAAI8BAAAAAAAAkAEAAAAAAAAAAAAAkAEAAAAAAACRAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAiQEAAAAAAACJAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					109,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":3044,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							62,
+							108,
+							4
+						],
+						"trigger": "setContent(String content) : void"
+					},
+					"BQAAAJABAAAAAAAAkAEAAAAAAAABAAAAQ48BAAAAAAAAjwEAAAAAAAABAAAAdI4BAAAAAAAAjgEAAAAAAAABAAAAZY0BAAAAAAAAjQEAAAAAAAABAAAAc40BAAAAAAAA2QEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAkQEAAAAAAACRAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					113,
+					1,
+					"reindent",
+					null,
+					"CAAAAPQAAAAAAAAA+AAAAAAAAAAAAAAA7gAAAAAAAADuAAAAAAAAAAYAAAAgICAgICAsAQAAAAAAADABAAAAAAAAAAAAACYBAAAAAAAAJgEAAAAAAAAGAAAAICAgICAgbgEAAAAAAAByAQAAAAAAAAAAAABoAQAAAAAAAGgBAAAAAAAABgAAACAgICAgILgBAAAAAAAAvAEAAAAAAAAAAAAAsgEAAAAAAACyAQAAAAAAAAYAAAAgICAgICA",
+					"AQAAAAAAAAABAAAA2QEAAAAAAACbAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					133,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAAM4AAAAAAAAA6AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAzQAAAAAAAADNAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					147,
+					1,
+					"insert",
+					{
+						"characters": "owner"
+					},
+					"BQAAAN8AAAAAAAAA4AAAAAAAAAAHAAAAY29udGVudOAAAAAAAAAA4QAAAAAAAAAAAAAA4QAAAAAAAADiAAAAAAAAAAAAAADiAAAAAAAAAOMAAAAAAAAAAAAAAOMAAAAAAAAA5AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA3wAAAAAAAADmAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					156,
+					1,
+					"insert",
+					{
+						"characters": "\n\ngetOwn"
+					},
+					"CQAAAFUBAAAAAAAAWAEAAAAAAAAAAAAAWAEAAAAAAABbAQAAAAAAAAAAAABWAQAAAAAAAFYBAAAAAAAAAgAAACAgWQEAAAAAAABaAQAAAAAAAAAAAABaAQAAAAAAAFsBAAAAAAAAAAAAAFsBAAAAAAAAXAEAAAAAAAAAAAAAXAEAAAAAAABdAQAAAAAAAAAAAABdAQAAAAAAAF4BAAAAAAAAAAAAAF4BAAAAAAAAXwEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAVQEAAAAAAABVAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					157,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":307,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							89,
+							156,
+							4
+						],
+						"trigger": "getOwner() : String"
+					},
+					"BwAAAF4BAAAAAAAAXgEAAAAAAAABAAAAbl0BAAAAAAAAXQEAAAAAAAABAAAAd1wBAAAAAAAAXAEAAAAAAAABAAAAT1sBAAAAAAAAWwEAAAAAAAABAAAAdFoBAAAAAAAAWgEAAAAAAAABAAAAZVkBAAAAAAAAWQEAAAAAAAABAAAAZ1kBAAAAAAAAjQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXwEAAAAAAABfAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					160,
+					1,
+					"insert",
+					{
+						"characters": "\n\nsetOwn"
+					},
+					"CQAAACECAAAAAAAAJAIAAAAAAAAAAAAAJAIAAAAAAAAnAgAAAAAAAAAAAAAiAgAAAAAAACICAAAAAAAAAgAAACAgJQIAAAAAAAAmAgAAAAAAAAAAAAAmAgAAAAAAACcCAAAAAAAAAAAAACcCAAAAAAAAKAIAAAAAAAAAAAAAKAIAAAAAAAApAgAAAAAAAAAAAAApAgAAAAAAACoCAAAAAAAAAAAAACoCAAAAAAAAKwIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAIQIAAAAAAAAhAgAAAAAAAAAAAAAAgEhA"
+				],
+				[
+					161,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":730,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							92,
+							160,
+							5
+						],
+						"trigger": "setOwner(String owner) : void"
+					},
+					"BgAAACoCAAAAAAAAKgIAAAAAAAABAAAAbikCAAAAAAAAKQIAAAAAAAABAAAAdygCAAAAAAAAKAIAAAAAAAABAAAATycCAAAAAAAAJwIAAAAAAAABAAAAdCUCAAAAAAAAJQIAAAAAAAACAAAAc2UlAgAAAAAAAGkCAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAKwIAAAAAAAArAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					164,
+					1,
+					"reindent",
+					null,
+					"DgAAAHQAAAAAAAAAdgAAAAAAAAAAAAAAcgAAAAAAAAByAAAAAAAAAAIAAAAgIAoBAAAAAAAADgEAAAAAAAAAAAAABgEAAAAAAAAGAQAAAAAAAAQAAAAgICAgQgEAAAAAAABGAQAAAAAAAAAAAAA+AQAAAAAAAD4BAAAAAAAABAAAACAgICB8AQAAAAAAAIABAAAAAAAAAAAAAHYBAAAAAAAAdgEAAAAAAAAGAAAAICAgICAgugEAAAAAAAC+AQAAAAAAAAAAAAC2AQAAAAAAALYBAAAAAAAABAAAACAgICAEAgAAAAAAAAgCAAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAEAAAAICAgIFACAAAAAAAAVAIAAAAAAAAAAAAASgIAAAAAAABKAgAAAAAAAAYAAAAgICAgICA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAABsAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					184,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAxgUAAAAAAABoAgAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5lbnRpdHk7CgppbXBvcnQgamFrYXJ0YS5wZXJzaXN0ZW5jZS4qOwoKQEVudGl0eSBAVGFibGUobmFtZSA9ICJwb3N0cyIpCnB1YmxpYyBjbGFzcyBQb3N0CnsKICBASWQgQEdlbmVyYXRlZFZhbHVlCiAgcHJpdmF0ZSBMb25nIGlkOwoKICBwcml2YXRlIFN0cmluZyB0aXRsZTsKICBwcml2YXRlIFN0cmluZyBjb250ZW50OwogIHByaXZhdGUgU3RyaW5nIG93bmVyOwoKICBwdWJsaWMgU3RyaW5nIGdldFRpdGxlKCkKICB7CiAgICByZXR1cm4gdGl0bGU7CiAgfQoKICBwdWJsaWMgU3RyaW5nIGdldENvbnRlbnQoKQogIHsKICAgIHJldHVybiBjb250ZW50OwogIH0KCiAgcHVibGljIFN0cmluZyBnZXRPd25lcigpCiAgewogICAgcmV0dXJuIG93bmVyOwogIH0KCiAgcHVibGljIHZvaWQgc2V0VGl0bGUoU3RyaW5nIHRpdGxlKQogIHsKICAgIHRoaXMudGl0bGUgPSB0aXRsZTsKICB9CgogIHB1YmxpYyB2b2lkIHNldENvbnRlbnQoU3RyaW5nIGNvbnRlbnQpCiAgewogICAgdGhpcy5jb250ZW50ID0gY29udGVudDsKICB9CgogIHB1YmxpYyB2b2lkIHNldE93bmVyKFN0cmluZyBvd25lcikKICB7CiAgICB0aGlzLm93bmVyID0gb3duZXI7CiAgfQp9Cg",
+					"AQAAAAAAAAABAAAAAAAAAAAAAABoAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					189,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAA4QgAAAAAAADGBQAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5lbnRpdHk7CgppbXBvcnQgamFrYXJ0YS5wZXJzaXN0ZW5jZS4qOwppbXBvcnQgamF2YS50aW1lLkxvY2FsRGF0ZVRpbWU7CgpARW50aXR5CkBUYWJsZShuYW1lID0gInBvc3RzIikKcHVibGljIGNsYXNzIFBvc3QKewogICAgQElkCiAgICBAR2VuZXJhdGVkVmFsdWUoc3RyYXRlZ3kgPSBHZW5lcmF0aW9uVHlwZS5JREVOVElUWSkKICAgIHByaXZhdGUgTG9uZyBpZDsKICAgIAogICAgQENvbHVtbihudWxsYWJsZSA9IGZhbHNlKQogICAgcHJpdmF0ZSBTdHJpbmcgdXNlcm5hbWU7CiAgICAKICAgIEBDb2x1bW4obnVsbGFibGUgPSBmYWxzZSwgbGVuZ3RoID0gMTAwMCkKICAgIHByaXZhdGUgU3RyaW5nIGNvbnRlbnQ7CiAgICAKICAgIEBDb2x1bW4obnVsbGFibGUgPSBmYWxzZSkKICAgIHByaXZhdGUgYm9vbGVhbiBpc1ByaXZhdGUgPSBmYWxzZTsKICAgIAogICAgQENvbHVtbihudWxsYWJsZSA9IGZhbHNlKQogICAgcHJpdmF0ZSBMb2NhbERhdGVUaW1lIGNyZWF0ZWRBdDsKICAgIAogICAgQFByZVBlcnNpc3QKICAgIHByb3RlY3RlZCB2b2lkIG9uQ3JlYXRlKCkKICAgIHsKICAgICAgICBjcmVhdGVkQXQgPSBMb2NhbERhdGVUaW1lLm5vdygpOwogICAgfQogICAgCiAgICAvLyBHZXR0ZXJzIGFuZCBTZXR0ZXJzCiAgICBwdWJsaWMgTG9uZyBnZXRJZCgpCiAgICB7CiAgICAgICAgcmV0dXJuIGlkOwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRJZChMb25nIGlkKQogICAgewogICAgICAgIHRoaXMuaWQgPSBpZDsKICAgIH0KICAgIAogICAgcHVibGljIFN0cmluZyBnZXRVc2VybmFtZSgpCiAgICB7CiAgICAgICAgcmV0dXJuIHVzZXJuYW1lOwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRVc2VybmFtZShTdHJpbmcgdXNlcm5hbWUpCiAgICB7CiAgICAgICAgdGhpcy51c2VybmFtZSA9IHVzZXJuYW1lOwogICAgfQogICAgCiAgICBwdWJsaWMgU3RyaW5nIGdldENvbnRlbnQoKQogICAgewogICAgICAgIHJldHVybiBjb250ZW50OwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRDb250ZW50KFN0cmluZyBjb250ZW50KQogICAgewogICAgICAgIHRoaXMuY29udGVudCA9IGNvbnRlbnQ7CiAgICB9CiAgICAKICAgIHB1YmxpYyBib29sZWFuIGlzUHJpdmF0ZSgpCiAgICB7CiAgICAgICAgcmV0dXJuIGlzUHJpdmF0ZTsKICAgIH0KICAgIAogICAgcHVibGljIHZvaWQgc2V0UHJpdmF0ZShib29sZWFuIGlzUHJpdmF0ZSkKICAgIHsKICAgICAgICB0aGlzLmlzUHJpdmF0ZSA9IGlzUHJpdmF0ZTsKICAgIH0KICAgIAogICAgcHVibGljIExvY2FsRGF0ZVRpbWUgZ2V0Q3JlYXRlZEF0KCkKICAgIHsKICAgICAgICByZXR1cm4gY3JlYXRlZEF0OwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRDcmVhdGVkQXQoTG9jYWxEYXRlVGltZSBjcmVhdGVkQXQpCiAgICB7CiAgICAgICAgdGhpcy5jcmVhdGVkQXQgPSBjcmVhdGVkQXQ7CiAgICB9Cn0",
+					"AQAAAAAAAAABAAAAAAAAAAAAAADGBQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					209,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAADYDAAAAAAAAhAMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAANgMAAAAAAADoAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					220,
+					1,
+					"insert",
+					{
+						"characters": "title"
+					},
+					"BgAAAC4DAAAAAAAALwMAAAAAAAAHAAAAY29udGVudL0IAAAAAAAAvQgAAAAAAAAEAAAAICAgIC8DAAAAAAAAMAMAAAAAAAAAAAAAMAMAAAAAAAAxAwAAAAAAAAAAAAAxAwAAAAAAADIDAAAAAAAAAAAAADIDAAAAAAAAMwMAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAALgMAAAAAAAA1AwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					225,
+					1,
+					"insert",
+					{
+						"characters": "128"
+					},
+					"AwAAABUDAAAAAAAAFgMAAAAAAAAEAAAAMTAwMBYDAAAAAAAAFwMAAAAAAAAAAAAAFwMAAAAAAAAYAwAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAFQMAAAAAAAAZAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					228,
+					2,
+					"left_delete",
+					null,
+					"AgAAAGMDAAAAAAAAYwMAAAAAAAABAAAAMGIDAAAAAAAAYgMAAAAAAAABAAAAMA",
+					"AQAAAAAAAAABAAAAZAMAAAAAAABkAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					229,
+					1,
+					"insert",
+					{
+						"characters": "24"
+					},
+					"AgAAAGIDAAAAAAAAYwMAAAAAAAAAAAAAYwMAAAAAAABkAwAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYgMAAAAAAABiAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					237,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAAGMHAAAAAAAAqwcAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYwcAAAAAAAAbBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					244,
+					1,
+					"insert",
+					{
+						"characters": "Title"
+					},
+					"BQAAADYHAAAAAAAANwcAAAAAAAAHAAAAQ29udGVudDcHAAAAAAAAOAcAAAAAAAAAAAAAOAcAAAAAAAA5BwAAAAAAAAAAAAA5BwAAAAAAADoHAAAAAAAAAAAAADoHAAAAAAAAOwcAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAANgcAAAAAAAA9BwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					251,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAAAUIAAAAAAAAYQgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAABQgAAAAAAACpBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					258,
+					1,
+					"insert",
+					{
+						"characters": "Title"
+					},
+					"BQAAAB4IAAAAAAAAHwgAAAAAAAAHAAAAQ29udGVudB8IAAAAAAAAIAgAAAAAAAAAAAAAIAgAAAAAAAAhCAAAAAAAAAAAAAAhCAAAAAAAACIIAAAAAAAAAAAAACIIAAAAAAAAIwgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAHggAAAAAAAAlCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					289,
+					1,
+					"insert",
+					{
+						"characters": "title"
+					},
+					"DwAAAFEIAAAAAAAAUggAAAAAAAAHAAAAY29udGVudEcIAAAAAAAASAgAAAAAAAAHAAAAY29udGVudCsIAAAAAAAALAgAAAAAAAAHAAAAY29udGVudEYIAAAAAAAARwgAAAAAAAAAAAAAQggAAAAAAABDCAAAAAAAAAAAAAAsCAAAAAAAAC0IAAAAAAAAAAAAAEkIAAAAAAAASggAAAAAAAAAAAAARAgAAAAAAABFCAAAAAAAAAAAAAAtCAAAAAAAAC4IAAAAAAAAAAAAAEwIAAAAAAAATQgAAAAAAAAAAAAARggAAAAAAABHCAAAAAAAAAAAAAAuCAAAAAAAAC8IAAAAAAAAAAAAAE8IAAAAAAAAUAgAAAAAAAAAAAAASAgAAAAAAABJCAAAAAAAAAAAAAAvCAAAAAAAADAIAAAAAAAAAAAAAA",
+					"AQAAAAAAAAADAAAAKwgAAAAAAAAyCAAAAAAAAAAAAAAAAPC/RwgAAAAAAABOCAAAAAAAAAAAAAAAAPC/UQgAAAAAAABYCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					302,
+					1,
+					"cut",
+					null,
+					"AQAAAIEDAAAAAAAAgQMAAAAAAABKAAAACiAgICAKICAgIEBDb2x1bW4obnVsbGFibGUgPSBmYWxzZSkKICAgIHByaXZhdGUgYm9vbGVhbiBpc1ByaXZhdGUgPSBmYWxzZTs",
+					"AQAAAAAAAAABAAAAywMAAAAAAACBAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					313,
+					1,
+					"cut",
+					null,
+					"AQAAAA8IAAAAAAAADwgAAAAAAACtAAAACiAgICAKICAgIHB1YmxpYyBib29sZWFuIGlzUHJpdmF0ZSgpCiAgICB7CiAgICAgICAgcmV0dXJuIGlzUHJpdmF0ZTsKICAgIH0KICAgIAogICAgcHVibGljIHZvaWQgc2V0UHJpdmF0ZShib29sZWFuIGlzUHJpdmF0ZSkKICAgIHsKICAgICAgICB0aGlzLmlzUHJpdmF0ZSA9IGlzUHJpdmF0ZTsKICAgIH0",
+					"AQAAAAAAAAABAAAADwgAAAAAAAC8CAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					317,
+					1,
+					"reindent",
+					null,
+					"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2AYAAAAAAADcBgAAAAAAAAAAAADQBgAAAAAAANAGAAAAAAAACAAAACAgICAgICAg8AYAAAAAAADyBgAAAAAAAAAAAADsBgAAAAAAAOwGAAAAAAAABAAAACAgICD0BgAAAAAAAPYGAAAAAAAAAAAAAPAGAAAAAAAA8AYAAAAAAAAEAAAAICAgIPcGAAAAAAAA+QYAAAAAAAAAAAAA8wYAAAAAAADzBgAAAAAAAAQAAAAgICAgHAcAAAAAAAAeBwAAAAAAAAAAAAAYBwAAAAAAABgHAAAAAAAABAAAACAgICAkBwAAAAAAACgHAAAAAAAAAAAAABwHAAAAAAAAHAcAAAAAAAAIAAAAICAgICAgICA4BwAAAAAAADoHAAAAAAAAAAAAADQHAAAAAAAANAcAAAAAAAAEAAAAICAgIDwHAAAAAAAAPgcAAAAAAAAAAAAAOAcAAAAAAAA4BwAAAAAAAAQAAAAgICAgPwcAAAAAAABBBwAAAAAAAAAAAAA7BwAAAAAAADsHAAAAAAAABAAAACAgICBlBwAAAAAAAGcHAAAAAAAAAAAAAGEHAAAAAAAAYQcAAAAAAAAEAAAAICAgIG0HAAAAAAAAcQcAAAAAAAAAAAAAZQcAAAAAAABlBwAAAAAAAAgAAAAgICAgICAgIH8HAAAAAAAAgQcAAAAAAAAAAAAAewcAAAAAAAB7BwAAAAAAAAQAAAAgICAghAcAAAAAAACGBwAAAAAAAAAAAACABwAAAAAAAIAHAAAAAAAABAAAACAgICC4BwAAAAAAALoHAAAAAAAAAAAAALQHAAAAAAAAtAcAAAAAAAAEAAAAICAgIMAHAAAAAAAAxAcAAAAAAAAAAAAAuAcAAAAAAAC4BwAAAAAAAAgAAAAgICAgICAgINwHAAAAAAAA3gcAAAAAAAAAAAAA2AcAAAAAAADYBwAAAAAAAAQAAAAgICAg",
+					"AQAAAAAAAAABAAAAAAAAAAAAAADLCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					326,
+					1,
+					"cut",
+					null,
+					"AQAAAFQEAAAAAAAAVAQAAAAAAAAbAAAAICAgIC8vIEdldHRlcnMgYW5kIFNldHRlcnMK",
+					"AQAAAAAAAAABAAAAbgQAAAAAAABuBAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					329,
+					1,
+					"cut",
+					null,
+					"AQAAAFcCAAAAAAAAVwIAAAAAAAA/AAAAICAgIC8vIERlbm9ybWFsaXplZCB1c2VybmFtZSBmb3IgZWFzaWVyIHF1ZXJ5aW5nIHdpdGhvdXQgam9pbnMK",
+					"AQAAAAAAAAABAAAAYQIAAAAAAABhAgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "package com.social.api.repository;\n\nimport org.springframework.data.jpa.repository.JpaRepository;\nimport org.springframework.data.jpa.repository.Query;\nimport org.springframework.data.repository.query.Param;\nimport com.social.api.entity.Post;\nimport java.util.List;\n\npublic interface PostRepository extends JpaRepository<Post, Long>\n{\n    // Find all posts by username (public only)\n    List<Post> findByUsernameAndIsPrivateFalseOrderByCreatedAtDesc(String username);\n    \n    // Find all posts by username (private only)\n    List<Post> findByUsernameAndIsPrivateTrueOrderByCreatedAtDesc(String username);\n    \n    // Find all posts by username (both public and private)\n    List<Post> findByUsernameOrderByCreatedAtDesc(String username);\n    \n    // Find all public posts (global feed)\n    List<Post> findByIsPrivateFalseOrderByCreatedAtDesc();\n    \n    // Find all posts regardless of user or privacy (admin use)\n    List<Post> findAllByOrderByCreatedAtDesc();\n    \n    // Custom queries using JPQL\n    @Query(\"SELECT p FROM Post p WHERE p.username = :username ORDER BY p.createdAt DESC\")\n    List<Post> findPublicPostsByUsername(@Param(\"username\") String username);\n    \n    @Query(\"SELECT p FROM Post p WHERE p.isPrivate = false ORDER BY p.createdAt DESC\")\n    List<Post> findAllPublicPosts();\n    \n    // Count posts by user\n    long countByUsername(String username);\n    \n    long countByUsernameAndIsPrivateFalse(String username);\n}",
+			"file": "api/src/main/java/com/social/api/repository/PostRepository.java",
+			"file_size": 1660,
+			"file_write_time": 134143277264806911,
+			"settings":
+			{
+				"buffer_size": 1439,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					11,
+					1,
+					"insert",
+					{
+						"characters": "Post"
+					},
+					"BAAAALQAAAAAAAAAtQAAAAAAAAAEAAAAVXNlcrUAAAAAAAAAtgAAAAAAAAAAAAAAtgAAAAAAAAC3AAAAAAAAAAAAAAC3AAAAAAAAALgAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAuAAAAAAAAAC0AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					45,
+					1,
+					"cut",
+					null,
+					"AQAAAPIAAAAAAAAA8gAAAAAAAAAEAAAAVXNlcg",
+					"AQAAAAAAAAABAAAA8gAAAAAAAAD2AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					46,
+					1,
+					"insert",
+					{
+						"characters": "List<>"
+					},
+					"BgAAAPIAAAAAAAAA8wAAAAAAAAAAAAAA8wAAAAAAAAD0AAAAAAAAAAAAAAD0AAAAAAAAAPUAAAAAAAAAAAAAAPUAAAAAAAAA9gAAAAAAAAAAAAAA9gAAAAAAAAD3AAAAAAAAAAAAAAD3AAAAAAAAAPgAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8gAAAAAAAADyAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					48,
+					1,
+					"paste",
+					null,
+					"AQAAAPcAAAAAAAAA+wAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9wAAAAAAAAD3AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					52,
+					1,
+					"left_delete",
+					null,
+					"AQAAAPUAAAAAAAAA9QAAAAAAAAABAAAAdA",
+					"AQAAAAAAAAABAAAA9gAAAAAAAAD2AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					53,
+					1,
+					"insert",
+					{
+						"characters": "r"
+					},
+					"AQAAAPUAAAAAAAAA9gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9QAAAAAAAAD1AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					54,
+					1,
+					"left_delete",
+					null,
+					"AQAAAPUAAAAAAAAA9QAAAAAAAAABAAAAcg",
+					"AQAAAAAAAAABAAAA9gAAAAAAAAD2AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					55,
+					1,
+					"insert",
+					{
+						"characters": "t"
+					},
+					"AQAAAPUAAAAAAAAA9gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9QAAAAAAAAD1AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					56,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":0,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							34,
+							55,
+							1
+						],
+						"trigger": "List"
+					},
+					"AgAAAPIAAAAAAAAA8gAAAAAAAAAEAAAATGlzdPIAAAAAAAAA9gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9gAAAAAAAAD2AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					57,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "import java.util.List;\n",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 2
+									},
+									"start":
+									{
+										"character": 0,
+										"line": 2
+									}
+								}
+							}
+						],
+						"label": null,
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AQAAACQAAAAAAAAAOwAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9gAAAAAAAAD2AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					68,
+					1,
+					"insert",
+					{
+						"characters": "Post"
+					},
+					"BAAAAA4BAAAAAAAADwEAAAAAAAAEAAAAVXNlcg8BAAAAAAAAEAEAAAAAAAAAAAAAEAEAAAAAAAARAQAAAAAAAAAAAAARAQAAAAAAABIBAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAADgEAAAAAAAASAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					74,
+					1,
+					"insert",
+					{
+						"characters": "Post"
+					},
+					"BAAAAPAAAAAAAAAA8QAAAAAAAAAEAAAAVXNlcvEAAAAAAAAA8gAAAAAAAAAAAAAA8gAAAAAAAADzAAAAAAAAAAAAAADzAAAAAAAAAPQAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8AAAAAAAAAD0AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					75,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":11,\"session_name\":\"jdtls\"}",
+						"format": "command",
+						"keep_prefix": true,
+						"must_insert": false,
+						"query_change_id":
+						[
+							49,
+							74,
+							2
+						],
+						"trigger": "Post"
+					},
+					"BAAAAPMAAAAAAAAA8wAAAAAAAAABAAAAdPIAAAAAAAAA8gAAAAAAAAABAAAAc/AAAAAAAAAA8AAAAAAAAAACAAAAUG/wAAAAAAAAAPQAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9AAAAAAAAAD0AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					76,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "\n\nimport com.social.api.entity.Post;\n",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 7
+									},
+									"start":
+									{
+										"character": 61,
+										"line": 5
+									}
+								}
+							}
+						],
+						"label": null,
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AQAAAJQAAAAAAAAAuQAAAAAAAAACAAAACgo",
+					"AQAAAAAAAAABAAAA9AAAAAAAAAD0AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					80,
+					1,
+					"cut",
+					null,
+					"AQAAALkAAAAAAAAAuQAAAAAAAAAjAAAAaW1wb3J0IGNvbS5zb2NpYWwuYXBpLmVudGl0eS5Vc2VyOwo",
+					"AQAAAAAAAAABAAAA2wAAAAAAAADbAAAAAAAAAAAAAAAAmI1A"
+				],
+				[
+					110,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAUgUAAAAAAAA4AQAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5yZXBvc2l0b3J5OwoKaW1wb3J0IGphdmEudXRpbC5MaXN0OwppbXBvcnQgamF2YS51dGlsLk9wdGlvbmFsOwoKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuZGF0YS5qcGEucmVwb3NpdG9yeS5KcGFSZXBvc2l0b3J5OwoKaW1wb3J0IGNvbS5zb2NpYWwuYXBpLmVudGl0eS5Qb3N0OwoKcHVibGljIGludGVyZmFjZSBQb3N0UmVwb3NpdG9yeSBleHRlbmRzIEpwYVJlcG9zaXRvcnk8UG9zdCwgTG9uZz4KewogIE9wdGlvbmFsPExpc3Q8UG9zdD4+IGZpbmRCeVVzZXJuYW1lKFN0cmluZyB1c2VybmFtZSk7Cn0K",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAA4AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					122,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAfAYAAAAAAABSBQAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5yZXBvc2l0b3J5OwoKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuZGF0YS5qcGEucmVwb3NpdG9yeS5KcGFSZXBvc2l0b3J5OwppbXBvcnQgb3JnLnNwcmluZ2ZyYW1ld29yay5kYXRhLmpwYS5yZXBvc2l0b3J5LlF1ZXJ5OwppbXBvcnQgb3JnLnNwcmluZ2ZyYW1ld29yay5kYXRhLnJlcG9zaXRvcnkucXVlcnkuUGFyYW07CmltcG9ydCBjb20uc29jaWFsLmFwaS5lbnRpdHkuUG9zdDsKaW1wb3J0IGphdmEudXRpbC5MaXN0OwoKcHVibGljIGludGVyZmFjZSBQb3N0UmVwb3NpdG9yeSBleHRlbmRzIEpwYVJlcG9zaXRvcnk8UG9zdCwgTG9uZz4KewogICAgLy8gRmluZCBhbGwgcHVibGljIHBvc3RzIGJ5IHVzZXJuYW1lCiAgICBAUXVlcnkoIlNFTEVDVCBwIEZST00gUG9zdCBwIFdIRVJFIHAudXNlcm5hbWUgPSA6dXNlcm5hbWUgQU5EIHAuaXNQcml2YXRlID0gZmFsc2UgT1JERVIgQlkgcC5jcmVhdGVkQXQgREVTQyIpCiAgICBMaXN0PFBvc3Q+IGZpbmRQdWJsaWNCeVVzZXJuYW1lKEBQYXJhbSgidXNlcm5hbWUiKSBTdHJpbmcgdXNlcm5hbWUpOwogICAgCiAgICAvLyBGaW5kIGFsbCBwcml2YXRlIHBvc3RzIGJ5IHVzZXJuYW1lCiAgICBAUXVlcnkoIlNFTEVDVCBwIEZST00gUG9zdCBwIFdIRVJFIHAudXNlcm5hbWUgPSA6dXNlcm5hbWUgQU5EIHAuaXNQcml2YXRlID0gdHJ1ZSBPUkRFUiBCWSBwLmNyZWF0ZWRBdCBERVNDIikKICAgIExpc3Q8UG9zdD4gZmluZFByaXZhdGVCeVVzZXJuYW1lKEBQYXJhbSgidXNlcm5hbWUiKSBTdHJpbmcgdXNlcm5hbWUpOwogICAgCiAgICAvLyBGaW5kIGFsbCBwb3N0cyBieSB1c2VybmFtZSAoYm90aCBwdWJsaWMgYW5kIHByaXZhdGUpCiAgICBMaXN0PFBvc3Q+IGZpbmRCeVVzZXJuYW1lT3JkZXJCeUNyZWF0ZWRBdERlc2MoU3RyaW5nIHVzZXJuYW1lKTsKICAgIAogICAgLy8gRmluZCBhbGwgcHVibGljIHBvc3RzIChmb3IgZmVlZCkKICAgIEBRdWVyeSgiU0VMRUNUIHAgRlJPTSBQb3N0IHAgV0hFUkUgcC5pc1ByaXZhdGUgPSBmYWxzZSBPUkRFUiBCWSBwLmNyZWF0ZWRBdCBERVNDIikKICAgIExpc3Q8UG9zdD4gZmluZEFsbFB1YmxpY1Bvc3RzKCk7CiAgICAKICAgIC8vIEFsdGVybmF0aXZlOiB1c2luZyBtZXRob2QgbmFtZSBjb252ZW50aW9uIChTcHJpbmcgRGF0YSBKUEEgYXV0by1pbXBsZW1lbnRzKQogICAgTGlzdDxQb3N0PiBmaW5kQnlVc2VybmFtZUFuZElzUHJpdmF0ZUZhbHNlT3JkZXJCeUNyZWF0ZWRBdERlc2MoU3RyaW5nIHVzZXJuYW1lKTsKICAgIAogICAgTGlzdDxQb3N0PiBmaW5kQnlVc2VybmFtZUFuZElzUHJpdmF0ZVRydWVPcmRlckJ5Q3JlYXRlZEF0RGVzYyhTdHJpbmcgdXNlcm5hbWUpOwp9",
+					"AQAAAAAAAAABAAAAAAAAAAAAAABSBQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					140,
+					1,
+					"cut",
+					null,
+					"AQAAAK0EAAAAAAAArQQAAAAAAADFAAAACiAgICBAUXVlcnkoIlNFTEVDVCBwIEZST00gUG9zdCBwIFdIRVJFIHAudXNlcm5hbWUgPSA6dXNlcm5hbWUgQU5EIHAuaXNQcml2YXRlID0gdHJ1ZSBPUkRFUiBCWSBwLmNyZWF0ZWRBdCBERVNDIikKICAgIExpc3Q8UG9zdD4gZmluZFByaXZhdGVQb3N0c0J5VXNlcm5hbWUoQFBhcmFtKCJ1c2VybmFtZSIpIFN0cmluZyB1c2VybmFtZSk7CiAgICA",
+					"AQAAAAAAAAABAAAAcgUAAAAAAACtBAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					147,
+					1,
+					"cut",
+					null,
+					"AQAAACYEAAAAAAAAJgQAAAAAAAAYAAAAIEFORCBwLmlzUHJpdmF0ZSA9IGZhbHNl",
+					"AQAAAAAAAAABAAAAJgQAAAAAAAA+BAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "api/src/main/java/com/social/api/repository/UserRepository.java",
+			"settings":
+			{
+				"buffer_size": 334,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAATgEAAAAAAAAbAQAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5yZXBvc2l0b3J5OwoKaW1wb3J0IGphdmEudXRpbC5PcHRpb25hbDsKCmltcG9ydCBvcmcuc3ByaW5nZnJhbWV3b3JrLmRhdGEuanBhLnJlcG9zaXRvcnkuSnBhUmVwb3NpdG9yeTsKCmltcG9ydCBjb20uc29jaWFsLmFwaS5lbnRpdHkuVXNlcjsKCnB1YmxpYyBpbnRlcmZhY2UgVXNlclJlcG9zaXRvcnkgZXh0ZW5kcyBKcGFSZXBvc2l0b3J5PFVzZXIsIExvbmc+CnsKICBPcHRpb25hbDxVc2VyPiBmaW5kQnlVc2VybmFtZShTdHJpbmcgdXNlcm5hbWUpOwp9Cg",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAbAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "api/src/main/java/com/social/api/entity/User.java",
+			"settings":
+			{
+				"buffer_size": 1189,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAApQQAAAAAAAAKAgAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5lbnRpdHk7CgppbXBvcnQgamFrYXJ0YS5wZXJzaXN0ZW5jZS4qOwoKQEVudGl0eSBAVGFibGUobmFtZSA9ICJ1c2VycyIpCnB1YmxpYyBjbGFzcyBVc2VyCnsKICBASWQgQEdlbmVyYXRlZFZhbHVlCiAgcHJpdmF0ZSBMb25nIGlkOwoKICBAQ29sdW1uKHVuaXF1ZSA9IHRydWUpCiAgcHJpdmF0ZSBTdHJpbmcgdXNlcm5hbWU7CgogIHByaXZhdGUgU3RyaW5nIHBhc3N3b3JkOwoKICBwdWJsaWMgU3RyaW5nIGdldFVzZXJuYW1lKCkKICB7CiAgICByZXR1cm4gdXNlcm5hbWU7CiAgfQoKICBwdWJsaWMgU3RyaW5nIGdldFBhc3N3b3JkKCkKICB7CiAgICByZXR1cm4gcGFzc3dvcmQ7CiAgfQoKICBwdWJsaWMgdm9pZCBzZXRVc2VybmFtZShTdHJpbmcgdXNlcm5hbWUpCiAgewogICAgdGhpcy51c2VybmFtZSA9IHVzZXJuYW1lOwogIH0KCiAgcHVibGljIHZvaWQgc2V0UGFzc3dvcmQoU3RyaW5nIHBhc3N3b3JkKQogIHsKICAgIHRoaXMucGFzc3dvcmQgPSBwYXNzd29yZDsKICB9Cn0K",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAKAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					13,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAApQQAAAAAAAClBAAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5lbnRpdHk7CgppbXBvcnQgamFrYXJ0YS5wZXJzaXN0ZW5jZS4qOwppbXBvcnQgamF2YS51dGlsLkFycmF5TGlzdDsKaW1wb3J0IGphdmEudXRpbC5MaXN0OwoKQEVudGl0eQpAVGFibGUobmFtZSA9ICJ1c2VycyIpCnB1YmxpYyBjbGFzcyBVc2VyCnsKICAgIEBJZAogICAgQEdlbmVyYXRlZFZhbHVlKHN0cmF0ZWd5ID0gR2VuZXJhdGlvblR5cGUuSURFTlRJVFkpCiAgICBwcml2YXRlIExvbmcgaWQ7CiAgICAKICAgIEBDb2x1bW4odW5pcXVlID0gdHJ1ZSwgbnVsbGFibGUgPSBmYWxzZSkKICAgIHByaXZhdGUgU3RyaW5nIHVzZXJuYW1lOwogICAgCiAgICBAQ29sdW1uKG51bGxhYmxlID0gZmFsc2UpCiAgICBwcml2YXRlIFN0cmluZyBwYXNzd29yZDsKICAgIAogICAgQE9uZVRvTWFueShtYXBwZWRCeSA9ICJ1c2VyIiwgY2FzY2FkZSA9IENhc2NhZGVUeXBlLkFMTCwgb3JwaGFuUmVtb3ZhbCA9IHRydWUpCiAgICBwcml2YXRlIExpc3Q8UG9zdD4gcG9zdHMgPSBuZXcgQXJyYXlMaXN0PD4oKTsKICAgIAogICAgLy8gR2V0dGVycyBhbmQgU2V0dGVycwogICAgcHVibGljIExvbmcgZ2V0SWQoKQogICAgewogICAgICAgIHJldHVybiBpZDsKICAgIH0KICAgIAogICAgcHVibGljIHZvaWQgc2V0SWQoTG9uZyBpZCkKICAgIHsKICAgICAgICB0aGlzLmlkID0gaWQ7CiAgICB9CiAgICAKICAgIHB1YmxpYyBTdHJpbmcgZ2V0VXNlcm5hbWUoKQogICAgewogICAgICAgIHJldHVybiB1c2VybmFtZTsKICAgIH0KICAgIAogICAgcHVibGljIHZvaWQgc2V0VXNlcm5hbWUoU3RyaW5nIHVzZXJuYW1lKQogICAgewogICAgICAgIHRoaXMudXNlcm5hbWUgPSB1c2VybmFtZTsKICAgIH0KICAgIAogICAgcHVibGljIFN0cmluZyBnZXRQYXNzd29yZCgpCiAgICB7CiAgICAgICAgcmV0dXJuIHBhc3N3b3JkOwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRQYXNzd29yZChTdHJpbmcgcGFzc3dvcmQpCiAgICB7CiAgICAgICAgdGhpcy5wYXNzd29yZCA9IHBhc3N3b3JkOwogICAgfQogICAgCiAgICBwdWJsaWMgTGlzdDxQb3N0PiBnZXRQb3N0cygpCiAgICB7CiAgICAgICAgcmV0dXJuIHBvc3RzOwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRQb3N0cyhMaXN0PFBvc3Q+IHBvc3RzKQogICAgewogICAgICAgIHRoaXMucG9zdHMgPSBwb3N0czsKICAgIH0KfQ",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAClBAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAApQQAAAAAAAClBAAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5lbnRpdHk7CgppbXBvcnQgamFrYXJ0YS5wZXJzaXN0ZW5jZS4qOwppbXBvcnQgamF2YS51dGlsLkFycmF5TGlzdDsKaW1wb3J0IGphdmEudXRpbC5MaXN0OwoKQEVudGl0eQpAVGFibGUobmFtZSA9ICJ1c2VycyIpCnB1YmxpYyBjbGFzcyBVc2VyCnsKICAgIEBJZAogICAgQEdlbmVyYXRlZFZhbHVlKHN0cmF0ZWd5ID0gR2VuZXJhdGlvblR5cGUuSURFTlRJVFkpCiAgICBwcml2YXRlIExvbmcgaWQ7CiAgICAKICAgIEBDb2x1bW4odW5pcXVlID0gdHJ1ZSwgbnVsbGFibGUgPSBmYWxzZSkKICAgIHByaXZhdGUgU3RyaW5nIHVzZXJuYW1lOwogICAgCiAgICBAQ29sdW1uKG51bGxhYmxlID0gZmFsc2UpCiAgICBwcml2YXRlIFN0cmluZyBwYXNzd29yZDsKICAgIAogICAgQE9uZVRvTWFueShtYXBwZWRCeSA9ICJ1c2VyIiwgY2FzY2FkZSA9IENhc2NhZGVUeXBlLkFMTCwgb3JwaGFuUmVtb3ZhbCA9IHRydWUpCiAgICBwcml2YXRlIExpc3Q8UG9zdD4gcG9zdHMgPSBuZXcgQXJyYXlMaXN0PD4oKTsKICAgIAogICAgLy8gR2V0dGVycyBhbmQgU2V0dGVycwogICAgcHVibGljIExvbmcgZ2V0SWQoKQogICAgewogICAgICAgIHJldHVybiBpZDsKICAgIH0KICAgIAogICAgcHVibGljIHZvaWQgc2V0SWQoTG9uZyBpZCkKICAgIHsKICAgICAgICB0aGlzLmlkID0gaWQ7CiAgICB9CiAgICAKICAgIHB1YmxpYyBTdHJpbmcgZ2V0VXNlcm5hbWUoKQogICAgewogICAgICAgIHJldHVybiB1c2VybmFtZTsKICAgIH0KICAgIAogICAgcHVibGljIHZvaWQgc2V0VXNlcm5hbWUoU3RyaW5nIHVzZXJuYW1lKQogICAgewogICAgICAgIHRoaXMudXNlcm5hbWUgPSB1c2VybmFtZTsKICAgIH0KICAgIAogICAgcHVibGljIFN0cmluZyBnZXRQYXNzd29yZCgpCiAgICB7CiAgICAgICAgcmV0dXJuIHBhc3N3b3JkOwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRQYXNzd29yZChTdHJpbmcgcGFzc3dvcmQpCiAgICB7CiAgICAgICAgdGhpcy5wYXNzd29yZCA9IHBhc3N3b3JkOwogICAgfQogICAgCiAgICBwdWJsaWMgTGlzdDxQb3N0PiBnZXRQb3N0cygpCiAgICB7CiAgICAgICAgcmV0dXJuIHBvc3RzOwogICAgfQogICAgCiAgICBwdWJsaWMgdm9pZCBzZXRQb3N0cyhMaXN0PFBvc3Q+IHBvc3RzKQogICAgewogICAgICAgIHRoaXMucG9zdHMgPSBwb3N0czsKICAgIH0KfQ",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAClBAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "api/src/main/java/com/social/api/service/CustomUserDetailsService.java",
+			"settings":
+			{
+				"buffer_size": 985,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "api/src/main/java/com/social/api/service/PostService.java",
+			"settings":
+			{
+				"buffer_size": 3330,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAAg0AAAAAAACTAAAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5zZXJ2aWNlOwoKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc3RlcmVvdHlwZS5TZXJ2aWNlOwoKQFNlcnZpY2UKcHVibGljIGNsYXNzIFBvc3RTZXJ2aWNlCnsKICBwdWJsaWMgUG9zdFNlcnZpY2UoKQogIHt9Cn0K",
+					"AQAAAAAAAAABAAAAAAAAAAAAAACTAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "api/src/main/java/com/social/api/service/UserService.java",
+			"settings":
+			{
+				"buffer_size": 1463,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAtwUAAAAAAACVAAAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5zZXJ2aWNlOwoKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc3RlcmVvdHlwZS5TZXJ2aWNlOwoKQFNlcnZpY2UKcHVibGljIGNsYXNzIFBvc3RzU2VydmljZQp7CiAgcHVibGljIFBvc3RzU2VydmljZSgpCiAge30KfQo",
+					"AQAAAAAAAAABAAAAAAAAAAAAAACVAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "package com.social.api.controller;\n\nimport org.springframework.http.ResponseEntity;\nimport org.springframework.security.core.Authentication;\nimport org.springframework.web.bind.annotation.*;\nimport com.social.api.entity.Post;\nimport com.social.api.service.PostService;\nimport java.util.List;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/posts\")\npublic class PostController\n{\n    private final PostService postService;\n    \n    public PostController(PostService postService)\n    {\n        this.postService = postService;\n    }\n    \n    // PUBLIC ENDPOINTS\n    \n    // Get all public posts (feed)\n    @GetMapping(\"/public\")\n    public List<Post> getAllPublicPosts()\n    {\n        return postService.getAllPublicPosts();\n    }\n    \n    // Get user's public posts\n    @GetMapping(\"/user/{username}\")\n    public List<Post> getUserPublicPosts(@PathVariable String username)\n    {\n        return postService.getPublicPostsByUsername(username);\n    }\n    \n    // Get single post (if public)\n    @GetMapping(\"/{id}/public\")\n    public ResponseEntity<Post> getPublicPost(@PathVariable Long id)\n    {\n        return postService.getPostById(id)\n            .filter(post -> !post.isPrivate())\n            .map(ResponseEntity::ok)\n            .orElse(ResponseEntity.notFound().build());\n    }\n    \n    // PROTECTED ENDPOINTS\n    \n    // Get my private posts\n    @GetMapping(\"/private\")\n    public List<Post> getMyPrivatePosts(Authentication auth)\n    {\n        return postService.getPrivatePostsByUsername(auth.getName());\n    }\n    \n    // Get all my posts (public + private)\n    @GetMapping(\"/my\")\n    public List<Post> getMyAllPosts(Authentication auth)\n    {\n        return postService.getAllPostsByUsername(auth.getName());\n    }\n    \n    // Create post\n    @PostMapping\n    public ResponseEntity<Post> createPost(\n        @RequestBody CreatePostRequest request,\n        Authentication auth)\n    {\n        Post post = postService.createPost(\n            auth.getName(),\n            request.getContent(),\n            request.isPrivate()\n        );\n        return ResponseEntity.ok(post);\n    }\n    \n    // Update post\n    @PutMapping(\"/{id}\")\n    public ResponseEntity<Post> updatePost(\n        @PathVariable Long id,\n        @RequestBody UpdatePostRequest request,\n        Authentication auth)\n    {\n        if (!postService.isPostOwner(id, auth.getName()))\n        {\n            return ResponseEntity.status(403).build();\n        }\n        \n        Post updated = postService.updatePost(\n            id,\n            request.getContent(),\n            request.getIsPrivate()\n        );\n        return ResponseEntity.ok(updated);\n    }\n    \n    // Delete post\n    @DeleteMapping(\"/{id}\")\n    public ResponseEntity<?> deletePost(\n        @PathVariable Long id,\n        Authentication auth)\n    {\n        if (!postService.isPostOwner(id, auth.getName()))\n        {\n            return ResponseEntity.status(403).build();\n        }\n        \n        postService.deletePost(id);\n        return ResponseEntity.ok().build();\n    }\n    \n    // Get post count for current user\n    @GetMapping(\"/my/count\")\n    public Map<String, Long> getMyPostCount(Authentication auth)\n    {\n        long total = postService.getPostCount(auth.getName());\n        long publicCount = postService.getPublicPostCount(auth.getName());\n        return Map.of(\n            \"total\", total,\n            \"public\", publicCount,\n            \"private\", total - publicCount\n        );\n    }\n    \n    // DTOs for request bodies\n    public static class CreatePostRequest\n    {\n        private String content;\n        private boolean isPrivate;\n        \n        public String getContent()\n        {\n            return content;\n        }\n        \n        public void setContent(String content)\n        {\n            this.content = content;\n        }\n        \n        public boolean isPrivate()\n        {\n            return isPrivate;\n        }\n        \n        public void setPrivate(boolean isPrivate)\n        {\n            this.isPrivate = isPrivate;\n        }\n    }\n    \n    public static class UpdatePostRequest\n    {\n        private String content;\n        private Boolean isPrivate;\n        \n        public String getContent()\n        {\n            return content;\n        }\n        \n        public void setContent(String content)\n        {\n            this.content = content;\n        }\n        \n        public Boolean getIsPrivate()\n        {\n            return isPrivate;\n        }\n        \n        public void setIsPrivate(Boolean isPrivate)\n        {\n            this.isPrivate = isPrivate;\n        }\n    }\n}",
+			"file": "api/src/main/java/com/social/api/controller/PostController.java",
+			"file_size": 469,
+			"file_write_time": 134143277942601837,
+			"settings":
+			{
+				"buffer_size": 4575,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAA3xEAAAAAAADVAQAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5jb250cm9sbGVyOwoKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc2VjdXJpdHkuY29yZS5BdXRoZW50aWNhdGlvbjsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsud2ViLmJpbmQuYW5ub3RhdGlvbi5HZXRNYXBwaW5nOwppbXBvcnQgb3JnLnNwcmluZ2ZyYW1ld29yay53ZWIuYmluZC5hbm5vdGF0aW9uLlJlcXVlc3RNYXBwaW5nOwppbXBvcnQgb3JnLnNwcmluZ2ZyYW1ld29yay53ZWIuYmluZC5hbm5vdGF0aW9uLlJlc3RDb250cm9sbGVyOwoKaW1wb3J0IGphdmEudXRpbC4qOwoKQFJlc3RDb250cm9sbGVyCkBSZXF1ZXN0TWFwcGluZygiL3Bvc3RzIikKcHVibGljIGNsYXNzIFBvc3RDb250cm9sbGVyCnsKICBAR2V0TWFwcGluZygiL2NyZWF0ZSIpCiAgcHVibGljIE1hcDxTdHJpbmcsIFN0cmluZz4gY3JlYXRlKEF1dGhlbnRpY2F0aW9uIGF1dGgpCiAgewogICAgCiAgfQp9Cg",
+					"AQAAAAAAAAABAAAAAAAAAAAAAADVAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "api/src/main/java/com/social/api/controller/AuthController.java",
+			"redo_stack":
+			[
+			],
+			"settings":
+			{
+				"buffer_size": 1319,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					15,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAJwUAAAAAAAC1BAAAcGFja2FnZSBjb20uc29jaWFsLmFwaS5jb250cm9sbGVyOwoKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuaHR0cC5SZXNwb25zZUVudGl0eTsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc2VjdXJpdHkuY3J5cHRvLnBhc3N3b3JkLlBhc3N3b3JkRW5jb2RlcjsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsud2ViLmJpbmQuYW5ub3RhdGlvbi5Qb3N0TWFwcGluZzsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsud2ViLmJpbmQuYW5ub3RhdGlvbi5SZXF1ZXN0TWFwcGluZzsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsud2ViLmJpbmQuYW5ub3RhdGlvbi5SZXF1ZXN0UGFyYW07CmltcG9ydCBvcmcuc3ByaW5nZnJhbWV3b3JrLndlYi5iaW5kLmFubm90YXRpb24uUmVzdENvbnRyb2xsZXI7CgppbXBvcnQgY29tLnNvY2lhbC5hcGkuZW50aXR5LlVzZXI7CmltcG9ydCBjb20uc29jaWFsLmFwaS5yZXBvc2l0b3J5LlVzZXJSZXBvc2l0b3J5OwoKQFJlc3RDb250cm9sbGVyIEBSZXF1ZXN0TWFwcGluZygiL2F1dGgiKQpwdWJsaWMgY2xhc3MgQXV0aENvbnRyb2xsZXIKewoKICBwcml2YXRlIGZpbmFsIFVzZXJSZXBvc2l0b3J5IHVzZXJzOwogIHByaXZhdGUgZmluYWwgUGFzc3dvcmRFbmNvZGVyIGVuY29kZXI7CgogIHB1YmxpYyBBdXRoQ29udHJvbGxlcihVc2VyUmVwb3NpdG9yeSB1c2VycywgUGFzc3dvcmRFbmNvZGVyIGVuY29kZXIpCiAgewogICAgdGhpcy51c2VycyA9IHVzZXJzOwogICAgdGhpcy5lbmNvZGVyID0gZW5jb2RlcjsKICB9CgogIEBQb3N0TWFwcGluZygiL3JlZ2lzdGVyIikKICBwdWJsaWMgUmVzcG9uc2VFbnRpdHk8Pz4gcmVnaXN0ZXIoCiAgICAgIEBSZXF1ZXN0UGFyYW0gU3RyaW5nIHVzZXJuYW1lLAogICAgICBAUmVxdWVzdFBhcmFtIFN0cmluZyBwYXNzd29yZCkKICB7CgogICAgaWYgKHVzZXJzLmZpbmRCeVVzZXJuYW1lKHVzZXJuYW1lKS5pc1ByZXNlbnQoKSkKICAgIHsKICAgICAgcmV0dXJuIFJlc3BvbnNlRW50aXR5LnN0YXR1cyg0MDkpLmJvZHkoIlVzZXIgZXhpc3RzIik7CiAgICB9CgogICAgVXNlciB1ID0gbmV3IFVzZXIoKTsKICAgIHUuc2V0VXNlcm5hbWUodXNlcm5hbWUpOwogICAgdS5zZXRQYXNzd29yZChlbmNvZGVyLmVuY29kZShwYXNzd29yZCkpOwogICAgdXNlcnMuc2F2ZSh1KTsKCiAgICByZXR1cm4gUmVzcG9uc2VFbnRpdHkub2soKS5idWlsZCgpOwogIH0KfQo",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAC1BAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Base",
+					""
+				],
+				[
+					"Build",
+					""
+				],
+				[
+					"Config",
+					""
+				],
+				[
+					"Debug GDB",
+					""
+				],
+				[
+					"Debug Leaks",
+					""
+				],
+				[
+					"Debug ObjDump",
+					""
+				],
+				[
+					"Run",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Base",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Base",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Build & run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Configure"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: leaks"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: objdump"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: gdb"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Build: Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Build: Test"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: leaks"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: objdump"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: gdb"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Build & run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Configure"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: leaks"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: objdump"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: gdb"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/ACMaker/CMaker.sublime-build",
+				"Build & run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Configure"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/ACMaker/CMaker.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Configure"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/ACMaker/CMaker.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/CMaker/CMaker.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/CMaker/CMaker.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Config - Debug"
+				]
+			],
+			[
+				"Packages/CMaker/CMaker.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/CMaker/CMaker.sublime-build",
+					"Configure"
+				]
+			],
+			[
+				"Packages/CMaker/CMaker.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Config"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug Leaks"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug ObjDump"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Debug GDB"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++.sublime-build",
+				"Build"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/Scripter/Scripter.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Build & run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Configure"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: leaks"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: objdump"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: gdb"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Exec"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Compile"
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Build & run"
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Exec"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Java/JAV.sublime-build",
+				"Build & run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Compile"
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Compile & Run"
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Exec"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Java/JAV.sublime-build",
+				"Compile & Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Java/JAV.sublime-build",
+					"Compile"
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Java.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Exec"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Package"
+				],
+				[
+					"Packages/User/Maven.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Java/JAV.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					""
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Build & run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Configure"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: leaks"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: objdump"
+				],
+				[
+					"Packages/ACMaker/CMaker.sublime-build",
+					"Debug: gdb"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/C++/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"rest",
+				"LSP: Restart Server"
+			],
+			[
+				"res",
+				"LSP: Restart Server"
+			],
+			[
+				"re",
+				"LSP: Restart Server"
+			],
+			[
+				"",
+				"LSP: Format File"
+			],
+			[
+				"lsp",
+				"Preferences: LSP-jdtls Settings"
+			],
+			[
+				"lsp sett",
+				"Preferences: LSP-jdtls Settings"
+			],
+			[
+				"color schem",
+				"UI: Customize Color Scheme"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"ters",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"removepa",
+				"Package Control: Remove Package"
+			],
+			[
+				"terst",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"helium",
+				"Helium: Connect Kernel"
+			],
+			[
+				"trerst",
+				"Terminus Utilities: Remove User Theme"
+			],
+			[
+				"restar",
+				"LSP: Restart Server"
+			],
+			[
+				"open res",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packageRes",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"extra",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"extract",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"lspre",
+				"LSP: Restart Server"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"edit",
+				"PackageDev: Edit Current Theme"
+			],
+			[
+				"colorsc",
+				"UI: Customize Color Scheme"
+			],
+			[
+				"ter",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"rese",
+				"Terminus: Reset"
+			],
+			[
+				"terminus them",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"copilo",
+				"Copilot: Get Panel Completions"
+			],
+			[
+				"copil",
+				"Copilot: Get Panel Completions"
+			],
+			[
+				"openre",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"openres",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"extrac",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"rp",
+				"Package Control: Remove Package"
+			],
+			[
+				"edit theme",
+				"PackageDev: Edit Current Theme"
+			],
+			[
+				"ccs",
+				"UI: Customize Color Scheme"
+			],
+			[
+				"resta",
+				"LSP: Restart Server"
+			],
+			[
+				"cus",
+				"UI: Customize Theme"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 190.0,
+		"history":
+		[
+			"sublime.run_command(\"run\", {\"text\": \"JAJAJA\"})",
+			"sublime.get_macro()",
+			"sublime",
+			"emmet",
+			"User",
+			"user",
+			"main",
+			"sidebar",
+			"sublime",
+			"Window",
+			"run_this_bash"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/omarfkuri/projects/social",
+		"/Users/omarfkuri/projects/social/api",
+		"/Users/omarfkuri/projects/social/api/src",
+		"/Users/omarfkuri/projects/social/api/src/main",
+		"/Users/omarfkuri/projects/social/api/src/main/java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/config",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/controller",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/entity",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/repository",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/service",
+		"/Users/omarfkuri/projects/social/api/src/main/resources",
+		"/Users/omarfkuri/projects/social/api/src/test",
+		"/Users/omarfkuri/projects/social/front",
+		"/Users/omarfkuri/projects/social/front/web",
+		"/Users/omarfkuri/projects/social/front/web/src",
+		"/Users/omarfkuri/projects/social/front/web/src/lib",
+		"/Users/omarfkuri/projects/social/front/web/src/lib/comp",
+		"/Users/omarfkuri/projects/social/front/web/src/lib/server",
+		"/Users/omarfkuri/projects/social/front/web/src/routes",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/(main)",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/profile",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/server",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/server/post",
+		"/Users/omarfkuri/projects/social/front/web/src/styles",
+		"/Users/omarfkuri/projects/social/nginx"
+	],
+	"file_history":
+	[
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/controller/PostsService.java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/service/PostsService.java",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/server/post/+server.ts",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/repository/UserRepository.java",
+		"/Users/omarfkuri/projects/social/front/web/src/lib/comp/WritePost.svelte",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/(main)/+layout.svelte",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/server/logout/+server.ts",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/astor/log_out/+server.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/(main)/+page.svelte",
+		"/Users/omarfkuri/projects/social/front/web/src/lib/index.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/(main)/+layout.server.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/profile/+page.server.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/profile/+page.svelte",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/(fs)/folder/[...path]/comps/folder.svelte",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/(fs)/folder/[...path]/comps/contents.svelte",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/(fs)/folder/[...path]/comps/file_info.svelte",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/(fs)/folder/[...path]/comps/manage_sharing.svelte",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/(fs)/folder/[...path]/comps/menu.svelte",
+		"/Users/omarfkuri/projects/sangfor/astor-manager/front/web/src/routes/(fs)/folder/[...path]/comps/share_with.svelte",
+		"/Users/omarfkuri/projects/social/front/web/.svelte-kit/types/src/routes/(main)/$types.d.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/+page.svelte",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/access/+page.svelte",
+		"/Users/omarfkuri/projects/social/front/web/src/lib/server/api.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/+page.server.ts",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/access/+page.server.ts",
+		"/Users/omarfkuri/projects/social/nginx/http.conf",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/config/SecurityConfig.java",
+		"/Users/omarfkuri/projects/social/front/web/src/styles/global.less",
+		"/Users/omarfkuri/projects/social/front/web/src/routes/+layout.server.ts",
+		"/Users/omarfkuri/projects/social/api/src/main/resources/application.yml",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/ApiApplication.java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/controller/AuthController.java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/entity/User.java",
+		"/Users/omarfkuri/projects/social/front/web/src/hooks.server.ts",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/service/CustomUserDetailsService.java",
+		"/Users/omarfkuri/projects/social/api/pom.xml",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/social/api/controller/MeController.java",
+		"/Users/omarfkuri/projects/social/docker-compose.dev.yml",
+		"/Users/omarfkuri/projects/social/api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst",
+		"/Users/omarfkuri/projects/social/api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst",
+		"/Users/omarfkuri/projects/social/api/src/test/java/com/fkuri/api/ApiApplicationTests.java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/fkuri/api/controller/ApiController.java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/fkuri/api/ApiApplication.java",
+		"/Users/omarfkuri/projects/social/api/src/main/java/com/fkuri/api/config/RestClientConfig.java",
+		"/Users/omarfkuri/projects/omar/front/web/src/styles/vars.less",
+		"/Users/omarfkuri/projects/omar/front/web/src/styles/global.less",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/gl.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/comp/TransitionCanvas.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/src/routes/Header.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/src/routes/Services.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/src/routes/Projects.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/src/routes/+page.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/math/Vec4.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/math/Mat4.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/math/Vec3.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/math/common.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/math/math.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/gl/math.ts",
+		"/Users/omarfkuri/projects/omar/front/web/src/lib/comp/Canvas.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/src/routes/+layout.svelte",
+		"/Users/omarfkuri/projects/omar/front/web/package.json",
+		"/Users/omarfkuri/projects/omar/front/web/tsconfig.json",
+		"/Users/omarfkuri/projects/omar/front/web/vite.config.ts",
+		"/Users/omarfkuri/projects/omar/api/src/main/java/com/fkuri/api/controller/ApiController.java",
+		"/Users/omarfkuri/projects/omar/docker-compose.dev.yml",
+		"/Users/omarfkuri/projects/omar/api/src/main/java/com/fkuri/api/config/RestClientConfig.java",
+		"/Users/omarfkuri/projects/omar/api/pom.xml",
+		"/Users/omarfkuri/projects/omar/api/src/main/java/com/fkuri/api/service/ExternalApiService.java",
+		"/Users/omarfkuri/projects/omar/api/src/main/java/com/fkuri/api/ApiApplication.java",
+		"/Users/omarfkuri/projects/omar/nginx/http.conf",
+		"/Users/omarfkuri/projects/omar/front/web/Dockerfile",
+		"/Users/omarfkuri/projects/omar/api/Dockerfile.dev",
+		"/Users/omarfkuri/projects/omar/api/Dockerfile",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/core/hashmap.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/core/binary_search.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/func/actions.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/graph/graph.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/list_users.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/list_func.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/list_friends.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/core/menu.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/main.py",
+		"/Users/omarfkuri/projects/business/Business.sublime-project",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/auth/auth.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/interpreter/evaluator.py",
+		"/Users/omarfkuri/projects/unam/eda-2/omp/sin.c",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/core/merge_sort.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/core/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/users.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/users/users.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/main_menu.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/interpreter/parser.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/interpreter/interpret.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/open_func.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/susan.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/elaine.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/russel.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/omar.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/poppie.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/newman.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/tim.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/kramer.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/george.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/data/user/jerry.csv",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/grapher.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/login.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/app.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/new.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/menus/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/func/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/func/func.py",
+		"/Users/omarfkuri/projects/unam/poo/cypher/src/Open.java",
+		"/Users/omarfkuri/projects/unam/poo/cypher/src/Save.java",
+		"/Users/omarfkuri/projects/unam/poo/cypher/src/Cifrador.java",
+		"/Users/omarfkuri/projects/unam/eda-2/omp/fib-dd.c",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/interpreter/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/auth/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/core/error.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/users/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/proyecto_1/grapher/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/fs/directory/node.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/fs/auth/auth.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/fs/directory/directory.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/main.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/fs/system.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/fs/input.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/fs/directory/__init__.py",
+		"/Users/omarfkuri/projects/unam/eda-2/práctica_10/data/users.csv"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 210.0,
+		"where_history":
+		[
+			"/Users/omarfkuri/projects/social/api/src/main/java/com/social,<project filters>",
+			"/Users/omarfkuri/projects/social,<project filters>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"findByUsername",
+			"http://social-api:8080",
+			"fkuri"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"social"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "api/src/main/java/com/social/api/entity/Post.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1606,
+								1606
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"registration_id": "45c0261b-df46-491a-bede-06d46a166945",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/entity/Post.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2903.5,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "api/src/main/java/com/social/api/repository/PostRepository.java",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1000,
+								1000
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/repository/PostRepository.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 483.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "api/src/main/java/com/social/api/repository/UserRepository.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/repository/UserRepository.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "api/src/main/java/com/social/api/entity/User.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1071,
+								1071
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/entity/User.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1511.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "api/src/main/java/com/social/api/service/CustomUserDetailsService.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 985,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/service/CustomUserDetailsService.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "api/src/main/java/com/social/api/service/PostService.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1795,
+								1795
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/service/PostService.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1434.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "api/src/main/java/com/social/api/service/UserService.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								397,
+								397
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/service/UserService.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "api/src/main/java/com/social/api/controller/PostController.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2006,
+								2006
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/controller/PostController.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1841.5,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "api/src/main/java/com/social/api/controller/AuthController.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								762,
+								762
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".@#* ",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "jdtls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///Users/omarfkuri/projects/social/api/src/main/java/com/social/api/controller/AuthController.java",
+							"show_definitions": false,
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 477.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 42.0
+	},
+	"input":
+	{
+		"height": 78.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.Terminus Build Results":
+	{
+		"height": 463.0,
+		"history":
+		[
+		]
+	},
+	"output.diagnostics":
+	{
+		"height": 254.0,
+		"history":
+		[
+		]
+	},
+	"output.exec":
+	{
+		"height": 985.0,
+		"history":
+		[
+			"3",
+			"5",
+			"2",
+			"4",
+			"123456",
+			"badger",
+			"1",
+			"5",
+			"2",
+			"4",
+			"2",
+			"123456",
+			"jerry",
+			"1",
+			"123456",
+			"jerry",
+			"1",
+			"123456",
+			"jerry",
+			"123456",
+			"omar",
+			"1",
+			"123",
+			"omar",
+			"1",
+			"2",
+			"123456",
+			"jerry",
+			"1",
+			"omar",
+			"1",
+			"2",
+			"123456",
+			"jerry",
+			"1",
+			"123456",
+			"jerry",
+			"123456",
+			"omar",
+			"1",
+			"12345",
+			"jerry",
+			"1",
+			"jerry",
+			"123456",
+			"omar",
+			"1",
+			"6 / 5",
+			"pi / 2",
+			"pi",
+			"2",
+			"Basic_Cos",
+			"1",
+			"2",
+			"123456",
+			"kramer",
+			"1",
+			"3",
+			"5",
+			"123456",
+			"kramer",
+			"1",
+			"omar",
+			"1",
+			"0",
+			"2",
+			"1",
+			"Basic_Sin",
+			"1",
+			"2",
+			"123456",
+			"jerry",
+			"1",
+			"Basic_Sin",
+			"1",
+			"2",
+			"123456",
+			"jerry",
+			"1",
+			"4",
+			"123456",
+			"kramer",
+			"1",
+			"123456",
+			"omar",
+			"1",
+			"4",
+			"123456",
+			"tio",
+			"1",
+			"5",
+			"2",
+			"4",
+			"123456",
+			"kramer",
+			"1",
+			"4",
+			"123456",
+			"newman",
+			"1",
+			"4",
+			"123456",
+			"newman",
+			"1",
+			"4",
+			"123456",
+			"jerry",
+			"1",
+			"4",
+			"123456",
+			"newman",
+			"1",
+			"5",
+			"2",
+			"4",
+			"123456",
+			"omar",
+			"1",
+			"4",
+			"123456",
+			"elaine",
+			"1",
+			"3",
+			"5",
+			"2",
+			"5",
+			"1",
+			"Tri_Power_Sum"
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.mdpopups-dummy":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 464.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 178.0
+	},
+	"pinned_build_system": "",
+	"project": "Social.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 550.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/projects/omar/FKuri.sublime-project"
+			],
+			[
+				"print",
+				"~/projects/print/Print.sublime-project"
+			]
+		],
+		"width": 418.0
+	},
+	"select_symbol":
+	{
+		"height": 419.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 652.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 313.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

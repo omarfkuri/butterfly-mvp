@@ -1,0 +1,58 @@
+@import "vars.less";
+
+*, 
+*::before, 
+*::after
+{
+	box-sizing: border-box;
+}
+
+html {
+	height: 100vh;
+}
+
+body
+{
+	font: 1em sans-serif;
+	margin: 0;
+
+	background: rgb(220,220,220);
+
+	width: 100%;
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, p
+{
+	margin: 0;
+}
+
+
+h1, h2, h3, h4, h5
+{
+	.doto(900);
+}
+
+h2
+{
+  text-transform: uppercase;
+}
+
+p
+{
+  .raleway(300);
+}
+
+a
+{
+	.doto(600);
+	color: @primary;
+	text-decoration: none;
+}
+
+a.dark
+{
+	.doto(600);
+	color: @primaryDark;
+}
+

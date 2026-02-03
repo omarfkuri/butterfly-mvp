@@ -1,0 +1,5 @@
+*.sublime-project
+
+nginx/default.conf/
+
+.DS_Store
