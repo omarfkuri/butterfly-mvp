@@ -1,72 +1,98 @@
 package com.social.api.events;
 
 import com.social.api.entity.Post;
-
 import jakarta.annotation.PreDestroy;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Component
 public class PostEventPublisher
 {
-    private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
 
-    public SseEmitter subscribe()
+  private final Map<String, List<SseEmitter>> topics = new ConcurrentHashMap<>();
+
+  public SseEmitter subscribe(String topic)
+  {
+    SseEmitter emitter = new SseEmitter(0L);
+
+    topics
+        .computeIfAbsent(topic,
+          t -> new CopyOnWriteArrayList<>())
+        .add(emitter);
+
+    emitter.onCompletion(() -> removeEmitter(topic, emitter));
+    emitter.onTimeout(() -> removeEmitter(topic, emitter));
+
+    return emitter;
+  }
+
+  private void removeEmitter(String topic, SseEmitter emitter)
+  {
+    List<SseEmitter> emitters = topics.get(topic);
+    if (emitters != null)
     {
-        SseEmitter emitter = new SseEmitter(0L);
-        emitters.add(emitter);
-
-        emitter.onCompletion(() -> emitters.remove(emitter));
-        emitter.onTimeout(() -> emitters.remove(emitter));
-
-        return emitter;
+      emitters.remove(emitter);
+      if (emitters.isEmpty())
+      {
+        topics.remove(topic);
+      }
     }
+  }
 
-    @PreDestroy
-    public void shutdown()
+  @PreDestroy
+  public void shutdown()
+  {
+    topics.values()
+        .forEach(list -> list.forEach(SseEmitter::complete));
+    topics.clear();
+  }
+
+  public void postCreated(Post post)
+  {
+    publish(post, "created");
+  }
+
+  public void postUpdated(Post post)
+  {
+    publish(post, "updated");
+  }
+
+  public void postDeleted(Long postId, String username)
+  {
+    emit("all", "deleted", postId);
+    emit("author:" + username, "deleted", postId);
+  }
+
+  private void publish(Post post, String event)
+  {
+    emit("all", event, post);
+    emit("author:" + post.getUsername(), event, post);
+  }
+
+  private void emit(String topic, String event, Object data)
+  {
+    List<SseEmitter> emitters = topics.get(topic);
+    if (emitters == null)
+      return;
+
+    for (SseEmitter emitter : emitters)
     {
-        for (SseEmitter emitter : emitters)
-        {
-            emitter.complete();
-        }
-        emitters.clear();
+      try
+      {
+        emitter.send(
+          SseEmitter.event()
+              .name(event)
+              .data(data));
+      }
+      catch (Exception e)
+      {
+        emitters.remove(emitter);
+      }
     }
-
-    public void postCreated(Post post)
-    {
-        emit("created", post.getId());
-    }
-
-    public void postDeleted(Long id)
-    {
-        emit("deleted", id);
-    }
-
-    public void postUpdated(Post saved)
-    {
-        emit("updated", saved);
-    }
-
-    private void emit(String name, Object data)
-    {
-        for (SseEmitter emitter : emitters)
-        {
-            try
-            {
-                emitter.send(
-                    SseEmitter.event()
-                        .name(name)
-                        .data(data)
-                );
-            }
-            catch (Exception e)
-            {
-                emitters.remove(emitter);
-            }
-        }
-    }
+  }
 }

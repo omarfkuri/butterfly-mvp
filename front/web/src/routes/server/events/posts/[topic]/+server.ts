@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async ({ fetch, request }) => {
-  const backend = await fetch('http://social-api:8080/events/posts', {
+export const GET: RequestHandler = async ({ fetch, request, params }) => {
+  const backend = await fetch(`http://social-api:8080/events/posts/${params.topic}`, {
     headers: {
       cookie: request.headers.get('cookie') ?? ''
     }

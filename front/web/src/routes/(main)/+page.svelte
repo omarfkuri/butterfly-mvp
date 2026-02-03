@@ -8,7 +8,7 @@
 
 onMount(() => {
   const source = new EventSource(
-    '/server/events/posts',
+    '/server/events/posts/all',
     { withCredentials: true }
   );
 

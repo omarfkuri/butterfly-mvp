@@ -75,14 +75,12 @@ public class PostController
         @PathVariable Long id,
         Authentication auth)
     {
-        System.out.println("Hi there");
         if (!postService.isPostOwner(id, auth.getName()))
         {
             return ResponseEntity.status(403).build();
         }
         
-        System.out.println("Wop!");
-        postService.deletePost(id);
+        postService.deletePost(id, auth.getName());
         return ResponseEntity.ok().build();
     }
     

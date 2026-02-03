@@ -81,11 +81,11 @@ public class PostService
     }
     
     @Transactional
-    public void deletePost(Long id)
+    public void deletePost(Long id, String username)
     {
         postRepository.deleteById(id);
 
-        eventPublisher.postDeleted(id);
+        eventPublisher.postDeleted(id, username);
     }
     
     public boolean isPostOwner(Long postId, String username)
