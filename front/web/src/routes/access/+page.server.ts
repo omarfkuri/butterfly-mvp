@@ -1,14 +1,10 @@
 import { fail, type Actions, redirect, type RequestEvent } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
-import { apiFetch } from "$lib/server/api";
+import { apiFetch, onlyGuestRoute } from "$lib/server/api";
 
 export const load: PageServerLoad = async function(event)
 {
-  const res = await apiFetch(event, '/me');
-
-  if (res.status !== 401)
-    throw redirect(302, '/');
-
+  await onlyGuestRoute(event);
   return {};
 };
 

@@ -1,14 +1,9 @@
-import { redirect, type Actions } from "@sveltejs/kit";
 import type { LayoutServerLoad } from "./$types";
-import { apiFetch } from "$lib/server/api";
-import type { User } from "$lib";
+import { onlyUserRoute } from "$lib/server/api";
 
-export const load: LayoutServerLoad = async (event) => {
-  const res = await apiFetch(event, '/me');
-  if (res.status === 401) {
-    throw redirect(302, '/access');
-  }
+export const load: LayoutServerLoad = async function (event)
+{
   return {
-    user: await res.json() as User
+    user: await onlyUserRoute(event)
   };
 };

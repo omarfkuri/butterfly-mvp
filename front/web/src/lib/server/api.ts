@@ -1,4 +1,5 @@
-import type { RequestEvent } from '@sveltejs/kit';
+import type { User } from '$lib';
+import { redirect, type RequestEvent } from '@sveltejs/kit';
 
 export async function apiFetch(
   event: RequestEvent, 
@@ -29,4 +30,24 @@ export async function apiFetch(
   }
   
   return response;
+}
+
+export async function onlyUserRoute(event: RequestEvent)
+: Promise<User>
+{
+  const res = await apiFetch(event, '/me');
+  
+  if (res.status === 401)
+    throw redirect(302, '/access');
+
+  return res.json();
+}
+
+export async function onlyGuestRoute(event: RequestEvent)
+: Promise<void>
+{
+  const res = await apiFetch(event, '/me');
+
+  if (res.status !== 401)
+    throw redirect(302, '/');
 }
