@@ -1,4 +1,8 @@
 spring:
+  server:
+    # Dev only
+    shutdown: immediate
+
   application:
     name: api
     
