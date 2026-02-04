@@ -61,8 +61,8 @@ button
 
 	transition: background-color ease 120ms;
 
-	&.dark,
-	&:not(.not-dark):hover
+	&.dark:not(:disabled),
+	&:not(.not-dark):not(:disabled):hover
 	{
 	  background-color: @fg1;
 	  color: @bg1;

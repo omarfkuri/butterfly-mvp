@@ -28,6 +28,8 @@
 		}
 	}
 
+	const disabled = $derived(title.length == 0 || content.length == 0);
+
 </script>
 
 <div class="form">
@@ -52,7 +54,12 @@
 	</div>
 	
 	<div class="button">
-		<button class="dark" onclick={onPost}>Post</button>
+		<button
+			{disabled}
+			tabindex="0"
+			class="dark" 
+			onclick={onPost}
+		>Post</button>
 	</div>
 </div>
 

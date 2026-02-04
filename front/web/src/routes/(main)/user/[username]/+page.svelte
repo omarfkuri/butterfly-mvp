@@ -8,6 +8,10 @@
 
 </script>
 
+<svelte:head>
+	<title>SO - {username}</title>
+</svelte:head>
+
 <div class="menu">
 	<a class="link" href="/" data-sveltekit-preload-data="off">←</a>
 	<span class="title">{username}</span>
@@ -15,11 +19,19 @@
 
 <div class="user-profile">
 	<div class="cover">
-		<img src="/image/cover.png" alt="Cover">
+		<img
+			src="/image/cover.png" 
+			alt="Cover"
+			draggable={false}
+		>
 	</div>
 	<div class="info">
 		<div class="profile-picture">
-			<img src="/image/user.png" alt="User">
+			<img
+				src="/image/user.png" 
+				alt="User"
+				draggable={false}
+			>
 		</div>
 		<div class="title">{username}</div>
 	</div>
@@ -36,7 +48,8 @@
 		align-items: center;
 		gap: .5em;
 
-		padding: .25em;
+		.card(false);
+
 		font-size: .8em;
 
 		.link

@@ -8,6 +8,10 @@
 
 </script>
 
+<svelte:head>
+	<title>SO - Home</title>
+</svelte:head>
+
 <WritePost />
 
 <PostList {posts} {user} topic="all"/>
