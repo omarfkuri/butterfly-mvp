@@ -17,6 +17,8 @@
 @bg1: var(--bg1);
 @bg2: var(--bg2);
 
+@mobileWidth: 600px;
+
 .font-titl
 {
   font-family: "Doto", sans-serif;
@@ -53,4 +55,12 @@
 {
   padding: .5em;
   border-bottom: 1px solid @bd1;
+}
+
+.mobile(@rules)
+{
+  @media (max-width: @mobileWidth)
+  {
+    @rules();
+  }
 }

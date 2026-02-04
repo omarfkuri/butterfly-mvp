@@ -8,6 +8,18 @@
 
 </script>
 
-<h1>Posts by {username}</h1>
+<div class="user-profile">
+	<h2>{username}</h2>
+</div>
 
 <PostList {posts} {user} topic="author:{username}"/>
+
+<style lang="less">
+	@import (reference) "../../../../lib/styles/vars.less";
+	
+	.user-profile
+	{
+		.card();
+	}
+
+</style>

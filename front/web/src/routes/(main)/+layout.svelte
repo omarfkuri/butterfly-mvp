@@ -91,7 +91,11 @@
 		width: 100%;
 		height: 100%;
 
-		max-width: 450px;
+		max-width: @mobileWidth - 100px;
+		
+		.mobile({
+			max-width: unset;
+		});
 
 		border-inline: 1px solid @bd1;
 
@@ -101,6 +105,10 @@
 	.other-wrapper
 	{
 		flex-grow: 1;
+
+		.mobile({
+			display: none;
+		});
 
 		.other
 		{
