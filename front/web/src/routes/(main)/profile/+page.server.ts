@@ -4,7 +4,9 @@ import type { Post } from "$lib";
 
 export const load: PageServerLoad = async function(event)
 {
-  const res = await apiFetch(event, '/posts/all');
+  const { user } = await event.parent();
+
+  const res = await apiFetch(event, `/posts/user/${user.username}`);
 
   return {
     posts: await res.json() as Post[]
