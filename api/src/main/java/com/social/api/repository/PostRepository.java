@@ -14,4 +14,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
   List<Post> findAllByOrderByCreatedAtDesc();
   
   long countByUsername(String username);
+
+  boolean existsById(Long id);
+
+  List<Post> findByParent(Long id);
 }

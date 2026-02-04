@@ -8,6 +8,7 @@ export type Post = {
 	title: string
 	content: string
 	createdAt: string
+	parent: string | null
 	id: string
 	username: string
 }

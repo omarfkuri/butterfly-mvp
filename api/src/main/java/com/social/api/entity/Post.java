@@ -32,6 +32,9 @@ public class Post
   @Column(nullable = false)
   private LocalDateTime createdAt;
   
+  @Column(nullable = true)
+  private Long parent;
+  
   @PrePersist
   protected void onCreate()
   {
@@ -104,5 +107,15 @@ public class Post
   public void setCreatedAt(LocalDateTime createdAt)
   {
     this.createdAt = createdAt;
+  }
+  
+  public Long getParent()
+  {
+    return parent;
+  }
+
+  public void setParent(Long parent)
+  {
+    this.parent = parent;
   }
 }

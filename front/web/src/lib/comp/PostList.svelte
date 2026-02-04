@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
 	import type { Post, User } from '$lib';
+  import PostElem from './Post.svelte';
 
 	type Topic = (
 		|"all"
@@ -12,9 +13,18 @@
 		posts: Post[]
 		topic: Topic
 		user: User | null
+		emptyString?: string
+		forComments?: boolean
 	}
 
-	let { posts, user, topic }: Props = $props();
+	let {
+		posts, 
+		user, 
+		topic, 
+		emptyString = "No posts yet",
+		forComments = false,
+
+	}: Props = $props();
 
 	if (browser)
 		$effect(() => {
@@ -59,103 +69,22 @@
 			return () => source.close();
 		});
 
-	async function deletePost(id: string)
-	{
-		if (!confirm("Are you sure you want to delete this post?"))
-			return;
-
-		const res = await fetch(`/server/posts/delete/${id}`, {
-			method: "DELETE",
-			credentials: "include"
-		});
-	}
-
 </script>
 
-{#each posts as { title, content, username, id, createdAt }}
-	{@const date = new Date(createdAt).toLocaleString(undefined, {
-		dateStyle: "long",
-	})}
-	{@const time = new Date(createdAt).toLocaleString(undefined, {
-		// timeZone: "America/Mexico_City",
-		timeStyle: "short",
-		hour12: false
-	})}
-	<article class="post">
-		<div class="main">
-			<div class="title">{title}</div>
-			<div class="content">{content}</div>
-		</div>
-
-		<div class="bottom">
-			<div class="info">
-				<a href="/user/{username}">{username}</a>
-				{date} {time}
-			</div>
-
-			{#if user}
-				{#if username == user.username}
-					<div class="buttons">
-						<button>Update</button>
-						<button onclick={()=>deletePost(id)}>Delete</button>
-					</div>
-				{/if}
-			{/if}
-		</div>
-	</article>
+{#each posts as post}
+	<PostElem {post} {user} isComment={forComments}/>
 {:else}
-	No posts yet
+	<div class="empty">
+		{emptyString}
+	</div>
 {/each}
 
 <style lang="less">
 	@import (reference) "../styles/vars.less";
 
-	.post
+	.empty
 	{
-		display: flex;
-		flex-direction: column;
-		gap: .75em;
-
-		.card();
-	}
-
-	.main
-	{
-		display: flex;
-		flex-direction: column;
-		gap: .125em;
-
-		.title
-		{
-			font-weight: bold;
-			font-size: 1.1em;
-		}
-
-		.content
-		{
-			font: .65em monospace;
-		}
-	}
-
-	.bottom
-	{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		
-		font-size: .8em;
-
-		.info
-		{
-			font-size: .8em;
-			color: @fg2;
-		}
-
-		.buttons
-		{
-			display: flex;
-			align-items: center;
-			gap: .5em;
-		}
+		padding: 0.5em;
+		color: @fg3;
 	}
 </style>

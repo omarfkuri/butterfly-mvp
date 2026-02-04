@@ -30,6 +30,27 @@ public class PostController
         return postService.getAllPostsByUsername(username);
     }
     
+    @GetMapping("/comments/all/{parentID}")
+    public List<Post> getComments(@PathVariable Long parentID)
+    {
+        return postService.getPostComments(parentID);
+    }
+    
+    @PostMapping("/comments/create/{parentID}")
+    public ResponseEntity<Post> createComment(
+        @PathVariable Long parentID,
+        @RequestBody CreatePostRequest request,
+        Authentication auth)
+    {
+        Post post = postService.createComment(
+            auth.getName(),
+            request.getTitle(),
+            request.getContent(),
+            parentID
+        );
+        return ResponseEntity.ok(post);
+    }
+    
     @GetMapping("/get/{id}")
     public ResponseEntity<Post> getPublicPost(@PathVariable Long id)
     {

@@ -43,6 +43,11 @@ public class PostService
         return postRepository.findById(id);
     }
     
+    public List<Post> getPostComments(Long id)
+    {
+        return postRepository.findByParent(id);
+    }
+    
     @Transactional
     public Post createPost(String username, String title, String content)
     {
@@ -55,6 +60,26 @@ public class PostService
         post.setContent(content);
 
         Post saved = postRepository.save(post);
+        eventPublisher.postCreated(saved);
+        return saved;
+    }
+    
+    @Transactional
+    public Post createComment(String username, String title, String content, Long parent)
+    {
+        if (!postRepository.existsById(parent))
+            throw new RuntimeException("Parent does not exist");
+
+        User user = userRepository.findByUsername(username)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+        
+        Post comment = new Post();
+        comment.setUser(user);
+        comment.setTitle(title);
+        comment.setContent(content);
+        comment.setParent(parent);
+
+        Post saved = postRepository.save(comment);
         eventPublisher.postCreated(saved);
         return saved;
     }
