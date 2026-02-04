@@ -75,6 +75,8 @@
 </div>
 
 <style lang="less">
+	@import (reference) "../../lib/styles/vars.less";
+
 	.form-wrapper
 	{
 		display: flex;
@@ -93,9 +95,9 @@
 
 		padding: 1em;
 
-		border-radius: .5em;
+		border: 1px solid @bd1;
 
-		background: #F8F8F8;
+		background: @bg1;
 		box-shadow: 0 0 8px -2.5px #0006;
 	}
 

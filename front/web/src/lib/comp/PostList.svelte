@@ -103,14 +103,15 @@
 {/each}
 
 <style lang="less">
+	@import (reference) "../styles/vars.less";
+
 	.post
 	{
 		display: flex;
 		flex-direction: column;
 		gap: .25em;
 
-		padding-block: .5em;
-		border-bottom: 1px solid #AAA;
+		.card();
 	}
 
 	.main

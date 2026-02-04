@@ -31,12 +31,14 @@
 
 </script>
 <div class="content">
-	<div class="side">
-		<a href="/">SO</a>
+	<div class="side-wrapper">
+		<div class="side">
+			<a href="/">SO</a>
 
-		<div class="buttons">
-			<button onclick={onLogOut}>Log out</button>
-			<button onclick={createPost}>New Post</button>
+			<div class="buttons">
+				<button onclick={onLogOut}>Log out</button>
+				<button onclick={createPost}>New Post</button>
+			</div>
 		</div>
 	</div>
 
@@ -44,12 +46,12 @@
 		{@render children()}
 	</div>
 
-	<div class="other">
-		<a href="/user/{user.username}">{user.username}</a>
+	<div class="other-wrapper">
+		<div class="other">
+			<a href="/user/{user.username}">{user.username}</a>
+		</div>
 	</div>
 </div>
-
-<WritePost bind:this={writePost} />
 
 <style lang="less">
 	@import (reference) "../../lib/styles/vars.less";
@@ -63,22 +65,30 @@
 		max-width: 700px;
 		margin-inline: auto;
 
-		* {
-			padding-block: .25em;
-			padding-inline: .5em;
+		> *
+		{
+			padding-block: .125em;
+
+			> *
+			{
+				padding: .5em;
+			}
 		}
 	}
 
-	.side
+	.side-wrapper
 	{
-		display: flex;
-		flex-direction: column;
-
-		.buttons
+		.side
 		{
 			display: flex;
 			flex-direction: column;
-			gap: .25em;
+
+			.buttons
+			{
+				display: flex;
+				flex-direction: column;
+				gap: .25em;
+			}
 		}
 	}
 
@@ -97,13 +107,18 @@
 		overflow-y: scroll;
 	}
 
-	.other
+	.other-wrapper
 	{
-		display: flex;
-		flex-direction: column;
-
 		flex-grow: 1;
-		overflow-y: scroll;
+
+		.other
+		{
+			display: flex;
+			flex-direction: column;
+
+			overflow-y: scroll;
+			width: 100%;
+		}
 	}
 
 </style>

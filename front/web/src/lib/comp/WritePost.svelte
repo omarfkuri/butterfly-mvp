@@ -1,18 +1,6 @@
 <script lang="ts">
 	let title = $state("");
 	let content = $state("");
-	
-	let dialog = $state<HTMLDialogElement>();
-
-	export function openModal()
-	{
-		dialog?.showModal();
-	}
-
-	function onCancel()
-	{
-		dialog?.close();
-	}
 
 	async function onPost()
 	{
@@ -37,88 +25,85 @@
 		else
 		{
 			title = content = "";
-
-			dialog?.close();
 		}
 	}
 
 </script>
 
-<dialog bind:this={dialog}>
-	<div class="control">
-		<button onclick={onCancel}>×</button>
-	</div>
-
-	<h3>Create Post</h3>
-
-	<div class="form">
+<div class="form">
+	<div class="inputs">
 		<label>
-			<span class="input-title">Title</span>
-			<input name="title" type="text" bind:value={title}/>
+			<input
+				required
+				name="title" 
+				type="text" 
+				bind:value={title}
+				placeholder="Title"
+			/>
 		</label>
 		<label>
-			<span class="input-title">Content</span>
-			<textarea name="content" bind:value={content}></textarea>
+			<textarea
+				required
+				name="content" 
+				bind:value={content}
+				placeholder="What's going on?"
+			></textarea>
 		</label>
-		
-		<div class="button">
-			<button onclick={onPost}>Post</button>
-		</div>
 	</div>
-</dialog>
+	
+	<div class="button">
+		<button onclick={onPost}>Post</button>
+	</div>
+</div>
 
 <style lang="less">
-	.control
-	{
-		width: 100%;
-		display: flex;
-		justify-content: end;
-
-		button
-		{
-			border: none;
-			background: none;
-
-			font-size: 1em;
-			padding: 0;
-			margin: 0;
-		}
-	}
+	@import (reference) "../styles/vars.less";
 
 	.form
 	{
+		width: 100%;
 		display: flex;
-		flex-direction: column;
-		gap: .75em;
 
-		label
+		.card();
+
+		.inputs
 		{
 			display: flex;
 			flex-direction: column;
 
-			.input-title
-			{
-				font-size: .8em;
-			}
+			width: 100%;
 
-			input, textarea
+			label
 			{
-				width: 100%;
-			}
+				display: flex;
+				flex-direction: column;
 
-			textarea
-			{
-				resize: vertical;
-				max-height: 60px;
+				input, textarea
+				{
+					width: 100%;
+					padding: 0;
+					border: none;
+				}
+
+				input
+				{
+					font-size: 1.2em;
+					font-weight: bold;
+				}
+
+				textarea
+				{
+					resize: vertical;
+					max-height: 60px;
+				}
 			}
 		}
 
 		.button
 		{
 			display: flex;
-			justify-content: center;
-
-			width: 100%;
+			flex-direction: column;
+			justify-content: end;
 
 			button
 			{

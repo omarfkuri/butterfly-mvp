@@ -5,14 +5,17 @@
 
   --bd1: #AAA;
   
-  --bg1: #DDD;
+  --bg1: #F8F8F8;
+  --bg2: #DDD;
 }
 
 @primary: var(--primary);
 @primaryDark: var(--primaryDark);
 
-@bg1: var(--bg1);
 @bd1: var(--bd1);
+
+@bg1: var(--bg1);
+@bg2: var(--bg2);
 
 .font-titl
 {
@@ -44,4 +47,10 @@
   font-optical-sizing: auto;
   font-weight: @num;
   font-style: normal;
+}
+
+.card()
+{
+  padding: .5em;
+  border-bottom: 1px solid @bd1;
 }
