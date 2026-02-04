@@ -7,11 +7,6 @@
 
 	let writePost = $state<WritePost>();
 
-	function createPost()
-	{
-		writePost?.openModal();
-	}
-
 	async function onLogOut()
 	{
 		if (!confirm("Do you want to log out?"))
@@ -37,7 +32,6 @@
 
 			<div class="buttons">
 				<button onclick={onLogOut}>Log out</button>
-				<button onclick={createPost}>New Post</button>
 			</div>
 		</div>
 	</div>
