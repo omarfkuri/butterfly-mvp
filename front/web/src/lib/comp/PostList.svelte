@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { browser } from '$app/environment';
 	import type { Post, User } from '$lib';
 
 	type Topic = (
@@ -15,50 +16,54 @@
 
 	let { posts, user, topic }: Props = $props();
 
-	$effect(() => {
-		const path = `/server/events/posts/${topic}`;
+	if (browser)
+		$effect(() => {
+			const path = `/server/events/posts/${topic}`;
 
-		const source = new EventSource(path, {
-			withCredentials: true
+			const source = new EventSource(path, {
+				withCredentials: true
+			});
+
+			async function getPost(id: string): Promise<Post>
+			{
+				const res = await fetch(`/server/posts/get/${id}`);
+				return res.json();
+			}
+
+			source.addEventListener('created', async function (e)
+			{
+				const post = JSON.parse(e.data) as Post;
+				posts = [post, ...posts];
+			});
+
+			source.addEventListener('deleted', async function (e)
+			{
+				const id = e.data;
+				posts = posts.filter(post => post.id != id);
+			});
+
+			source.addEventListener('updated', async function (e)
+			{
+				const id = e.data;
+				const found = posts.find(post => post.id == id);
+
+				if (!found)
+					return;
+
+				const post = await getPost(id);
+
+				const i = posts.findIndex(post => post.id == id);
+				posts[i] = post;
+			});
+
+			return () => source.close();
 		});
-
-		async function getPost(id: string): Promise<Post>
-		{
-			const res = await fetch(`/server/posts/get/${id}`);
-			return res.json();
-		}
-
-		source.addEventListener('created', async function (e)
-		{
-			const post = JSON.parse(e.data) as Post;
-			posts = [post, ...posts];
-		});
-
-		source.addEventListener('deleted', async function (e)
-		{
-			const id = e.data;
-			posts = posts.filter(post => post.id != id);
-		});
-
-		source.addEventListener('updated', async function (e)
-		{
-			const id = e.data;
-			const found = posts.find(post => post.id == id);
-
-			if (!found)
-				return;
-
-			const post = await getPost(id);
-
-			const i = posts.findIndex(post => post.id == id);
-			posts[i] = post;
-		});
-
-		return () => source.close();
-	});
 
 	async function deletePost(id: string)
 	{
+		if (!confirm("Are you sure you want to delete this post?"))
+			return;
+
 		const res = await fetch(`/server/posts/delete/${id}`, {
 			method: "DELETE",
 			credentials: "include"
