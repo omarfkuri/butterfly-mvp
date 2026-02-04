@@ -1,11 +1,8 @@
 <script lang="ts">
-  import WritePost from "$lib/comp/WritePost.svelte";
   import type { LayoutProps } from "./$types";
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);
-
-	let writePost = $state<WritePost>();
 
 	async function onLogOut()
 	{
