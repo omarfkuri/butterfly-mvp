@@ -22,19 +22,36 @@
 			withCredentials: true
 		});
 
-		source.addEventListener('created', async () => {
-			const res = await fetch('/server/posts/all');
-			posts = await res.json();
+		async function getPost(id: string): Promise<Post>
+		{
+			const res = await fetch(`/server/posts/get/${id}`);
+			return res.json();
+		}
+
+		source.addEventListener('created', async function (e)
+		{
+			const post = JSON.parse(e.data) as Post;
+			posts = [post, ...posts];
 		});
 
-		source.addEventListener('deleted', async () => {
-			const res = await fetch('/server/posts/all');
-			posts = await res.json();
+		source.addEventListener('deleted', async function (e)
+		{
+			const id = e.data;
+			posts = posts.filter(post => post.id != id);
 		});
 
-		source.addEventListener('updated', async () => {
-			const res = await fetch('/server/posts/all');
-			posts = await res.json();
+		source.addEventListener('updated', async function (e)
+		{
+			const id = e.data;
+			const found = posts.find(post => post.id == id);
+
+			if (!found)
+				return;
+
+			const post = await getPost(id);
+
+			const i = posts.findIndex(post => post.id == id);
+			posts[i] = post;
 		});
 
 		return () => source.close();
