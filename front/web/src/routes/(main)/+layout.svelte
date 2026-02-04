@@ -52,6 +52,7 @@
 <WritePost bind:this={writePost} />
 
 <style lang="less">
+	@import (reference) "../../lib/styles/vars.less";
 	
 	.content
 	{
@@ -91,7 +92,7 @@
 
 		max-width: 450px;
 
-		border-inline: 1px solid #AAA;
+		border-inline: 1px solid @bd1;
 
 		overflow-y: scroll;
 	}

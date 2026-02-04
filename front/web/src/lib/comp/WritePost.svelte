@@ -68,22 +68,6 @@
 </dialog>
 
 <style lang="less">
-	dialog
-	{
-		flex-direction: column;
-		align-items: center;
-
-		gap: 1em;
-
-		border: none;
-		border-radius: .5em;
-
-		&:open
-		{
-			display: flex;
-		}
-	}
-
 	.control
 	{
 		width: 100%;
