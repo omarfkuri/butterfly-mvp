@@ -7,4 +7,6 @@
 
 </script>
 
+<h1>Feed</h1>
+
 <PostList {posts} {user} topic="all"/>

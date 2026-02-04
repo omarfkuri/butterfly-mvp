@@ -45,7 +45,7 @@
 	</div>
 
 	<div class="other">
-		<a href="/profile">{user.username}</a>
+		<a href="/user/{user.username}">{user.username}</a>
 	</div>
 </div>
 

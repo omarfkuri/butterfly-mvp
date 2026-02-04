@@ -2,9 +2,12 @@
   import PostList from "$lib/comp/PostList.svelte";
 	import type { PageProps } from "./$types";
 	
-	const { data }: PageProps = $props();
+	const { data, params }: PageProps = $props();
 	const { posts, user } = $derived(data);
+	const { username } = $derived(params);
 
 </script>
 
-<PostList {posts} {user} topic="author:{user.username}"/>
+<h1>Posts by {username}</h1>
+
+<PostList {posts} {user} topic="author:{username}"/>

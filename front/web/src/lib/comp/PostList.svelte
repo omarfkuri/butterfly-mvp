@@ -83,9 +83,12 @@
 		</div>
 
 		<div class="info">
-			{#if user}
-				<div class="username">{username}, {date} {time}</div>
+			<div class="username">
+				<a href="/user/{username}">{username}</a>
+				{date} {time}
+			</div>
 
+			{#if user}
 				{#if username == user.username}
 					<div class="buttons">
 						<button>Update</button>
