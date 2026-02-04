@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </svelte:head>
 
 {@render children()}

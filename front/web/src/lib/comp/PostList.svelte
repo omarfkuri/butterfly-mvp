@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { browser } from '$app/environment';
+  import { browser } from '$app/environment';
 	import type { Post, User } from '$lib';
 
 	type Topic = (
@@ -87,8 +87,8 @@
 			<div class="content">{content}</div>
 		</div>
 
-		<div class="info">
-			<div class="username">
+		<div class="bottom">
+			<div class="info">
 				<a href="/user/{username}">{username}</a>
 				{date} {time}
 			</div>
@@ -114,7 +114,7 @@
 	{
 		display: flex;
 		flex-direction: column;
-		gap: .25em;
+		gap: .75em;
 
 		.card();
 	}
@@ -123,7 +123,7 @@
 	{
 		display: flex;
 		flex-direction: column;
-		gap: .1em;
+		gap: .125em;
 
 		.title
 		{
@@ -133,18 +133,29 @@
 
 		.content
 		{
-			font: 1em monospace;
+			font: .65em monospace;
 		}
 	}
 
-	.info
+	.bottom
 	{
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		
+		font-size: .8em;
 
-		.username
+		.info
 		{
 			font-size: .8em;
+			color: @fg2;
+		}
+
+		.buttons
+		{
+			display: flex;
+			align-items: center;
+			gap: .5em;
 		}
 	}
 </style>

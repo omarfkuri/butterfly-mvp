@@ -25,10 +25,34 @@
 <div class="content">
 	<div class="side-wrapper">
 		<div class="side">
-			<a href="/">SO</a>
+			<a href="/" data-sveltekit-preload-data="off">SO</a>
 
 			<div class="buttons">
-				<button onclick={onLogOut}>Log out</button>
+				<div class="account">
+					<div class="material-icons account-button">
+						person
+					</div>
+					<div class="account-menu" data-sveltekit-preload-data="off">
+						<button 
+							class="account-menu-item not-dark"
+							onclick={onLogOut}
+						>
+							<div 
+								class="icon material-icons"
+							>logout</div>
+							<span class="account-menu-item-title">Log Out</span>
+						</button>
+						<a
+							class="account-menu-item"
+							href="/user/{user.username}"
+						>
+							<div 
+								class="icon material-icons"
+							>account_circle</div>
+							<span class="account-menu-item-title">Profile</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -39,7 +63,7 @@
 
 	<div class="other-wrapper">
 		<div class="other">
-			<a href="/user/{user.username}">{user.username}</a>
+			
 		</div>
 	</div>
 </div>
@@ -58,8 +82,6 @@
 
 		> *
 		{
-			padding-block: .125em;
-
 			> *
 			{
 				padding: .5em;
@@ -91,9 +113,9 @@
 		width: 100%;
 		height: 100%;
 
-		max-width: @mobileWidth - 100px;
+		max-width: @smallWebWidth - 100px;
 		
-		.mobile({
+		.smallWeb({
 			max-width: unset;
 		});
 
@@ -106,7 +128,7 @@
 	{
 		flex-grow: 1;
 
-		.mobile({
+		.smallWeb({
 			display: none;
 		});
 
@@ -117,6 +139,67 @@
 
 			overflow-y: scroll;
 			width: 100%;
+		}
+	}
+
+	.account
+	{
+		position: relative;
+		width: min-content;
+
+		.account-button
+		{
+			cursor: pointer;
+		}
+
+		.account-menu
+		{
+			position: absolute;
+			z-index: 9999;
+
+			display: flex;
+			flex-direction: column;
+
+
+			background: @bg3;
+			box-shadow: 2px 2px 10px #999;
+
+			.account-menu-item
+			{
+				display: flex;
+				align-items: center;
+				gap: .25em;
+
+				font-size: .625em;
+				height: min-content;
+				padding: .5em .5em .5em .5em;
+
+				border: none;
+				color: @fg1;
+				font-weight: normal;
+
+				&:hover
+				{
+					background: @bg2;
+				}
+
+				.icon
+				{
+					font-size: 1em;
+					padding: 0;
+				}
+
+				.account-menu-item-title
+				{
+					padding: 0;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		&:not(:hover) .account-menu
+		{
+			display: none;
 		}
 	}
 

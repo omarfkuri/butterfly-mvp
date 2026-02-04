@@ -52,7 +52,7 @@
 	</div>
 	
 	<div class="button">
-		<button onclick={onPost}>Post</button>
+		<button class="dark" onclick={onPost}>Post</button>
 	</div>
 </div>
 
@@ -94,7 +94,7 @@
 
 				textarea
 				{
-					resize: vertical;
+					resize: none;
 					max-height: 60px;
 				}
 			}

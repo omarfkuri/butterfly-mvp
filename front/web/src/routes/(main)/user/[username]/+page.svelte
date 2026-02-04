@@ -8,6 +8,11 @@
 
 </script>
 
+<div class="menu">
+	<a class="link" href="/" data-sveltekit-preload-data="off">←</a>
+	<span class="title">{username}</span>
+</div>
+
 <div class="user-profile">
 	<div class="cover">
 		<img src="/image/cover.png" alt="Cover">
@@ -24,10 +29,25 @@
 
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";
+
+	.menu
+	{
+		display: flex;
+		align-items: center;
+		gap: .5em;
+
+		padding: .25em;
+		font-size: .8em;
+
+		.link
+		{
+			color: @fg1;
+		}
+	}
 	
 	.user-profile
 	{
-		.card();
+		.card(false);
 
 		position: relative;
 
