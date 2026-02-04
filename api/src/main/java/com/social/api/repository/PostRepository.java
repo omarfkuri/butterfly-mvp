@@ -7,15 +7,16 @@ import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post, Long>
 {
+
   Optional<Post> findById(Long id);
-  
+
   List<Post> findByUsernameOrderByCreatedAtDesc(String username);
-  
+
   List<Post> findAllByOrderByCreatedAtDesc();
-  
+
   long countByUsername(String username);
 
-  boolean existsById(Long id);
+  List<Post> findByParent(Post parent);
 
-  List<Post> findByParent(Long id);
+  boolean existsById(Long id);
 }

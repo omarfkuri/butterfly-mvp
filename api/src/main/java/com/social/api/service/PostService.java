@@ -45,8 +45,12 @@ public class PostService
     
     public List<Post> getPostComments(Long id)
     {
-        return postRepository.findByParent(id);
+        Post parent = postRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Post not found"));
+
+        return postRepository.findByParent(parent);
     }
+
     
     @Transactional
     public Post createPost(String username, String title, String content)
@@ -65,14 +69,18 @@ public class PostService
     }
     
     @Transactional
-    public Post createComment(String username, String title, String content, Long parent)
-    {
-        if (!postRepository.existsById(parent))
-            throw new RuntimeException("Parent does not exist");
+    public Post createComment(
+        String username,
+        String title,
+        String content,
+        Long parentId
+    ) {
+        Post parent = postRepository.findById(parentId)
+        .orElseThrow(() -> new RuntimeException("Parent does not exist"));
 
         User user = userRepository.findByUsername(username)
-            .orElseThrow(() -> new RuntimeException("User not found"));
-        
+        .orElseThrow(() -> new RuntimeException("User not found"));
+
         Post comment = new Post();
         comment.setUser(user);
         comment.setTitle(title);
@@ -83,6 +91,7 @@ public class PostService
         eventPublisher.postCreated(saved);
         return saved;
     }
+
     
     @Transactional
     public Post updatePost(Long id, String title, String content)
@@ -106,12 +115,15 @@ public class PostService
     }
     
     @Transactional
-    public void deletePost(Long id, String username)
-    {
-        postRepository.deleteById(id);
+    public void deletePost(Long id, String username) {
+        Post post = postRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Post not found"));
+
+        postRepository.delete(post);
 
         eventPublisher.postDeleted(id, username);
     }
+
     
     public boolean isPostOwner(Long postId, String username)
     {

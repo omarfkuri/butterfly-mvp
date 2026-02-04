@@ -2,7 +2,11 @@ package com.social.api.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "posts", indexes = {
@@ -19,6 +23,18 @@ public class Post
   @JoinColumn(name = "user_id", nullable = false)
   @JsonIgnore
   private User user;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "parent_id")
+  @JsonIgnore
+  private Post parent;
+
+  @OneToMany(
+      mappedBy = "parent",
+      cascade = CascadeType.ALL,
+      orphanRemoval = true
+  )
+  private List<Post> children = new ArrayList<>();
   
   @Column(nullable = false)
   private String username;
@@ -31,9 +47,7 @@ public class Post
   
   @Column(nullable = false)
   private LocalDateTime createdAt;
-  
-  @Column(nullable = true)
-  private Long parent;
+
   
   @PrePersist
   protected void onCreate()
@@ -109,13 +123,20 @@ public class Post
     this.createdAt = createdAt;
   }
   
-  public Long getParent()
+  public Post getParent()
   {
     return parent;
   }
 
-  public void setParent(Long parent)
+  public void setParent(Post parent)
   {
     this.parent = parent;
   }
+
+  @JsonProperty("parent")
+  public Long getParentId()
+  {
+    return parent != null ? parent.getId() : null;
+  }
+
 }
