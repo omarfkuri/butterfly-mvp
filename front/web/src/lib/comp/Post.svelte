@@ -36,17 +36,6 @@
 		hour12: false
 	}));
 
-	async function deletePost(id: string)
-	{
-		if (!confirm("Are you sure you want to delete this post?"))
-			return;
-
-		await fetch(`/server/posts/delete/${id}`, {
-			method: "DELETE",
-			credentials: "include"
-		});
-	}
-
 	async function getParent(id: string)
 	: Promise<Post>
 	{
@@ -78,23 +67,16 @@
 		onclick={() => goto(`/post/${id}`)}
 		onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
 	>
-		<div class="title">{title}</div>
-		<div class="content">{content}</div>
-	</div>
-
-	<div class="bottom">
-		<div class="info">
-			<a href="/user/{username}">{username}</a>
-			{date} {time}
+		<div class="top">
+			<div class="title">{title}</div>
+			<div class="content">{content}</div>
 		</div>
 
-		<div class="buttons">
-			{#if user}
-				{#if username == user.username}
-					<button>Update</button>
-					<button onclick={()=>deletePost(id)}>Delete</button>
-				{/if}
-			{/if}
+		<div class="bottom">
+			<div class="info">
+				<a href="/user/{username}">{username}</a>
+				{date} {time}
+			</div>
 		</div>
 	</div>
 </article>
@@ -125,9 +107,17 @@
 	{
 		display: flex;
 		flex-direction: column;
-		gap: .125em;
+		gap: .75em;
 
 		cursor: pointer;
+	}
+
+	.top
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: .125em;
 
 		.title
 		{
@@ -153,13 +143,6 @@
 		{
 			font-size: .8em;
 			color: @fg2;
-		}
-
-		.buttons
-		{
-			display: flex;
-			align-items: center;
-			gap: .5em;
 		}
 	}
 </style>

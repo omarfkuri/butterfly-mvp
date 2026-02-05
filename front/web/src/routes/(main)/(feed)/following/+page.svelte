@@ -1,6 +1,5 @@
 <script lang="ts">
   import PostList from "$lib/comp/PostList.svelte";
-  import WritePost from "$lib/comp/WritePost.svelte";
 	import type { PageProps } from "./$types";
 	
 	const { data }: PageProps = $props();
@@ -9,10 +8,8 @@
 </script>
 
 <svelte:head>
-	<title>SO - Home</title>
+	<title>SO - Following</title>
 </svelte:head>
-
-<WritePost />
 
 <PostList {posts} {user} topic="all"/>
 

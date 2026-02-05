@@ -8,6 +8,17 @@
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
 
+	async function deletePost()
+	{
+		if (!confirm("Are you sure you want to delete this post?"))
+			return;
+
+		await fetch(`/server/posts/delete/${post.id}`, {
+			method: "DELETE",
+			credentials: "include"
+		});
+	}
+
 </script>
 
 <svelte:head>
@@ -17,6 +28,16 @@
 <Back title={post.title}/>
 
 <Post {post} {user} />
+
+
+<div class="buttons">
+	{#if user}
+		{#if post.username == user.username}
+			<button>Update</button>
+			<button onclick={()=>deletePost()}>Delete</button>
+		{/if}
+	{/if}
+</div>
 
 <div class="com-title">
 	<h4>Replies</h4>
@@ -33,6 +54,16 @@
 	
 	.com-title
 	{
+		.card();
+	}
+
+	.buttons
+	{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: .5em;
+
 		.card();
 	}
 </style>

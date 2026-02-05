@@ -5,7 +5,7 @@
 	const { children }: LayoutProps = $props();
 
 	const pages = [
-		["All", "/"],
+		["Home", "/"],
 		["Following", "/following"],
 	];
 
