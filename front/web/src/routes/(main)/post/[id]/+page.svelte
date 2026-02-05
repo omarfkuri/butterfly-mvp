@@ -30,14 +30,14 @@
 <Post {post} {user} />
 
 
-<div class="buttons">
-	{#if user}
-		{#if post.username == user.username}
+{#if user}
+	{#if post.username == user.username}
+		<div class="buttons">
 			<button>Update</button>
 			<button onclick={()=>deletePost()}>Delete</button>
-		{/if}
+		</div>
 	{/if}
-</div>
+{/if}
 
 <div class="com-title">
 	<h4>Replies</h4>
