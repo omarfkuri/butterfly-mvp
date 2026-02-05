@@ -4,8 +4,37 @@
 	import type { PageProps } from "./$types";
 	
 	const { data, params }: PageProps = $props();
-	const { posts, user } = $derived(data);
+	const { posts, user, doesFollow, isSelf } = $derived(data);
 	const { username } = $derived(params);
+
+	// svelte-ignore state_referenced_locally
+	let following = $state(doesFollow);
+	
+	async function follow()
+	{
+		const res = await fetch(`/server/follow/add/${username}`, {
+			method: "POST",
+		});
+
+		if (!res.ok)
+			alert(`Failed to follow ${username}`)
+		
+		else
+			following = true;
+	}
+
+	async function unfollow()
+	{
+		const res = await fetch(`/server/follow/rem/${username}`, {
+			method: "DELETE",
+		});
+
+		if (!res.ok)
+			alert(`Failed to unfollow ${username}`)
+		
+		else
+			following = false;
+	}
 
 </script>
 
@@ -32,6 +61,13 @@
 			>
 		</div>
 		<div class="title">{username}</div>
+		{#if !isSelf}
+			{#if following}
+				<button onclick={unfollow}>Unfollow</button>
+			{:else}
+				<button onclick={follow}>Follow</button>
+			{/if}
+		{/if}
 	</div>
 </div>
 

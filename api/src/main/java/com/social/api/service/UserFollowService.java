@@ -40,6 +40,18 @@ public class UserFollowService
     userFollowRepository.delete(follow);
   }
 
+  public boolean follows(User follower, User followed)
+  {
+    System.out.println(userFollowRepository.count());
+    System.out.println(userFollowRepository.count());
+    System.out.println(userFollowRepository.count());
+    System.out.println(userFollowRepository.count());
+    System.out.println(userFollowRepository.count());
+    System.out.println(userFollowRepository.count());
+    System.out.println(userFollowRepository.count());
+    return userFollowRepository.existsByFollowerAndFollowed(follower, followed);
+  }
+
   public List<User> getAllByFollower(User follower)
   {
     var l = new ArrayList<User>();
