@@ -16,16 +16,16 @@
 
 <Back title={post.title}/>
 
-<Post {post} {user} current/>
+<Post {post} {user} />
 
 <div class="com-title">
-	<h4>Comments</h4>
+	<h4>Replies</h4>
 </div>
 
 <WriteComment id={post.id} />
 
 <PostList posts={comments} {user} topic="all" forComments
-	emptyString="No comments"
+	emptyString="No replies"
 />
 
 <style lang="less">
