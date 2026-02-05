@@ -12,3 +12,8 @@ export type Post = {
 	id: string
 	username: string
 }
+
+export type Topic = (
+	|"all"
+	|`author:${string}`
+);

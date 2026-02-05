@@ -1,12 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
-	import type { Post, User } from '$lib';
+	import type { Post, Topic, User } from '$lib';
   import PostElem from './Post.svelte';
-
-	type Topic = (
-		|"all"
-		|`author:${string}`
-	);
 
 	interface Props
 	{
