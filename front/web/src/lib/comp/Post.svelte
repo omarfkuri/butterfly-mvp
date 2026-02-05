@@ -89,7 +89,7 @@
 				{/if}
 			{/if}
 			{#if !current}
-				<a href="/post/{id}">View</a>
+				<a href="/post/{id}" data-sveltekit-preload-data="off">View</a>
 			{/if}
 		</div>
 	</div>
