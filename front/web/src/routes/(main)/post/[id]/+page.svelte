@@ -1,6 +1,6 @@
 <script lang="ts">
   import Post from "$lib/comp/Post.svelte";
-    import PostList from "$lib/comp/PostList.svelte";
+  import PostList from "$lib/comp/PostList.svelte";
   import WriteComment from "$lib/comp/WriteComment.svelte";
 	import type { PageProps } from "./$types";
 	
