@@ -2,8 +2,7 @@
 	import { fade } from "svelte/transition";
 
   import type { LayoutProps } from "./$types";
-    import { browser } from "$app/environment";
-    import { afterNavigate } from "$app/navigation";
+  import { afterNavigate } from "$app/navigation";
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);
@@ -69,8 +68,9 @@
 					<div class="material-icons account-button">
 						person
 					</div>
-					<div class="account-menu-wrapping">
+					<div class="account-menu-wrapper">
 						<div class="account-menu" data-sveltekit-preload-data="off">
+							<span class="account-menu-title">{user.username}</span>
 							<button 
 								class="account-menu-item not-dark"
 								onclick={onLogOut}
@@ -82,7 +82,7 @@
 							</button>
 							<a
 								class="account-menu-item"
-								href="/user/{user.username}"
+								href="/profile"
 							>
 								<div 
 									class="icon material-icons"
@@ -216,7 +216,7 @@
 			cursor: pointer;
 		}
 
-		.account-menu-wrapping
+		.account-menu-wrapper
 		{
 			position: relative;
 
@@ -234,6 +234,15 @@
 				background: @bg3;
 				box-shadow: 0 4px 8px #999;
 
+				.account-menu-title
+				{
+					font-size: .5em;
+					width: 100%;
+					padding: .5em;
+
+					text-align: left;
+				}
+
 				.account-menu-item
 				{
 					display: flex;
@@ -242,7 +251,7 @@
 
 					font-size: .625em;
 					height: min-content;
-					padding: .5em .5em .5em .5em;
+					padding: .5em;
 
 					border: none;
 					color: @fg1;
