@@ -7,6 +7,8 @@ import com.social.api.entity.User;
 import com.social.api.events.PostEventPublisher;
 import com.social.api.repository.PostRepository;
 import com.social.api.repository.UserRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -115,14 +117,20 @@ public class PostService
   }
 
   @Transactional
-  public void deletePost(Long id, String username)
+  public void deletePost(Long id)
   {
     Post post = postRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Post not found"));
 
+    var desc = new ArrayList<PostInfo>();
+    getAllDescendants(post, desc);
+
     postRepository.delete(post);
 
-    eventPublisher.postDeleted(id, username);
+    eventPublisher.postDeleted(id, post.getUsername());
+    
+    for (var child : desc)
+      eventPublisher.postDeleted(child.id(), child.username());
   }
 
   public boolean isPostOwner(Long postId, String username)
@@ -136,4 +144,16 @@ public class PostService
   {
     return postRepository.countByUsername(username);
   }
+
+  private void getAllDescendants(Post current, List<PostInfo> desc)
+  {
+    for (var post : postRepository.findByParent(current))
+    {
+      desc.add(new PostInfo(post.getId(), post.getUsername()));
+
+      getAllDescendants(post, desc);
+    }
+  }
+
+  record PostInfo(Long id, String username) {};
 }

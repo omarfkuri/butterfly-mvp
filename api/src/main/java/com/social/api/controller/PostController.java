@@ -101,7 +101,7 @@ public class PostController
             return ResponseEntity.status(403).build();
         }
         
-        postService.deletePost(id, auth.getName());
+        postService.deletePost(id);
         return ResponseEntity.ok().build();
     }
     
