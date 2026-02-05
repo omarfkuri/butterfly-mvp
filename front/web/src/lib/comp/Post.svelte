@@ -68,14 +68,17 @@
 		onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
 	>
 		<div class="top">
-			<div class="title">{title}</div>
-			<div class="content">{content}</div>
+			<span class="title">{title}</span>
+			<span class="content">{content}</span>
+			<span class="author" data-sveltekit-preload-data="off">
+				By
+				<a href="/user/{username}">{username}</a>
+			</span>
 		</div>
 
 		<div class="bottom">
 			<div class="info">
-				<a href="/user/{username}">{username}</a>
-				{date} {time}
+				<div class="date">{date} {time}</div>	
 			</div>
 		</div>
 	</div>
@@ -107,7 +110,6 @@
 	{
 		display: flex;
 		flex-direction: column;
-		gap: .75em;
 
 		cursor: pointer;
 	}
@@ -128,6 +130,12 @@
 		.content
 		{
 			font: .65em monospace;
+			padding-bottom: .5em;
+		}
+
+		.author
+		{
+			font-size: .5em;			
 		}
 	}
 
@@ -141,8 +149,19 @@
 
 		.info
 		{
+			display: flex;
+			justify-content: end;
+			gap: .5em;
+
+			width: 100%;
+			text-align: left;
 			font-size: .8em;
 			color: @fg2;
+
+			.date
+			{
+				color: @fg3;
+			}
 		}
 	}
 </style>
