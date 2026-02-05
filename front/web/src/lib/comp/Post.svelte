@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from '$app/navigation';
 	import type { Post, User } from '$lib';
 	import This from "./Post.svelte"
 
@@ -6,7 +7,6 @@
 	{
 		post: Post
 		user: User | null
-		current?: boolean
 		isChild?: boolean
 		isComment?: boolean
 	}
@@ -14,7 +14,6 @@
 	let { 
 		post, 
 		user, 
-		current = false, 
 		isChild = false,
 		isComment = false,
 	}: Props = $props();
@@ -59,18 +58,26 @@
 	}
 
 </script>
-<article class="post" class:isChild>
+
+<article
+	class="post"
+	class:isChild
+>
 	{#if !isComment && !isChild && parent != null}
-		<div class="replied">
-			{#await getParent(parent)}
-				Loading parent
-			{:then post}
-				<This {post} {user} isChild={true}/>
-			{/await}
-		</div>
+		{#await getParent(parent)}
+			Loading parent
+		{:then post}
+			<This {post} {user} isChild={true}/>
+		{/await}
 	{/if}
 
-	<div class="main">
+	<div 
+		class="main"
+		role="link"
+		tabindex="0"
+		onclick={() => goto(`/post/${id}`)}
+		onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
+	>
 		<div class="title">{title}</div>
 		<div class="content">{content}</div>
 	</div>
@@ -88,9 +95,6 @@
 					<button onclick={()=>deletePost(id)}>Delete</button>
 				{/if}
 			{/if}
-			{#if !current}
-				<a href="/post/{id}" data-sveltekit-preload-data="off">View</a>
-			{/if}
 		</div>
 	</div>
 </article>
@@ -104,6 +108,8 @@
 		flex-direction: column;
 		gap: .75em;
 
+		width: 100%;
+
 		.card();
 
 		&.isChild
@@ -115,15 +121,13 @@
 		}
 	}
 
-	.replied
-	{
-	}
-
 	.main
 	{
 		display: flex;
 		flex-direction: column;
 		gap: .125em;
+
+		cursor: pointer;
 
 		.title
 		{
@@ -156,18 +160,6 @@
 			display: flex;
 			align-items: center;
 			gap: .5em;
-
-			a
-			{
-				font-weight: normal;
-				color: @fg3;
-				font-size: .75em;
-
-				&:not(:hover)
-				{
-					opacity: .5;
-				}
-			}
 		}
 	}
 </style>
