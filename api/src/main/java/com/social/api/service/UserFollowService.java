@@ -42,13 +42,6 @@ public class UserFollowService
 
   public boolean follows(User follower, User followed)
   {
-    System.out.println(userFollowRepository.count());
-    System.out.println(userFollowRepository.count());
-    System.out.println(userFollowRepository.count());
-    System.out.println(userFollowRepository.count());
-    System.out.println(userFollowRepository.count());
-    System.out.println(userFollowRepository.count());
-    System.out.println(userFollowRepository.count());
     return userFollowRepository.existsByFollowerAndFollowed(follower, followed);
   }
 
