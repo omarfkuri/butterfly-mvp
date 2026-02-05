@@ -82,14 +82,14 @@
 		</div>
 
 		<div class="buttons">
-			{#if !current}
-				<a href="/post/{id}">View</a>
-			{/if}
 			{#if user}
 				{#if username == user.username}
 					<button>Update</button>
 					<button onclick={()=>deletePost(id)}>Delete</button>
 				{/if}
+			{/if}
+			{#if !current}
+				<a href="/post/{id}">View</a>
 			{/if}
 		</div>
 	</div>
