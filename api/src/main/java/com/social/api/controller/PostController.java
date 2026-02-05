@@ -5,6 +5,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import com.social.api.entity.Post;
 import com.social.api.service.PostService;
+import com.social.api.service.UserFollowService;
+
 import java.util.List;
 
 @RestController
@@ -13,7 +15,8 @@ public class PostController
 {
     private final PostService postService;
     
-    public PostController(PostService postService)
+    public PostController(
+        PostService postService)
     {
         this.postService = postService;
     }
@@ -22,6 +25,12 @@ public class PostController
     public List<Post> getAllPublicPosts()
     {
         return postService.getAllPosts();
+    }
+    
+    @GetMapping("/following")
+    public List<Post> getAllFollowingPosts(Authentication auth)
+    {
+        return postService.getFeedForUser(auth.getName());
     }
     
     @GetMapping("/user/{username}")

@@ -133,6 +133,15 @@ public class PostService
       eventPublisher.postDeleted(child.id(), child.username());
   }
 
+  @Transactional(readOnly = true)
+  public List<Post> getFeedForUser(String username)
+  {
+    User user = userRepository.findByUsername(username)
+    .orElseThrow(() -> new RuntimeException("User not found"));
+
+    return postRepository.findFeedForUser(user);
+  }
+
   public boolean isPostOwner(Long postId, String username)
   {
     return postRepository.findById(postId)
