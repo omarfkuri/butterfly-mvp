@@ -40,6 +40,16 @@ public class UserFollowService
     userFollowRepository.delete(follow);
   }
 
+  public long getFollowerCount(User follower)
+  {
+    return userFollowRepository.countByFollowed(follower);
+  }
+
+  public long getFollowingCount(User follower)
+  {
+    return userFollowRepository.countByFollower(follower);
+  }
+
   public boolean follows(User follower, User followed)
   {
     return userFollowRepository.existsByFollowerAndFollowed(follower, followed);
