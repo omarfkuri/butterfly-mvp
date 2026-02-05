@@ -89,23 +89,23 @@ public class UserFollowController
     return ResponseEntity.ok(b);
   }
 
-  @GetMapping("/follower-count")
+  @GetMapping("/follower-count/{username}")
   public ResponseEntity<Long> getFollowerCount(
-    Authentication auth)
+    @PathVariable String username)
   {
-    var follower = userService.findByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + auth.getName()));
+    var follower = userService.findByUsername(username)
+    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + username));
 
     var b = userFollowService.getFollowerCount(follower);
     return ResponseEntity.ok(b);
   }
 
-  @GetMapping("/following-count")
+  @GetMapping("/following-count/{username}")
   public ResponseEntity<Long> getFollowingCount(
-    Authentication auth)
+    @PathVariable String username)
   {
-    var follower = userService.findByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + auth.getName()));
+    var follower = userService.findByUsername(username)
+    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + username));
 
     var b = userFollowService.getFollowingCount(follower);
     return ResponseEntity.ok(b);
