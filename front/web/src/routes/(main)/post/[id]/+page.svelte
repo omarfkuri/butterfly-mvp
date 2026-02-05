@@ -20,6 +20,10 @@
 
 <Post {post} {user} current/>
 
+<div class="com-title">
+	<h4>Comments</h4>
+</div>
+
 <WriteComment id={post.id} />
 
 <PostList posts={comments} {user} topic="all" forComments
@@ -29,4 +33,24 @@
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";
 	
+	.com-title
+	{
+		.card();
+	}
+
+	.menu
+	{
+		display: flex;
+		align-items: center;
+		gap: .5em;
+
+		.card(false);
+
+		font-size: .8em;
+
+		.link
+		{
+			color: @fg1;
+		}
+	}
 </style>
