@@ -4,7 +4,14 @@
 	import type { PageProps } from "./$types";
 	
 	const { data, params }: PageProps = $props();
-	const { posts, user, doesFollow, isSelf } = $derived(data);
+	const {
+		posts,
+		user,
+		doesFollow,
+		isSelf,
+		followerCount,
+		followingCount,
+	} = $derived(data);
 	const { username } = $derived(params);
 
 	// svelte-ignore state_referenced_locally
@@ -60,15 +67,30 @@
 				draggable={false}
 			>
 		</div>
-		<div class="title">{username}</div>
-		{#if !isSelf}
+		<div class="bottom">
+			<div class="title">{username}</div>
+		</div>
+	</div>
+</div>
+
+<div class="controls">
+	<div class="followers">
+		<span class="count">{followerCount}</span>
+		<span class="title">Followers</span>
+	</div>
+	<div class="following">
+		<span class="count">{followingCount}</span>
+		<span class="title">Following</span>
+	</div>
+	{#if !isSelf}
+		<div class="follow-btn">
 			{#if following}
 				<button onclick={unfollow}>Unfollow</button>
 			{:else}
 				<button onclick={follow}>Follow</button>
 			{/if}
-		{/if}
-	</div>
+		</div>
+	{/if}
 </div>
 
 <PostList {posts} {user} topic="author:{username}"/>
@@ -109,6 +131,10 @@
 
 		.info
 		{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
 			margin-top: 3em;
 			width: min-content;
 
@@ -129,9 +155,46 @@
 				}
 			}
 
+			.bottom
+			{
+				display: flex;
+
+				.title
+				{
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.controls
+	{
+		display: flex;
+		gap: .5em;
+
+		.card();
+
+		.follow-btn
+		{
+
+		}
+
+		.followers, .following
+		{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			font-size: .8em;
+
+			.count
+			{
+				font-weight: bold;
+			}
+
 			.title
 			{
-				text-align: center;
+				font-size: .5em;
 			}
 		}
 	}
