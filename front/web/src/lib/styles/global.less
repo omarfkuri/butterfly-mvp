@@ -50,16 +50,20 @@ a.dark
 	color: @primaryDark;
 }
 
-button
+button:not(.default)
 {
 	font-size: .6em;
 	background: none;
 	border: 1px solid @bd1;
 
-	cursor: pointer;
 	white-space: nowrap;
 
 	transition: background-color ease 120ms;
+
+	&:not(:disabled)
+	{
+		cursor: pointer;
+	}
 
 	&.dark:not(:disabled),
 	&:not(.not-dark):not(:disabled):hover

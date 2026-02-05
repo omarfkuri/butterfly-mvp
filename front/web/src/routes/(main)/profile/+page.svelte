@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Back from "$lib/comp/Back.svelte";
   import PostList from "$lib/comp/PostList.svelte";
   import WritePost from "$lib/comp/WritePost.svelte";
 	import type { PageProps } from "./$types";
@@ -12,10 +13,7 @@
 	<title>SO - Profile</title>
 </svelte:head>
 
-<div class="menu">
-	<a class="link" href="/" data-sveltekit-preload-data="off">←</a>
-	<span class="title">Profile</span>
-</div>
+<Back title="Profile"/>
 
 <div class="profile">
 	<div class="cover">
@@ -43,22 +41,6 @@
 
 <style lang="less">
 	@import (reference) "../../../lib/styles/vars.less";
-
-	.menu
-	{
-		display: flex;
-		align-items: center;
-		gap: .5em;
-
-		.card(false);
-
-		font-size: .8em;
-
-		.link
-		{
-			color: @fg1;
-		}
-	}
 	
 	.profile
 	{

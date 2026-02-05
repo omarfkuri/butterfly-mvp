@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Back from "$lib/comp/Back.svelte";
   import Post from "$lib/comp/Post.svelte";
   import PostList from "$lib/comp/PostList.svelte";
   import WriteComment from "$lib/comp/WriteComment.svelte";
@@ -13,10 +14,7 @@
 	<title>SO - Post</title>
 </svelte:head>
 
-<div class="menu">
-	<a class="link" href="/" data-sveltekit-preload-data="off">←</a>
-	<span class="title">{post.title}</span>
-</div>
+<Back title={post.title}/>
 
 <Post {post} {user} current/>
 
@@ -36,21 +34,5 @@
 	.com-title
 	{
 		.card();
-	}
-
-	.menu
-	{
-		display: flex;
-		align-items: center;
-		gap: .5em;
-
-		.card(false);
-
-		font-size: .8em;
-
-		.link
-		{
-			color: @fg1;
-		}
 	}
 </style>
