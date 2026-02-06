@@ -5,12 +5,14 @@ export type User = {
 }
 
 export type Post = {
+	id: number
 	title: string
 	content: string
-	createdAt: string
-	parent: string | null
-	id: string
 	username: string
+	parentId: number
+	createdAt: string
+	likeCount: number
+	likedByMe: boolean
 }
 
 export type Topic = (

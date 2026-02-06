@@ -24,7 +24,12 @@
 		username,
 		id,
 		createdAt,
-		parent,
+		parentId,
+	} = $derived(post);
+
+	let {
+		likeCount,
+		likedByMe,
 	} = $derived(post);
 
 	const date = $derived(new Date(createdAt).toLocaleString(undefined, {
@@ -46,14 +51,44 @@
 		return res.json();
 	}
 
+	async function toggleLike()
+	{
+		if (likedByMe)
+		{
+			const res = await fetch(`/server/like/rem/${id}`, {
+				method: "DELETE",
+				credentials: "include"
+			});
+
+			if (!res.ok)
+				return alert(await res.text());
+
+			likedByMe = false;
+			likeCount -= 1;
+		}
+		else
+		{
+			const res = await fetch(`/server/like/add/${id}`, {
+				method: "POST",
+				credentials: "include"
+			});
+
+			if (!res.ok)
+				return alert(await res.text());
+
+			likedByMe = true;
+			likeCount += 1;
+		}
+	}
+
 </script>
 
 <article
 	class="post"
 	class:isChild
 >
-	{#if !isComment && !isChild && parent != null}
-		{#await getParent(parent)}
+	{#if !isComment && !isChild && parentId != null}
+		{#await getParent(`${parentId}`)}
 			Loading parent
 		{:then post}
 			<This {post} {user} isChild={true}/>
@@ -74,6 +109,17 @@
 				By
 				<a href="/user/{username}">{username}</a>
 			</span>
+			<div class="likes">
+				<input
+					type="checkbox" 
+					bind:checked={likedByMe}
+					onclick={e =>  {
+						e.stopPropagation();
+					}}
+					oninput={toggleLike}
+				>
+				{likeCount}
+			</div>
 		</div>
 
 		<div class="bottom">
