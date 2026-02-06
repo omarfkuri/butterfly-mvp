@@ -2,6 +2,8 @@ package com.social.api.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.social.api.dto.PostDto;
 import com.social.api.entity.Post;
 import com.social.api.entity.User;
 import com.social.api.events.PostEventPublisher;
@@ -29,28 +31,40 @@ public class PostService
     this.eventPublisher = eventPublisher;
   }
 
-  public List<Post> getAllPosts()
+  public List<PostDto> getAllPosts(String username)
   {
-    return postRepository.findAllByOrderByCreatedAtDesc();
+    User user = userRepository.findByUsername(username)
+        .orElseThrow(() -> new RuntimeException("User not found"));
+
+    return postRepository.findAllPostDtos(user);
   }
 
-  public List<Post> getAllPostsByUsername(String username)
+  public List<PostDto> getAllPostsByUsername(String username, String targetUsername)
   {
+    User user = userRepository.findByUsername(username)
+        .orElseThrow(() -> new RuntimeException("User not found"));
+
     return postRepository
-        .findByUsernameOrderByCreatedAtDesc(username);
+        .findPostDtosByUsername(targetUsername, user);
   }
 
-  public Optional<Post> getPostById(Long id)
+  public Optional<PostDto> getPostById(String username, Long id)
   {
-    return postRepository.findById(id);
+    User user = userRepository.findByUsername(username)
+        .orElseThrow(() -> new RuntimeException("User not found"));
+
+    return postRepository.findPostDtoById(id, user);
   }
 
-  public List<Post> getPostComments(Long id)
+  public List<PostDto> getPostComments(String username, Long id)
   {
+    User user = userRepository.findByUsername(username)
+        .orElseThrow(() -> new RuntimeException("User not found"));
+
     Post parent = postRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Post not found"));
 
-    return postRepository.findByParent(parent);
+    return postRepository.findPostDtosByParent(parent, user);
   }
 
   @Transactional
@@ -134,12 +148,12 @@ public class PostService
   }
 
   @Transactional(readOnly = true)
-  public List<Post> getFeedForUser(String username)
+  public List<PostDto> getFeedForUser(String username)
   {
     User user = userRepository.findByUsername(username)
     .orElseThrow(() -> new RuntimeException("User not found"));
 
-    return postRepository.findFeedForUser(user);
+    return postRepository.findFeedPostDtos(user);
   }
 
   public boolean isPostOwner(Long postId, String username)

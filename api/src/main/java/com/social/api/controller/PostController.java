@@ -3,6 +3,8 @@ package com.social.api.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+import com.social.api.dto.PostDto;
 import com.social.api.entity.Post;
 import com.social.api.service.PostService;
 import com.social.api.service.UserFollowService;
@@ -22,27 +24,27 @@ public class PostController
     }
     
     @GetMapping("/all")
-    public List<Post> getAllPublicPosts()
+    public List<PostDto> getAllPosts(Authentication auth)
     {
-        return postService.getAllPosts();
+        return postService.getAllPosts(auth.getName());
     }
     
     @GetMapping("/following")
-    public List<Post> getAllFollowingPosts(Authentication auth)
+    public List<PostDto> getAllFollowingPosts(Authentication auth)
     {
         return postService.getFeedForUser(auth.getName());
     }
     
     @GetMapping("/user/{username}")
-    public List<Post> getUserPublicPosts(@PathVariable String username)
+    public List<PostDto> getUserPublicPosts(@PathVariable String username, Authentication auth)
     {
-        return postService.getAllPostsByUsername(username);
+        return postService.getAllPostsByUsername(auth.getName(), username);
     }
     
     @GetMapping("/comments/all/{parentID}")
-    public List<Post> getComments(@PathVariable Long parentID)
+    public List<PostDto> getComments(@PathVariable Long parentID, Authentication auth)
     {
-        return postService.getPostComments(parentID);
+        return postService.getPostComments(auth.getName(), parentID);
     }
     
     @PostMapping("/comments/create/{parentID}")
@@ -61,9 +63,9 @@ public class PostController
     }
     
     @GetMapping("/get/{id}")
-    public ResponseEntity<Post> getPublicPost(@PathVariable Long id)
+    public ResponseEntity<PostDto> getPublicPost(@PathVariable Long id, Authentication auth)
     {
-        return postService.getPostById(id)
+        return postService.getPostById(auth.getName(), id)
             .map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
     }

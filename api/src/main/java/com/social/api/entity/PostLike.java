@@ -31,4 +31,30 @@ public class PostLike
 
   @Column(nullable = false)
   private LocalDateTime createdAt = LocalDateTime.now();
+  
+  @PrePersist
+  protected void onCreate()
+  {
+    createdAt = LocalDateTime.now();
+  }
+
+  public Post getPost()
+  {
+    return post;
+  }
+
+  public User getUser()
+  {
+    return user;
+  }
+
+  public void setPost(Post post)
+  {
+    this.post = post;
+  }
+
+  public void setUser(User user)
+  {
+    this.user = user;
+  }
 }
