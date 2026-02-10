@@ -21,6 +21,8 @@
 
 	}: Props = $props();
 
+	let posts = $derived(page.content);
+
 	if (browser)
 		$effect(() => {
 			const path = `/server/events/posts/${topic}`;
@@ -66,7 +68,7 @@
 
 </script>
 
-{#each page.content as post}
+{#each posts as post}
 	<PostElem {post} {user} isComment={forComments}/>
 {:else}
 	<div class="empty">
