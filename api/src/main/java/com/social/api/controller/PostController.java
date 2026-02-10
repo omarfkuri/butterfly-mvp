@@ -1,5 +1,8 @@
 package com.social.api.controller;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -7,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import com.social.api.dto.PostDto;
 import com.social.api.entity.Post;
 import com.social.api.service.PostService;
-import com.social.api.service.UserFollowService;
 
 import java.util.List;
 
@@ -24,27 +26,35 @@ public class PostController
     }
     
     @GetMapping("/all")
-    public List<PostDto> getAllPosts(Authentication auth)
+    public Page<PostDto> getAllPosts(
+        @PageableDefault(size = 10, sort = "id") Pageable pageable,
+        Authentication auth)
     {
-        return postService.getAllPosts(auth.getName());
+        return postService.getAllPosts(auth.getName(), pageable);
     }
     
     @GetMapping("/following")
-    public List<PostDto> getAllFollowingPosts(Authentication auth)
+    public Page<PostDto> getAllFollowingPosts(
+        @PageableDefault(size = 10, sort = "id") Pageable pageable,
+        Authentication auth)
     {
-        return postService.getFeedForUser(auth.getName());
+        return postService.getFeedForUser(auth.getName(), pageable);
     }
     
     @GetMapping("/user/{username}")
-    public List<PostDto> getUserPublicPosts(@PathVariable String username, Authentication auth)
+    public Page<PostDto> getUserPublicPosts(
+        @PageableDefault(size = 10, sort = "id") Pageable pageable,
+        @PathVariable String username, Authentication auth)
     {
-        return postService.getAllPostsByUsername(auth.getName(), username);
+        return postService.getAllPostsByUsername(auth.getName(), username, pageable);
     }
     
     @GetMapping("/comments/all/{parentID}")
-    public List<PostDto> getComments(@PathVariable Long parentID, Authentication auth)
+    public Page<PostDto> getComments(
+        @PageableDefault(size = 10, sort = "id") Pageable pageable,
+        @PathVariable Long parentID, Authentication auth)
     {
-        return postService.getPostComments(auth.getName(), parentID);
+        return postService.getPostComments(auth.getName(), parentID, pageable);
     }
     
     @PostMapping("/comments/create/{parentID}")

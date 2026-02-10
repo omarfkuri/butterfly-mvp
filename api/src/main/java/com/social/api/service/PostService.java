@@ -1,5 +1,7 @@
 package com.social.api.service;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,21 +33,51 @@ public class PostService
     this.eventPublisher = eventPublisher;
   }
 
-  public List<PostDto> getAllPosts(String username)
+  public Page<PostDto> getAllPosts(String username, Pageable pageable)
   {
     User user = userRepository.findByUsername(username)
         .orElseThrow(() -> new RuntimeException("User not found"));
 
-    return postRepository.findAllPostDtos(user);
+
+    return postRepository.findAllPostDtos(user, pageable);
   }
 
-  public List<PostDto> getAllPostsByUsername(String username, String targetUsername)
+  @Transactional(readOnly = true)
+  public Page<PostDto> getFeedForUser(String username, 
+    Pageable pageable)
+  {
+    User user = userRepository.findByUsername(username)
+    .orElseThrow(() -> new RuntimeException("User not found"));
+
+    return postRepository.findFeedPostDtos(user, pageable);
+  }
+
+  public Page<PostDto> getAllPostsByUsername(
+    String username, 
+    String targetUsername, 
+    Pageable pageable
+  )
   {
     User user = userRepository.findByUsername(username)
         .orElseThrow(() -> new RuntimeException("User not found"));
 
     return postRepository
-        .findPostDtosByUsername(targetUsername, user);
+        .findPostDtosByUsername(targetUsername, user, pageable);
+  }
+
+  public Page<PostDto> getPostComments(
+    String username, 
+    Long id, 
+    Pageable pageable
+  )
+  {
+    User user = userRepository.findByUsername(username)
+        .orElseThrow(() -> new RuntimeException("User not found"));
+
+    Post parent = postRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Post not found"));
+
+    return postRepository.findPostDtosByParent(parent, user, pageable);
   }
 
   public Optional<PostDto> getPostById(String username, Long id)
@@ -54,17 +86,6 @@ public class PostService
         .orElseThrow(() -> new RuntimeException("User not found"));
 
     return postRepository.findPostDtoById(id, user);
-  }
-
-  public List<PostDto> getPostComments(String username, Long id)
-  {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
-
-    Post parent = postRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Post not found"));
-
-    return postRepository.findPostDtosByParent(parent, user);
   }
 
   @Transactional
@@ -145,15 +166,6 @@ public class PostService
     
     for (var child : desc)
       eventPublisher.postDeleted(child.id(), child.username());
-  }
-
-  @Transactional(readOnly = true)
-  public List<PostDto> getFeedForUser(String username)
-  {
-    User user = userRepository.findByUsername(username)
-    .orElseThrow(() -> new RuntimeException("User not found"));
-
-    return postRepository.findFeedPostDtos(user);
   }
 
   public boolean isPostOwner(Long postId, String username)

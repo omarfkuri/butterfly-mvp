@@ -4,6 +4,8 @@ import com.social.api.dto.PostDto;
 import com.social.api.entity.Post;
 import com.social.api.entity.User;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,7 +20,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
   long countByUsername(String username);
 
   boolean existsById(Long id);
-  
+
   List<Post> findByParent(Post parent);
 
   @Query("""
@@ -37,7 +39,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
     GROUP BY p
     ORDER BY p.createdAt DESC
   """)
-  List<PostDto> findAllPostDtos(@Param("viewer") User viewer);
+  Page<PostDto> findAllPostDtos(@Param("viewer") User viewer, Pageable pageable);
 
   @Query("""
     SELECT new com.social.api.dto.PostDto(
@@ -56,9 +58,10 @@ public interface PostRepository extends JpaRepository<Post, Long>
     GROUP BY p
     ORDER BY p.createdAt DESC
   """)
-  List<PostDto> findPostDtosByUsername(
+  Page<PostDto> findPostDtosByUsername(
     @Param("username") String username,
-    @Param("viewer") User viewer
+    @Param("viewer") User viewer, 
+    Pageable pageable
   );
 
   @Query("""
@@ -78,9 +81,10 @@ public interface PostRepository extends JpaRepository<Post, Long>
     GROUP BY p
     ORDER BY p.createdAt ASC
   """)
-  List<PostDto> findPostDtosByParent(
+  Page<PostDto> findPostDtosByParent(
     @Param("parent") Post parent,
-    @Param("viewer") User viewer
+    @Param("viewer") User viewer, 
+    Pageable pageable
   );
 
   @Query("""
@@ -101,7 +105,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
     GROUP BY p
     ORDER BY p.createdAt DESC
   """)
-  List<PostDto> findFeedPostDtos(@Param("viewer") User viewer);
+  Page<PostDto> findFeedPostDtos(@Param("viewer") User viewer, 
+    Pageable pageable);
 
   @Query("""
     SELECT new com.social.api.dto.PostDto(
