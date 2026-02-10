@@ -37,7 +37,8 @@
 
 <WritePost />
 
-<PostList page={postsPage} {user} topic="author:{user.username}"/>
+<PostList page={postsPage} {user} topic="author:{user.username}"
+	path="user/{user.username}"/>
 
 <style lang="less">
 	@import (reference) "../../../lib/styles/vars.less";

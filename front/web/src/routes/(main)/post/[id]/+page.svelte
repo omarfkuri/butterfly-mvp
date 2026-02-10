@@ -47,6 +47,7 @@
 
 <PostList page={comments} {user} topic="all" forComments
 	emptyString="No replies"
+	path="comments/all/{post.id}"
 />
 
 <style lang="less">

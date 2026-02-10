@@ -22,28 +22,28 @@ export type Topic = (
 
 export type Page<Type> = {
 	content: Type[],
-	empty: false,
-	first: true,
-	last: false,
+	empty: boolean,
+	first: boolean,
+	last: boolean,
 	number: number,
 	numberOfElements: number,
 	pageable: {
 		offset: number,
 		pageNumber: number,
 		pageSize: number,
-		paged: true,
+		paged: boolean,
 		sort: {
-			empty: false,
-			sorted: true,
-			unsorted: false
+			empty: boolean,
+			sorted: boolean,
+			unsorted: boolean
 		},
-		unpaged: false
+		unpaged: boolean
 	},
 	size: number,
 	sort: {
-		empty: false,
-		sorted: true,
-		unsorted: false
+		empty: boolean,
+		sorted: boolean,
+		unsorted: boolean
 	},
 	totalElements: number,
 	totalPages: number

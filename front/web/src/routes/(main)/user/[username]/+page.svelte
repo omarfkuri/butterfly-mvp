@@ -93,7 +93,8 @@
 	{/if}
 </div>
 
-<PostList page={postsPage} {user} topic="author:{username}"/>
+<PostList page={postsPage} {user} topic="author:{username}"
+	path="user/{username}"/>
 
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";

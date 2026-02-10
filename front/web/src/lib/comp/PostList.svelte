@@ -10,6 +10,7 @@
 		user: User | null
 		emptyString?: string
 		forComments?: boolean
+		path: string
 	}
 
 	let {
@@ -17,11 +18,13 @@
 		user, 
 		topic, 
 		emptyString = "No posts yet",
+		path,
 		forComments = false,
 
 	}: Props = $props();
 
-	let posts = $derived(page.content);
+	let posts = $state<Post[]>(page.content);
+	let lastElement = $state<HTMLElement | null>(null);
 
 	if (browser)
 		$effect(() => {
@@ -63,13 +66,55 @@
 				posts[i] = post;
 			});
 
+			if (lastElement)
+			{
+				const options = {
+					root: null,
+					rootMargin: '0px',
+					threshold: 0.5
+				};
+
+				const observer = new IntersectionObserver(([e]) => {
+					if (e?.isIntersecting)
+						loadMorePosts();
+				}, options);
+
+    		observer.observe(lastElement);
+    	}
+
 			return () => source.close();
 		});
 
+	async function loadMorePosts()
+	{
+		if (page.last)
+		{
+			alert("No posts to show...");
+			return;
+		}
+
+		const res = await fetch(`/server/posts/${path}?page=${page.number + 1}&size=10`, {
+			credentials: "include"
+		});
+
+		const pg = await res.json() as Page<Post>;
+		posts.push(...pg.content);
+
+		page = pg;
+	}
+
 </script>
 
-{#each posts as post}
-	<PostElem {post} {user} isComment={forComments}/>
+{#each posts as post, i}
+	{#if !page.last && i + 1 == posts.length}
+		<div class="post-wrapper" bind:this={lastElement}>
+			<PostElem {post} {user} isComment={forComments}/>
+		</div>
+	{:else}
+		<div class="post-wrapper">
+			<PostElem {post} {user} isComment={forComments}/>
+		</div>
+	{/if}
 {:else}
 	<div class="empty">
 		{emptyString}

@@ -11,7 +11,7 @@
 	<title>SO - Following</title>
 </svelte:head>
 
-<PostList page={postsPage} {user} topic="all"/>
+<PostList page={postsPage} {user} topic="all" path="following"/>
 
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";

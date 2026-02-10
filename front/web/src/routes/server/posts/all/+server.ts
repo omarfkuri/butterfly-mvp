@@ -3,7 +3,7 @@ import { type RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async (event) =>
 {
-	return apiFetch(event, '/posts/all', {
+	return apiFetch(event, `/posts/all?${event.url.searchParams}`, {
 		method: 'GET',
 		credentials: 'include',
 	});
