@@ -1,6 +1,6 @@
 import type { PageServerLoad } from "./$types";
 import { apiFetch } from "$lib/server/api";
-import type { Post } from "$lib";
+import type { Page, Post } from "$lib";
 
 export const load: PageServerLoad = async function(event)
 {
@@ -8,6 +8,6 @@ export const load: PageServerLoad = async function(event)
   const res = await apiFetch(event, `/posts/user/${user.username}`);
 
   return {
-    posts: await res.json() as Post[]
+    postsPage: await res.json() as Page<Post>
   };
 };

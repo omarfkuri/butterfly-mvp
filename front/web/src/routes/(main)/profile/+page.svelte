@@ -5,7 +5,7 @@
 	import type { PageProps } from "./$types";
 	
 	const { data }: PageProps = $props();
-	const { posts, user } = $derived(data);
+	const { postsPage, user } = $derived(data);
 
 </script>
 
@@ -37,7 +37,7 @@
 
 <WritePost />
 
-<PostList {posts} {user} topic="author:{user.username}"/>
+<PostList page={postsPage} {user} topic="author:{user.username}"/>
 
 <style lang="less">
 	@import (reference) "../../../lib/styles/vars.less";

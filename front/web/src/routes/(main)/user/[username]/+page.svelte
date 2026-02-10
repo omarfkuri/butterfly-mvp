@@ -5,7 +5,7 @@
 	
 	const { data, params }: PageProps = $props();
 	const {
-		posts,
+		postsPage,
 		user,
 		doesFollow,
 		isSelf,
@@ -93,7 +93,7 @@
 	{/if}
 </div>
 
-<PostList {posts} {user} topic="author:{username}"/>
+<PostList page={postsPage} {user} topic="author:{username}"/>
 
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";

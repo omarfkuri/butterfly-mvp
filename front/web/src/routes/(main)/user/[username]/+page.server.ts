@@ -1,6 +1,6 @@
 import type { PageServerLoad } from "./$types";
 import { apiFetch } from "$lib/server/api";
-import type { Post } from "$lib";
+import type { Page, Post } from "$lib";
 
 export const load: PageServerLoad = async function(event)
 {
@@ -12,7 +12,7 @@ export const load: PageServerLoad = async function(event)
   const followingCount = await apiFetch(event, `/follow/following-count/${event.params.username}`);
 
   return {
-    posts: await userPosts.json() as Post[],
+    postsPage: await userPosts.json() as Page<Post>,
     doesFollow: await doesFollow.json() as boolean,
     isSelf: user.username == event.params.username,
     followerCount: await followerCount.json() as number,

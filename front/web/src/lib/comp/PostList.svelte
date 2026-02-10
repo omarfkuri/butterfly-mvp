@@ -1,11 +1,11 @@
 <script lang="ts">
   import { browser } from '$app/environment';
-	import type { Post, Topic, User } from '$lib';
+	import type { Page, Post, Topic, User } from '$lib';
   import PostElem from './Post.svelte';
 
 	interface Props
 	{
-		posts: Post[]
+		page: Page<Post>
 		topic: Topic
 		user: User | null
 		emptyString?: string
@@ -13,7 +13,7 @@
 	}
 
 	let {
-		posts, 
+		page, 
 		user, 
 		topic, 
 		emptyString = "No posts yet",
@@ -66,7 +66,7 @@
 
 </script>
 
-{#each posts as post}
+{#each page.content as post}
 	<PostElem {post} {user} isComment={forComments}/>
 {:else}
 	<div class="empty">
