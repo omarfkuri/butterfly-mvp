@@ -11,29 +11,16 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 import java.util.Optional;
 
-public interface PostRepository extends JpaRepository<Post, Long> {
-
-  /* ============================
-     ENTITY-BASED METHODS
-     ============================ */
-
+public interface PostRepository extends JpaRepository<Post, Long>
+{
   Optional<Post> findById(Long id);
-
-  List<Post> findByUsernameOrderByCreatedAtDesc(String username);
-
-  List<Post> findAllByOrderByCreatedAtDesc();
 
   long countByUsername(String username);
 
+  boolean existsById(Long id);
+  
   List<Post> findByParent(Post parent);
 
-  boolean existsById(Long id);
-
-  /* ============================
-     DTO-BASED METHODS (FEED/UI)
-     ============================ */
-
-  // 1. All posts (global feed)
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
@@ -52,7 +39,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
   """)
   List<PostDto> findAllPostDtos(@Param("viewer") User viewer);
 
-  // 2. Posts by username
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
@@ -75,7 +61,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Param("viewer") User viewer
   );
 
-  // 3. Posts by parent (comments / replies)
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
@@ -98,7 +83,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Param("viewer") User viewer
   );
 
-  // 4. Feed: posts from followed users
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
@@ -119,7 +103,6 @@ public interface PostRepository extends JpaRepository<Post, Long> {
   """)
   List<PostDto> findFeedPostDtos(@Param("viewer") User viewer);
 
-  // 5. Single post by id (YES, this is valid)
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
