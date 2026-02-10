@@ -107,7 +107,13 @@
 			<span class="content">{content}</span>
 			<span class="author" data-sveltekit-preload-data="off">
 				By
-				<a href="/user/{username}">{username}</a>
+				<a href="/user/{username}">
+					{#if user && username == user?.username}
+						me
+					{:else}
+						{username}
+					{/if}
+				</a>
 			</span>
 			<div class="likes">
 				<input
