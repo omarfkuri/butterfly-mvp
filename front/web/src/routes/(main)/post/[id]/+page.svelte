@@ -45,7 +45,7 @@
 
 <WriteComment id={post.id} />
 
-<PostList posts={comments} {user} topic="all" forComments
+<PostList page={comments} {user} topic="all" forComments
 	emptyString="No replies"
 />
 
