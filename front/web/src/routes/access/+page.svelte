@@ -1,22 +1,43 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
-	import type { PageProps } from './$types';
+    import WaitDialog from '$lib/comp/WaitDialog.svelte';
+	import type { PageProps, SubmitFunction } from './$types';
 
 	let { form }: PageProps = $props();
 
 	let haveAccount = $state(false);
+	let dialog = $state<WaitDialog>();
 
 	function onToggle()
 	{
 		haveAccount = !haveAccount;
 	}
+
+	export const onRegister: SubmitFunction = async function(e)
+	{
+		const confirmed = await dialog?.waitAction();
+
+    if (confirmed)
+    {
+      return ({ update }) => update();
+    }
+    else
+    {
+      e.cancel();
+    }
+	}
+
 </script>
 
 <div class="wrapper">
 	<div class="content-wrapper">
 		<main class="brand-wrapper">
 			<div class="brand-name">
-				<img src="/image/brand/Icon.png" alt="Icon">
+				<img 
+					src="/image/brand/Icon.png"
+					alt="Icon"
+					draggable="false"
+				/>
 				<h1>Butterfly</h1>
 			</div>
 
@@ -71,7 +92,9 @@
 			{:else}
 				<h2>Register</h2>
 
-				<form method="POST" action="?/register" use:enhance>
+				<form method="POST" action="?/register" 
+					use:enhance={onRegister}
+				>
 					<div class="inputs">
 						<label>
 							<span class="material-icons icon">person</span>
@@ -97,10 +120,10 @@
 
 			<div class="change">
 				{#if haveAccount}
-					Don't have an account? 
+					<div class="change-title">Don't have an account?</div> 
 					<button tabindex="0" onclick={onToggle}>Sign up</button>
 				{:else}
-					Already have an account? 
+					<div class="change-title">Already have an account?</div> 
 					<button tabindex="0" onclick={onToggle}>Log in</button>
 				{/if}
 			</div>
@@ -108,12 +131,27 @@
 	</div>
 </div>
 
+<WaitDialog bind:this={dialog}>
+	<div class="warn-container">
+		<h2>Before you register</h2>
+
+		<p>
+			The purpose of this page is to display
+			the capabilities of a social media like
+			application. Please do not enter real 
+			information. While the back end is secure,
+			we make no guarantees to protect data.
+		</p>
+	</div>
+</WaitDialog>
+
 <style lang="less">
 	@import (reference) "../../lib/styles/vars.less";
 
 	.wrapper
 	{
 		display: flex;
+		align-items: center;
 
 		width: 100%;
 		height: 100%;
@@ -186,17 +224,20 @@
 	.form-wrapper
 	{
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 
-		height: 100%;
+		height: min-content;
 		width: 50%;
 
 		font-size: .8em;
+		border-left: 1px solid @fg3;
 
 		.smallWeb({
 			width: 100%;
 			border-top: 1px solid @fg3;
+			border-left: none;
 		});
 	}
 
@@ -208,12 +249,6 @@
 
 		width: 100%;
 		padding: 1em;
-
-		border-left: 1px solid @fg3;
-
-		.smallWeb({
-			border-left: none;
-		});
 	}
 
 	form
@@ -274,5 +309,23 @@
 		font-size: .8em;
 
 		padding-top: 1.5em;
+
+		.change-title
+		{
+			color: @fg3;
+		}
 	}
+
+	.warn-container
+	{
+		display: flex;
+		flex-direction: column;
+		gap: .25em;
+
+		p
+		{
+			font-size: .8em;
+		}
+	}
+
 </style>
