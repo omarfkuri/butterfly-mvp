@@ -3,18 +3,18 @@
   import Back from "$lib/comp/Back.svelte";
   import Post from "$lib/comp/Post.svelte";
   import PostList from "$lib/comp/PostList.svelte";
-  import WaitDialog from "$lib/comp/WaitDialog.svelte";
+  import Confirm from "$lib/comp/Confirm.svelte";
   import WriteComment from "$lib/comp/WriteComment.svelte";
 	import type { PageProps, SubmitFunction } from "./$types";
 	
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
 	
-	let dialog = $state<WaitDialog>();
+	let confirmComp = $state<Confirm>();
 
 	export const onDelete: SubmitFunction = async function(e)
 	{
-		const confirmed = await dialog?.waitAction();
+		const confirmed = await confirmComp?.waitAction();
 
     if (confirmed)
     {
@@ -63,11 +63,11 @@
 	path="comments/all/{post.id}"
 />
 
-<WaitDialog bind:this={dialog}>
+<Confirm bind:this={confirmComp}>
 	<div class="delete-msg">
 		Delete "<b>{post.title}</b>" forever?
 	</div>
-</WaitDialog>
+</Confirm>
 
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";

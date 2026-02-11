@@ -1,12 +1,12 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
-    import WaitDialog from '$lib/comp/WaitDialog.svelte';
+  import Confirm from '$lib/comp/Confirm.svelte';
 	import type { PageProps, SubmitFunction } from './$types';
 
 	let { form }: PageProps = $props();
 
 	let haveAccount = $state(false);
-	let dialog = $state<WaitDialog>();
+	let confirmComp = $state<Confirm>();
 
 	function onToggle()
 	{
@@ -15,7 +15,7 @@
 
 	export const onRegister: SubmitFunction = async function(e)
 	{
-		const confirmed = await dialog?.waitAction();
+		const confirmed = await confirmComp?.waitAction();
 
     if (confirmed)
     {
@@ -129,7 +129,7 @@
 	</div>
 </div>
 
-<WaitDialog bind:this={dialog}>
+<Confirm bind:this={confirmComp}>
 	<div class="warn-container">
 		<h2>Before you register</h2>
 
@@ -141,7 +141,7 @@
 			we make no guarantees to protect data.
 		</p>
 	</div>
-</WaitDialog>
+</Confirm>
 
 <style lang="less">
 	@import (reference) "../../lib/styles/vars.less";
