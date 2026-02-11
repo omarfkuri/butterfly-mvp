@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.social.api.entity.User;
 import com.social.api.service.UserService;
 
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController
@@ -24,8 +27,16 @@ public class AuthController
     
     @PostMapping("/register")
     public ResponseEntity<?> register(
-        @RequestParam String username,
-        @RequestParam String password)
+        @RequestParam 
+        @Size(min = 3, max = 24)
+        @Pattern(regexp = "^[a-z0-9._]+$")
+        String username,
+        
+        @RequestParam 
+        @Size(min = 4, max = 16)
+        @Pattern(regexp = "^[a-zA-Z0-9#]+$")
+        String password
+    )
     {
         if (userService.existsByUsername(username))
         {

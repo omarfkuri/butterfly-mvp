@@ -20,10 +20,10 @@ export const actions = {
         return v;
       
       const result = await login(username, password, event);
-      if (result.ok) {
+      if (result.ok)
         throw redirect(302, '/');
-      }
-      return result;
+
+      return fail(400, { error: "Failed to login" });
     }
 
     catch(error)
@@ -51,20 +51,20 @@ export const actions = {
       });
       
       if (!res.ok) {
-        return { ok: false, error: null };
+        return fail(400, { error: "Failed to register" });
       }
       
       const result = await login(username, password, event);
-      if (result.ok) {
+      if (result.ok)
         throw redirect(302, '/');
-      }
-      return result;
+      
+      return fail(400, { error: "Failed to login" });
     }
 
     catch(error)
     {
       if (error instanceof redirect) throw error;
-      return { fail: true, error: String(error) };
+      return fail(400, { error: String(error) });
     }
   }
 } satisfies Actions;
@@ -72,10 +72,27 @@ export const actions = {
 function verifyParameters(username: string, password: string)
 {
   if (username.length == 0)
-    return fail(400, { username, missing: true })
+    return fail(400, { error: "No username provided" })
+
+  if (username.length < 4 || username.length > 24)
+    return fail(400, { error: "Username must be between 4 and 24 characters" })
+
+  if (!/^[a-z0-9._]+$/.test(username))
+    return fail(400, { 
+      error: "Username must only contain numbers, letters, dot and underscore" 
+    })
+
 
   if (password.length == 0)
-    return fail(400, { password, missing: true })
+    return fail(400, { error: "No password provided" })
+
+  if (password.length < 4 || password.length > 24)
+    return fail(400, { error: "Password must be between 4 and 24 characters" })
+
+  if (!/^[a-zA-Z0-9#]+$/.test(username))
+    return fail(400, { 
+      error: "Password must only contain numbers, letters and #" 
+    })
 
   return null;
 }
@@ -92,7 +109,7 @@ async function login(username: string, password: string, event: RequestEvent)
   });
   
   if (!res.ok)
-    return { ok: false, error: null };
+    return { ok: false, message: await res.text() };
 
   return { ok: true };
 }

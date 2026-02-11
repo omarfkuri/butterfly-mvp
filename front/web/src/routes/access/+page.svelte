@@ -53,14 +53,12 @@
 	</div>
 	<div class="form-wrapper">
 			
-		{#if form}
-			{#if form.ok}
-				Success!
-			{:else}
-				<div class="form-error">
-					Error: {JSON.stringify(form)}
+		{#if form?.error}
+			<div class="server-error-wrapper">
+				<div class="server-error-content">
+					{form.error}
 				</div>
-			{/if}
+			</div>
 		{/if}
 
 		<div class="form-container">
@@ -239,6 +237,19 @@
 			border-top: 1px solid @fg3;
 			border-left: none;
 		});
+	}
+
+	.server-error-wrapper
+	{
+		padding: 1em;
+
+
+		.server-error-content
+		{
+			border: 1px solid @error;
+			padding: 1em;
+			font-size: .8em;
+		}
 	}
 
 	.form-container
