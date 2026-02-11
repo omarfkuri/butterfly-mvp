@@ -1,4 +1,6 @@
 <script lang="ts">
+    import type { ApiErrorRes } from "$lib";
+
 	let title = $state("");
 	let content = $state("");
 
@@ -7,8 +9,20 @@
 		if (title.length == 0)
 			return alert("No title was provided");
 
+		if (title.length < 2 || title.length > 100)
+			return alert("Title must be between 4 and 100 letters");
+
+		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(title))
+			return alert("Title did not match expected pattern");
+
 		if (content.length == 0)
 			return alert("No content was provided");
+
+		if (content.length < 2 || content.length > 512)
+			return alert("Content must be between 4 and 512 letters");
+
+		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(content))
+			return alert("Content did not match expected pattern");
 
 		const res = await fetch("/server/posts/create", {
 			method: "POST",
@@ -20,7 +34,9 @@
 
 		if (!res.ok)
 		{
-			alert(`Failed to post`)
+			const err = await res.json() as ApiErrorRes;
+			for (const error of err.errors)
+				alert(`Failed to post: ${error.defaultMessage}`)
 		}
 		else
 		{

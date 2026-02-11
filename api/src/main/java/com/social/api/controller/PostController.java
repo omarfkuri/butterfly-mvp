@@ -11,7 +11,10 @@ import com.social.api.dto.PostDto;
 import com.social.api.entity.Post;
 import com.social.api.service.PostService;
 
-import java.util.List;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @RestController
 @RequestMapping("/posts")
@@ -60,7 +63,7 @@ public class PostController
     @PostMapping("/comments/create/{parentID}")
     public ResponseEntity<Post> createComment(
         @PathVariable Long parentID,
-        @RequestBody CreatePostRequest request,
+        @Valid @RequestBody CreatePostRequest request,
         Authentication auth)
     {
         Post post = postService.createComment(
@@ -82,7 +85,7 @@ public class PostController
     
     @PostMapping("/create")
     public ResponseEntity<Post> createPost(
-        @RequestBody CreatePostRequest request,
+        @Valid @RequestBody CreatePostRequest request,
         Authentication auth)
     {
         Post post = postService.createPost(
@@ -96,7 +99,7 @@ public class PostController
     @PutMapping("/update/{id}")
     public ResponseEntity<Post> updatePost(
         @PathVariable Long id,
-        @RequestBody UpdatePostRequest request,
+        @Valid @RequestBody UpdatePostRequest request,
         Authentication auth)
     {
         if (!postService.isPostOwner(id, auth.getName()))
@@ -128,7 +131,20 @@ public class PostController
     
     public static class CreatePostRequest
     {
+        @NotBlank
+        @Size(min = 2, max = 100)
+        @Pattern(
+            regexp = "^[\\p{L}\\p{N} .,'\"\\-!?()]+$",
+            message = "Title contains invalid characters"
+        )
         private String title;
+
+        @NotBlank
+        @Size(min = 2, max = 512)
+        @Pattern(
+            regexp = "^[\\p{L}\\p{N}\\p{P}\\p{Zs}\\r\\n\\t]+$",
+            message = "Body contains invalid characters"
+        )
         private String content;
         
         public String getTitle()
@@ -154,7 +170,20 @@ public class PostController
     
     public static class UpdatePostRequest
     {
+        @NotBlank
+        @Size(min = 3, max = 100)
+        @Pattern(
+            regexp = "^[a-zA-Z0-9 _-]+$",
+            message = "Title contains invalid characters"
+        )
         private String title;
+
+        @NotBlank
+        @Size(min = 3, max = 512)
+        @Pattern(
+            regexp = "^[a-zA-Z0-9 _-]+$",
+            message = "Body contains invalid characters"
+        )
         private String content;
         
         public String getContent()

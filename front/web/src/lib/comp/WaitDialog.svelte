@@ -39,9 +39,7 @@
 
 <dialog bind:this={dialog} class="wrapper">
 	<div class="container">
-		<div class="top">
-			{@render children()}
-		</div>
+		{@render children()}
 
 		<div class="buttons">
 			<button
@@ -70,13 +68,6 @@
 			display: flex;
 			flex-direction: column;
 			gap: 2em;
-
-			.top
-			{
-				display: flex;
-				flex-direction: column;
-				gap: .25em;
-			}
 
 			.buttons
 			{

@@ -48,3 +48,31 @@ export type Page<Type> = {
 	totalElements: number,
 	totalPages: number
 }
+
+export type ApiArg = {
+	arguments: unknown,
+	code: string,
+	codes: string[],
+	defaultMessage: string
+} | number
+
+export type ApiError = {
+	objectName: string,
+	field: string,
+	rejectedValue: string,
+	codes: string[],
+	arguments: ApiArg[],
+	bindingFailure: boolean,
+	code: string,
+	defaultMessage: string
+}
+
+export type ApiErrorRes = {
+  timestamp: string
+  status: number,
+  error: string
+  trace: string
+  message: string
+  errors: ApiError[],
+  path: string
+}

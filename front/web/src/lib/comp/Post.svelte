@@ -129,10 +129,22 @@
 						}}
 						oninput={toggleLike}
 					>
-					<span class="like-icon material-icons">
+					<span 
+						class="like-icon material-icons"
+						role="button"
+						tabindex="0"
+						onclick={e => e.stopPropagation()}
+						onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
+						>
 						favorite
 					</span>
-					<span class="like-count">
+					<span 
+						class="like-count"
+						role="button"
+						tabindex="0"
+						onclick={e => e.stopPropagation()}
+						onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
+						>
 						{likeCount}
 					</span>
 				</label>
@@ -185,12 +197,16 @@
 		{
 			font-weight: bold;
 			font-size: 1.1em;
+
+			word-break: break-all;
 		}
 
 		.content
 		{
 			font: .65em monospace;
 			padding-bottom: .5em;
+
+			word-break: break-all;
 		}
 	}
 

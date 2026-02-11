@@ -1,22 +1,30 @@
 <script lang="ts">
+  import { enhance } from "$app/forms";
   import Back from "$lib/comp/Back.svelte";
   import Post from "$lib/comp/Post.svelte";
   import PostList from "$lib/comp/PostList.svelte";
+  import WaitDialog from "$lib/comp/WaitDialog.svelte";
   import WriteComment from "$lib/comp/WriteComment.svelte";
-	import type { PageProps } from "./$types";
+	import type { PageProps, SubmitFunction } from "./$types";
 	
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
+	
+	let dialog = $state<WaitDialog>();
 
-	async function deletePost()
+	export const onDelete: SubmitFunction = async function(e)
 	{
-		if (!confirm("Are you sure you want to delete this post?"))
-			return;
+		const confirmed = await dialog?.waitAction();
 
-		await fetch(`/server/posts/delete/${post.id}`, {
-			method: "DELETE",
-			credentials: "include"
-		});
+    if (confirmed)
+    {
+    	location.href = "/";
+      return;
+    }
+    else
+    {
+      e.cancel();
+    }
 	}
 
 </script>
@@ -29,12 +37,17 @@
 
 <Post {post} {user} />
 
-
 {#if user}
 	{#if post.username == user.username}
 		<div class="buttons">
-			<button>Update</button>
-			<button onclick={()=>deletePost()}>Delete</button>
+			<form method="POST" action="?/updatePost" use:enhance>
+				<button>Update</button>
+			</form>
+			<form method="POST" action="?/deletePost" 
+				use:enhance={onDelete}
+			>
+				<button>Delete</button>
+			</form>
 		</div>
 	{/if}
 {/if}
@@ -50,12 +63,24 @@
 	path="comments/all/{post.id}"
 />
 
+<WaitDialog bind:this={dialog}>
+	<div class="delete-msg">
+		Delete "<b>{post.title}</b>" forever?
+	</div>
+</WaitDialog>
+
 <style lang="less">
 	@import (reference) "../../../../lib/styles/vars.less";
 	
 	.com-title
 	{
 		.card();
+	}
+
+	.delete-msg
+	{
+		width: 100%;
+		word-break: break-all;
 	}
 
 	.buttons
