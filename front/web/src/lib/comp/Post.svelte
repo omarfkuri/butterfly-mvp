@@ -105,30 +105,38 @@
 		<div class="top">
 			<span class="title">{title}</span>
 			<span class="content">{content}</span>
-			<span class="author" data-sveltekit-preload-data="off">
-				By
-				<a href="/user/{username}">
-					{#if user && username == user?.username}
-						me
-					{:else}
-						{username}
-					{/if}
-				</a>
-			</span>
-			<div class="likes">
-				<input
-					type="checkbox" 
-					bind:checked={likedByMe}
-					onclick={e =>  {
-						e.stopPropagation();
-					}}
-					oninput={toggleLike}
-				>
-				{likeCount}
-			</div>
 		</div>
 
 		<div class="bottom">
+
+			<div class="top-bottom">
+				<span class="author" data-sveltekit-preload-data="off">
+					By
+					<a href="/user/{username}">
+						{#if user && username == user?.username}
+							me
+						{:else}
+							{username}
+						{/if}
+					</a>
+				</span>
+				<label class="likes">
+					<input
+						type="checkbox" 
+						bind:checked={likedByMe}
+						onclick={e =>  {
+							e.stopPropagation();
+						}}
+						oninput={toggleLike}
+					>
+					<span class="like-icon material-icons">
+						favorite
+					</span>
+					<span class="like-count">
+						{likeCount}
+					</span>
+				</label>
+			</div>
 			<div class="info">
 				<div class="date">{date} {time}</div>	
 			</div>
@@ -184,11 +192,6 @@
 			font: .65em monospace;
 			padding-bottom: .5em;
 		}
-
-		.author
-		{
-			font-size: .5em;			
-		}
 	}
 
 	.bottom
@@ -213,6 +216,60 @@
 			.date
 			{
 				color: @fg3;
+			}
+		}
+	}
+
+	.top-bottom
+	{
+		display: flex;
+		align-items: center;
+		gap: .5em;
+
+		.author
+		{
+			font-size: .7em;
+			white-space: nowrap;
+		}
+
+		.likes
+		{
+			display: flex;
+			align-items: center;
+			gap: .1em;
+
+			font-size: .8em;
+			cursor: pointer;
+
+			.no-select();
+
+			input
+			{
+				display: none;
+
+				&:checked + .like-icon,
+				&:checked + .like-icon + .like-count
+				{
+					color: @primary;
+				}
+
+				&:not(:checked) + .like-icon,
+				&:not(:checked) + .like-icon + .like-count
+				{
+					color: @fg3;
+				}
+			}
+
+			.like-icon
+			{
+				font-size: 1em;
+				line-height: 1;
+			}
+
+			.like-count
+			{
+				font-size: .8em;
+				line-height: 1;
 			}
 		}
 	}
