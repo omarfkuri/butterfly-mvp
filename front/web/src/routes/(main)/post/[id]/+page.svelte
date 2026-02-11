@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>SO - Post</title>
+	<title>SO - {post.title}, by {post.username}</title>
 </svelte:head>
 
 <Back title={post.title}/>
