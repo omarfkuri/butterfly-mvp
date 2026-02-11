@@ -196,7 +196,7 @@
 
 		.smallWeb({
 			width: 100%;
-			border-top: 1px solid #000;
+			border-top: 1px solid @fg3;
 		});
 	}
 
@@ -209,7 +209,7 @@
 		width: 100%;
 		padding: 1em;
 
-		border-left: 1px solid #000;
+		border-left: 1px solid @fg3;
 
 		.smallWeb({
 			border-left: none;
