@@ -16,6 +16,7 @@ body
 	font: 24px sans-serif;
 	margin: 0;
 
+	color: @fg1;
 	background: @bg2;
 
 	width: 100%;
@@ -50,11 +51,17 @@ a.dark
 	color: @primaryDark;
 }
 
+button.default
+{
+	color: @fg1;
+}
+
 button:not(.default)
 {
 	font-size: .6em;
 	background: none;
 	border: 1px solid @bd1;
+	color: @fg1;
 
 	white-space: nowrap;
 
@@ -87,6 +94,7 @@ input, textarea
 	font-size: .6em;
 	background: none;
 	border: 1px solid @bd1;
+	color: @fg2;
 
 	cursor: pointer;
 }

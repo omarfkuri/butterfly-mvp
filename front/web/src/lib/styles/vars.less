@@ -12,6 +12,22 @@
   --fg1: #000;
   --fg2: #444;
   --fg3: #666;
+
+  @media (prefers-color-scheme: dark)
+  {
+    --primary: hsl(270, 50%, 70%);
+    --primaryDark: hsl(270, 50%, 60%);
+
+    --bd1: #333;
+    
+    --bg1: #000;
+    --bg2: #111;
+    --bg3: #222;
+
+    --fg1: #FFF;
+    --fg2: #DDD;
+    --fg3: #BBB;
+  }
 }
 
 @primary: var(--primary);
