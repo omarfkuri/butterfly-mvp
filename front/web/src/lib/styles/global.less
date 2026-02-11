@@ -72,6 +72,14 @@ button:not(.default)
 	  color: @bg1;
 	  border-color: @fg1;
 	}
+
+	&.lure:not(:disabled),
+	&.lure:not(:disabled):hover
+	{
+	  background-color: @primary;
+	  color: white;
+	  border-color: @primary;
+	}
 }
 
 input, textarea
