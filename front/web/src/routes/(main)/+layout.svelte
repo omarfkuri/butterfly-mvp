@@ -4,13 +4,16 @@
   import type { LayoutProps } from "./$types";
   import { afterNavigate } from "$app/navigation";
     import Message from "$lib/comp/Message.svelte";
+    import Confirm from "$lib/comp/Confirm.svelte";
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);
 
 	async function onLogOut()
 	{
-		if (!confirm("Do you want to log out?"))
+		const confirmed = await confirmComp?.waitAction();
+
+		if (!confirmed)
 			return;
 
 		const res = await fetch("/server/logout", {
@@ -28,6 +31,8 @@
 	const showOn = 100;
 	let hidden = $state(true);
 	let container = $state<HTMLDivElement>();
+
+	let confirmComp = $state<Confirm>();
 
 	let errorComp = $state<Message>();
 	let errorMsg = $state("");
@@ -69,6 +74,10 @@
 <Message bind:this={errorComp}>
 	{errorMsg}
 </Message>
+
+<Confirm bind:this={confirmComp}>
+	Are you sure you want to log out?
+</Confirm>
 
 <div class="content">
 	<div class="side-wrapper">
