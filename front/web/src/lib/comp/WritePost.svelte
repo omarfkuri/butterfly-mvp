@@ -1,28 +1,34 @@
 <script lang="ts">
     import type { ApiErrorRes } from "$lib";
+    import Message from "./Message.svelte";
 
 	let title = $state("");
 	let content = $state("");
 
+	const disabled = $derived(title.length == 0 || content.length == 0);
+
+	let errorComp = $state<Message>();
+	let errorMsg = $state("");
+
 	async function onPost()
 	{
 		if (title.length == 0)
-			return alert("No title was provided");
+			return await showMessage("No title was provided");
 
 		if (title.length < 2 || title.length > 100)
-			return alert("Title must be between 4 and 100 letters");
+			return await showMessage("Title must be between 4 and 100 letters");
 
 		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(title))
-			return alert("Title did not match expected pattern");
+			return await showMessage("Title did not match expected pattern");
 
 		if (content.length == 0)
-			return alert("No content was provided");
+			return await showMessage("No content was provided");
 
 		if (content.length < 2 || content.length > 512)
-			return alert("Content must be between 4 and 512 letters");
+			return await showMessage("Content must be between 4 and 512 letters");
 
 		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(content))
-			return alert("Content did not match expected pattern");
+			return await showMessage("Content did not match expected pattern");
 
 		const res = await fetch("/server/posts/create", {
 			method: "POST",
@@ -36,7 +42,7 @@
 		{
 			const err = await res.json() as ApiErrorRes;
 			for (const error of err.errors)
-				alert(`Failed to post: ${error.defaultMessage}`)
+				await showMessage(`Failed to post: ${error.defaultMessage}`)
 		}
 		else
 		{
@@ -44,9 +50,17 @@
 		}
 	}
 
-	const disabled = $derived(title.length == 0 || content.length == 0);
+	async function showMessage(content: string)
+	{
+		errorMsg = content;
+		return errorComp?.show();
+	}
 
 </script>
+
+<Message bind:this={errorComp}>
+	{errorMsg}
+</Message>
 
 <div class="form">
 	<div class="inputs">

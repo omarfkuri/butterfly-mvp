@@ -3,6 +3,7 @@
 
   import type { LayoutProps } from "./$types";
   import { afterNavigate } from "$app/navigation";
+    import Message from "$lib/comp/Message.svelte";
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);
@@ -18,7 +19,7 @@
 
 		if (!res.ok)
 		{
-			alert(`Failed to log out`)
+			await showMessage(`Failed to log out`)
 		}
 		else
 			location.href = ""
@@ -27,6 +28,15 @@
 	const showOn = 100;
 	let hidden = $state(true);
 	let container = $state<HTMLDivElement>();
+
+	let errorComp = $state<Message>();
+	let errorMsg = $state("");
+
+	async function showMessage(content: string)
+	{
+		errorMsg = content;
+		return errorComp?.show();
+	}
 
 	function onScroll()
 	{
@@ -55,6 +65,10 @@
 
 
 </script>
+
+<Message bind:this={errorComp}>
+	{errorMsg}
+</Message>
 
 <div class="content">
 	<div class="side-wrapper">

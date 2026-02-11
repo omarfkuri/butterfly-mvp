@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
 	import type { Page, Post, Topic, User } from '$lib';
+    import Message from './Message.svelte';
   import PostElem from './Post.svelte';
 
 	interface Props
@@ -25,6 +26,9 @@
 
 	let posts = $state<Post[]>(page.content);
 	let lastElement = $state<HTMLElement | null>(null);
+
+	let errorComp = $state<Message>();
+	let errorMsg = $state("");
 
 	if (browser)
 		$effect(() => {
@@ -85,11 +89,17 @@
 			return () => source.close();
 		});
 
+	async function showMessage(content: string)
+	{
+		errorMsg = content;
+		return errorComp?.show();
+	}
+
 	async function loadMorePosts()
 	{
 		if (page.last)
 		{
-			alert("No posts to show...");
+			await showMessage("No posts to show...");
 			return;
 		}
 
@@ -104,6 +114,10 @@
 	}
 
 </script>
+
+<Message bind:this={errorComp}>
+	{errorMsg}
+</Message>
 
 {#each posts as post, i}
 	{#if !page.last && i + 1 == posts.length}

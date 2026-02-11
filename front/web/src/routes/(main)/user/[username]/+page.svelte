@@ -1,5 +1,6 @@
 <script lang="ts">
   import Back from "$lib/comp/Back.svelte";
+    import Message from "$lib/comp/Message.svelte";
   import PostList from "$lib/comp/PostList.svelte";
 	import type { PageProps } from "./$types";
 	
@@ -16,6 +17,15 @@
 
 	// svelte-ignore state_referenced_locally
 	let following = $state(doesFollow);
+
+	let errorComp = $state<Message>();
+	let errorMsg = $state("");
+
+	async function showMessage(content: string)
+	{
+		errorMsg = content;
+		return errorComp?.show();
+	}
 	
 	async function follow()
 	{
@@ -24,7 +34,7 @@
 		});
 
 		if (!res.ok)
-			alert(`Failed to follow ${username}`)
+			await showMessage(`Failed to follow ${username}`)
 		
 		else
 			following = true;
@@ -37,13 +47,17 @@
 		});
 
 		if (!res.ok)
-			alert(`Failed to unfollow ${username}`)
+			await showMessage(`Failed to unfollow ${username}`)
 		
 		else
 			following = false;
 	}
 
 </script>
+
+<Message bind:this={errorComp}>
+	{errorMsg}
+</Message>
 
 <svelte:head>
 	<title>SO - {username}</title>
@@ -175,10 +189,10 @@
 
 		.card();
 
-		.follow-btn
-		{
+		// .follow-btn
+		// {
 
-		}
+		// }
 
 		.followers, .following
 		{

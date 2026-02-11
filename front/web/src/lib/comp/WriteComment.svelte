@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Message from "./Message.svelte";
+
 
 	interface Props
 	{
@@ -10,13 +12,30 @@
 	let title = $state("");
 	let content = $state("");
 
+	const disabled = $derived(title.length == 0 || content.length == 0);
+
+	let errorComp = $state<Message>();
+	let errorMsg = $state("");
+
 	async function onPost()
 	{
 		if (title.length == 0)
-			return alert("No title was provided");
+			return await showMessage("No title was provided");
+
+		if (title.length < 2 || title.length > 100)
+			return await showMessage("Title must be between 4 and 100 letters");
+
+		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(title))
+			return await showMessage("Title did not match expected pattern");
 
 		if (content.length == 0)
-			return alert("No content was provided");
+			return await showMessage("No content was provided");
+
+		if (content.length < 2 || content.length > 512)
+			return await showMessage("Content must be between 4 and 512 letters");
+
+		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(content))
+			return await showMessage("Content did not match expected pattern");
 
 		const res = await fetch(`/server/posts/comments/create/${id}`, {
 			method: "POST",
@@ -28,7 +47,7 @@
 
 		if (!res.ok)
 		{
-			alert(`Failed to post`)
+			await showMessage(`Failed to post`)
 		}
 		else
 		{
@@ -36,9 +55,17 @@
 		}
 	}
 
-	const disabled = $derived(title.length == 0 || content.length == 0);
+	async function showMessage(content: string)
+	{
+		errorMsg = content;
+		return errorComp?.show();
+	}
 
 </script>
+
+<Message bind:this={errorComp}>
+	{errorMsg}
+</Message>
 
 <div class="form">
 	<div class="inputs">

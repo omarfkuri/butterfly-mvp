@@ -1,6 +1,7 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
 	import type { Post, User } from '$lib';
+    import Message from './Message.svelte';
 	import This from "./Post.svelte"
 
 	interface Props
@@ -41,6 +42,15 @@
 		hour12: false
 	}));
 
+	let errorComp = $state<Message>();
+	let errorMsg = $state("");
+
+	async function showMessage(content: string)
+	{
+		errorMsg = content;
+		return errorComp?.show();
+	}
+
 	async function getParent(id: string)
 	: Promise<Post>
 	{
@@ -61,7 +71,7 @@
 			});
 
 			if (!res.ok)
-				return alert(await res.text());
+				return showMessage(await res.text());
 
 			likedByMe = false;
 			likeCount -= 1;
@@ -74,7 +84,7 @@
 			});
 
 			if (!res.ok)
-				return alert(await res.text());
+				return showMessage(await res.text());
 
 			likedByMe = true;
 			likeCount += 1;
@@ -82,6 +92,10 @@
 	}
 
 </script>
+
+<Message bind:this={errorComp}>
+	{errorMsg}
+</Message>
 
 <article
 	class="post"
