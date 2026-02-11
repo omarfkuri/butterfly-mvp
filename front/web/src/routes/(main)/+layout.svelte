@@ -60,7 +60,13 @@
 	<div class="side-wrapper">
 		<div class="side">
 			<div class="title">
-				<a href="/" data-sveltekit-preload-data="off">SO</a>
+				<a href="/" data-sveltekit-preload-data="off">
+					<img 
+						src="/image/brand/Icon.png" 
+						alt="Logo"
+						draggable="false"
+					/>
+				</a>
 			</div>
 
 			<div class="buttons">
@@ -139,9 +145,18 @@
 
 			padding: .5em;
 
-			.title a
+			.title
 			{
-				color: @fg1;
+				width: 1em;
+				height: 1em;
+
+				img
+				{
+					width: 100%;
+					height: 100%;
+
+					object-fit: cover;
+				}
 			}
 
 			.buttons
