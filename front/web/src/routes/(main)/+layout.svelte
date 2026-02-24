@@ -3,8 +3,9 @@
 
   import type { LayoutProps } from "./$types";
   import { afterNavigate } from "$app/navigation";
-    import Message from "$lib/comp/Message.svelte";
-    import Confirm from "$lib/comp/Confirm.svelte";
+  import Message from "$lib/comp/Message.svelte";
+  import Confirm from "$lib/comp/Confirm.svelte";
+    import ImageCircle from "$lib/comp/ImageCircle.svelte";
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);
@@ -99,9 +100,18 @@
 					</div>
 					<div class="account-menu-wrapper">
 						<div class="account-menu" data-sveltekit-preload-data="off">
-							<span class="account-menu-title">{user.username}</span>
+							<div class="account-menu-top">
+								<ImageCircle
+									src={user.profilePictureURL || "images/user.png"}
+									{user} 
+									height=".8em" 
+								/>
+								<span class="account-menu-title">
+									{user.name}
+								</span>
+							</div>
 							<button 
-								class="account-menu-item not-dark"
+								class="unset account-menu-item not-dark"
 								onclick={onLogOut}
 							>
 								<div 
@@ -110,7 +120,7 @@
 								<span class="account-menu-item-title">Log Out</span>
 							</button>
 							<a
-								class="account-menu-item"
+								class="unset account-menu-item"
 								href="/profile"
 							>
 								<div 
@@ -268,17 +278,25 @@
 				display: flex;
 				flex-direction: column;
 
+				font-size: .625em;
 
 				background: @bg3;
 				box-shadow: 0 4px 8px #999;
 
-				.account-menu-title
+				.account-menu-top
 				{
-					font-size: .5em;
-					width: 100%;
+					display: flex;
+					align-items: center;
+					gap: .2em;
+
 					padding: .5em;
 
-					text-align: left;
+					.account-menu-title
+					{
+						width: 100%;
+
+						text-align: left;
+					}
 				}
 
 				.account-menu-item
@@ -287,7 +305,6 @@
 					align-items: center;
 					gap: .25em;
 
-					font-size: .625em;
 					height: min-content;
 					padding: .5em;
 

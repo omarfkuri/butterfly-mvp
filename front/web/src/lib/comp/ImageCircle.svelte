@@ -12,7 +12,7 @@
 
 </script>
 
-<div class="image" style:width={height} style:height={height}>
+<div class="image" style:--size={height}>
 	<img
 		{src}
 		alt="{user.name} - Profile Picture"
@@ -23,9 +23,12 @@
 <style lang="less">
 	@import (reference) "../styles/vars.less";
 
+	@size: var(--size);
+
 	.image
 	{
-		aspect-ratio: 1 / 1;
+		width: @size;
+		height: @size;
 
 		overflow: hidden;
 		border-radius: 50%;
