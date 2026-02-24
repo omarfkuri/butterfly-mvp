@@ -7,6 +7,7 @@
     import Message from './Message.svelte';
     import NameDisplay from './NameDisplay.svelte';
 	import This from "./Post.svelte"
+    import ShareButton from './ShareButton.svelte';
 
 	interface Props
 	{
@@ -120,58 +121,51 @@
 		onclick={() => goto(`/post/${id}`)}
 		onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
 	>
-		<div class="top">
-			<div class="side">
-				<ImageCircle
-					src={author.profilePictureURL || "/image/user.png"}
-					user={author}
-					height=1.5em
-				/>
+		<div class="side">
+			<ImageCircle
+				src={author.profilePictureURL || "/image/user.png"}
+				user={author}
+				height=1.5em
+			/>
+		</div>
+		<div class="content">
+			<div class="content-top">
+				<div class="author">
+					<a class="unset name"
+						data-sveltekit-preload-data=false
+						href="/user/{author.username}">
+						<b>{author.name}</b>
+					</a>
+					<Handle username={author.username}/>
+				</div>
+
+				<div class="info">
+					<div class="date">{date} {time}</div>	
+				</div>
 			</div>
-			<div class="content">
-				<div class="content-top">
-					<div class="author">
-						<a class="unset name"
-							data-sveltekit-preload-data=false
-							href="/user/{author.username}">
-							<b>{author.name}</b>
-						</a>
-						<Handle username={author.username}/>
-					</div>
 
-					<div class="info">
-						<div class="date">{date} {time}</div>	
-					</div>
-				</div>
+			<div class="content-bottom">
+				<span class="title">{title}</span>
+				<span class="content">{content}</span>
+			</div>
+		</div>
+	</div>
+	<div class="bottom">
+		<LikeButton {post} />
 
-				<div class="content-bottom">
-					<span class="title">{title}</span>
-					<span class="content">{content}</span>
-				</div>
+		<div class="icon-button">
+			<div class="icon material-icons">
+				chat_bubble
 			</div>
 		</div>
 
-		<div class="bottom">
-			<LikeButton {post} />
-
-			<div class="icon-button">
-				<div class="icon material-icons">
-					chat_bubble
-				</div>
+		<a class="unset icon-button" href="/post/{id}">
+			<div class="icon material-icons">
+				visibility
 			</div>
+		</a>
 
-			<div class="icon-button">
-				<div class="icon material-icons">
-					visibility
-				</div>
-			</div>
-
-			<div class="icon-button">
-				<div class="icon material-icons">
-					arrow_outward
-				</div>
-			</div>
-		</div>
+		<ShareButton {post}/>
 	</div>
 </article>
 
@@ -181,23 +175,17 @@
 	.post
 	{
 		.card();
-		cursor: pointer;
+		
+		display: flex;
+		flex-direction: column;
 	}
 
 	.main
 	{
 		display: flex;
-		flex-direction: column;
 		gap: .75em;
-	}
 
-	.top
-	{
-		display: flex;
-
-		> * {
-			padding: .25em;
-		}
+		cursor: pointer;
 
 		.content
 		{
@@ -248,6 +236,15 @@
 					font-size: .9em;
 				}
 			}
+		}
+	}
+
+	.top
+	{
+		display: flex;
+
+		> * {
+			padding: .25em;
 		}
 	}
 

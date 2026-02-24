@@ -10,6 +10,7 @@
   import Handle from "$lib/comp/Handle.svelte";
     import type { Post } from "$lib";
     import LikeButton from "$lib/comp/LikeButton.svelte";
+    import ShareButton from "$lib/comp/ShareButton.svelte";
 	
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
@@ -111,17 +112,7 @@
 			</div>
 		</button>
 
-	<!-- 	<div class="icon-button">
-			<div class="icon material-icons">
-				visibility
-			</div>
-		</div> -->
-
-		<div class="icon-button">
-			<div class="icon material-icons">
-				arrow_outward
-			</div>
-		</div>
+		<ShareButton {post} />
 	</div>
 </article>
 

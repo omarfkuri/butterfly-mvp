@@ -1,11 +1,7 @@
 <script lang="ts">
      import { goto } from '$app/navigation';
-	import type { Post, User } from '$lib';
-    import Handle from './Handle.svelte';
-    import ImageCircle from './ImageCircle.svelte';
+	import type { Post } from '$lib';
     import Message from './Message.svelte';
-    import NameDisplay from './NameDisplay.svelte';
-	import This from "./Post.svelte"
 
 	interface Props
 	{
