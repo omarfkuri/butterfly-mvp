@@ -3,6 +3,7 @@
 	import type { Post, User } from '$lib';
     import Handle from './Handle.svelte';
     import ImageCircle from './ImageCircle.svelte';
+    import LikeButton from './LikeButton.svelte';
     import Message from './Message.svelte';
     import NameDisplay from './NameDisplay.svelte';
 	import This from "./Post.svelte"
@@ -151,34 +152,7 @@
 		</div>
 
 		<div class="bottom">
-			<label class="likes">
-				<input
-					type="checkbox" 
-					bind:checked={likedByMe}
-					onclick={e =>  {
-						e.stopPropagation();
-					}}
-					oninput={toggleLike}
-				>
-				<span 
-					class="like-icon material-icons"
-					role="button"
-					tabindex="0"
-					onclick={e => e.stopPropagation()}
-					onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
-					>
-					favorite
-				</span>
-				<span 
-					class="like-count"
-					role="button"
-					tabindex="0"
-					onclick={e => e.stopPropagation()}
-					onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
-					>
-					{likeCount}
-				</span>
-			</label>
+			<LikeButton {post} />
 
 			<div class="icon-button">
 				<div class="icon material-icons">
@@ -259,11 +233,19 @@
 
 			.content-bottom
 			{
+				display: flex;
+				flex-direction: column;
+
 				width: 100%;
 
 				.title
 				{
 					font-weight: bold;
+				}
+
+				.post-content
+				{
+					font-size: .9em;
 				}
 			}
 		}
@@ -276,47 +258,6 @@
 		gap: .5em;
 
 		padding-block: .5em;
-	}
-
-	.likes
-	{
-		display: flex;
-		align-items: center;
-		gap: .1em;
-
-		font-size: .8em;
-		cursor: pointer;
-
-		.no-select();
-
-		input
-		{
-			display: none;
-
-			&:checked + .like-icon,
-			&:checked + .like-icon + .like-count
-			{
-				color: @primary;
-			}
-
-			&:not(:checked) + .like-icon,
-			&:not(:checked) + .like-icon + .like-count
-			{
-				color: @fg3;
-			}
-		}
-
-		.like-icon
-		{
-			font-size: 1em;
-			line-height: 1;
-		}
-
-		.like-count
-		{
-			font-size: .8em;
-			line-height: 1;
-		}
 	}
 
 	.icon-button

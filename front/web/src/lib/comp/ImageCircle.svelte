@@ -12,7 +12,7 @@
 
 </script>
 
-<div class="image" style:height={height}>
+<div class="image" style:width={height} style:height={height}>
 	<img
 		{src}
 		alt="{user.name} - Profile Picture"

@@ -11,7 +11,7 @@
 
 <div class="menu">
 	<button
-		class="default"
+		class="unset"
 		onclick={() => history.back()}
 	>←</button>
 	<span class="title">{title}</span>

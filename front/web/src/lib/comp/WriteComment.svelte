@@ -71,6 +71,7 @@
 	<div class="inputs">
 		<label>
 			<input
+				id=title-input
 				required
 				name="title" 
 				type="text" 

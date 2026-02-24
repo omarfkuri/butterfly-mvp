@@ -44,24 +44,19 @@ p
 	all: unset;
 }
 
-a
+a:not(.unset)
 {
 	.doto(600);
 	color: @primary;
 	text-decoration: none;
+
+	&.dark
+	{
+		color: @primaryDark;
+	}
 }
 
-a.dark
-{
-	color: @primaryDark;
-}
-
-button.default
-{
-	color: @fg1;
-}
-
-button:not(.default)
+button:not(.unset)
 {
 	font-size: .6em;
 	background: none;
