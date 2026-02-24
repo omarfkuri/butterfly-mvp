@@ -1,17 +1,20 @@
 <script lang="ts">
   import Back from "$lib/comp/Back.svelte";
     import Message from "$lib/comp/Message.svelte";
+    import NameDisplay from "$lib/comp/NameDisplay.svelte";
   import PostList from "$lib/comp/PostList.svelte";
 	import type { PageProps } from "./$types";
 	
 	const { data, params }: PageProps = $props();
 	const {
+		author,
 		postsPage,
 		user,
 		doesFollow,
 		isSelf,
 		followerCount,
 		followingCount,
+		profile,
 	} = $derived(data);
 	const { username } = $derived(params);
 
@@ -70,21 +73,10 @@
 		<img
 			src="/image/cover.png" 
 			alt="Cover"
-			draggable={false}
+			draggable=false
 		>
 	</div>
-	<div class="info">
-		<div class="profile-picture">
-			<img
-				src="/image/user.png" 
-				alt="User"
-				draggable={false}
-			>
-		</div>
-		<div class="bottom">
-			<div class="title">{username}</div>
-		</div>
-	</div>
+	<NameDisplay user={author} {profile} fontSize="1em"/>
 </div>
 
 <div class="controls">
@@ -123,6 +115,8 @@
 			@bg1, 
 			transparent 50%
 		);
+		
+		padding-top: 4em;
 
 		.cover
 		{
@@ -141,43 +135,6 @@
 				height: 100%;
 
 				object-fit: cover;
-			}
-		}
-
-		.info
-		{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-
-			margin-top: 3em;
-			width: min-content;
-
-			.profile-picture
-			{
-				width: 50px;
-				height: 50px;
-
-				overflow: hidden;
-				border-radius: 50%;
-
-				img
-				{
-					width: 100%;
-					height: 100%;
-
-					object-fit: cover;
-				}
-			}
-
-			.bottom
-			{
-				display: flex;
-
-				.title
-				{
-					text-align: center;
-				}
 			}
 		}
 	}

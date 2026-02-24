@@ -30,64 +30,64 @@
 	let errorComp = $state<Message>();
 	let errorMsg = $state("");
 
-	if (browser)
-		$effect(() => {
-			const path = `/server/events/posts/${topic}`;
+	// if (browser)
+	// 	$effect(() => {
+	// 		const path = `/server/events/posts/${topic}`;
 
-			const source = new EventSource(path, {
-				withCredentials: true
-			});
+	// 		const source = new EventSource(path, {
+	// 			withCredentials: true
+	// 		});
 
-			async function getPost(id: string): Promise<Post>
-			{
-				const res = await fetch(`/server/posts/get/${id}`);
-				return res.json();
-			}
+	// 		async function getPost(id: string): Promise<Post>
+	// 		{
+	// 			const res = await fetch(`/server/posts/get/${id}`);
+	// 			return res.json();
+	// 		}
 
-			source.addEventListener('created', async function (e)
-			{
-				const post = JSON.parse(e.data) as Post;
-				posts = [post, ...posts];
-			});
+	// 		source.addEventListener('created', async function (e)
+	// 		{
+	// 			const post = JSON.parse(e.data) as Post;
+	// 			posts = [post, ...posts];
+	// 		});
 
-			source.addEventListener('deleted', async function (e)
-			{
-				const id = e.data;
-				posts = posts.filter(post => post.id != id);
-			});
+	// 		source.addEventListener('deleted', async function (e)
+	// 		{
+	// 			const id = e.data;
+	// 			posts = posts.filter(post => post.id != id);
+	// 		});
 
-			source.addEventListener('updated', async function (e)
-			{
-				const id = e.data;
-				const found = posts.find(post => post.id == id);
+	// 		source.addEventListener('updated', async function (e)
+	// 		{
+	// 			const id = e.data;
+	// 			const found = posts.find(post => post.id == id);
 
-				if (!found)
-					return;
+	// 			if (!found)
+	// 				return;
 
-				const post = await getPost(id);
+	// 			const post = await getPost(id);
 
-				const i = posts.findIndex(post => post.id == id);
-				posts[i] = post;
-			});
+	// 			const i = posts.findIndex(post => post.id == id);
+	// 			posts[i] = post;
+	// 		});
 
-			if (lastElement)
-			{
-				const options = {
-					root: null,
-					rootMargin: '0px',
-					threshold: 0.5
-				};
+	// 		if (lastElement)
+	// 		{
+	// 			const options = {
+	// 				root: null,
+	// 				rootMargin: '0px',
+	// 				threshold: 0.5
+	// 			};
 
-				const observer = new IntersectionObserver(([e]) => {
-					if (e?.isIntersecting)
-						loadMorePosts();
-				}, options);
+	// 			const observer = new IntersectionObserver(([e]) => {
+	// 				if (e?.isIntersecting)
+	// 					loadMorePosts();
+	// 			}, options);
 
-    		observer.observe(lastElement);
-    	}
+  //   		observer.observe(lastElement);
+  //   	}
 
-			return () => source.close();
-		});
+	// 		return () => source.close();
+	// 	});
 
 	async function showMessage(content: string)
 	{

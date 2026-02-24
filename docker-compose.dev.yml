@@ -15,6 +15,9 @@ services:
     environment:
       - SERVER_PORT=${BACK_PORT}
       - SPRING_PROFILES_ACTIVE=dev
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
 
   web:
     container_name: social-web

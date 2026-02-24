@@ -76,11 +76,9 @@ public class PostController
     }
     
     @GetMapping("/get/{id}")
-    public ResponseEntity<PostDto> getPublicPost(@PathVariable Long id, Authentication auth)
+    public PostDto getPublicPost(@PathVariable Long id, Authentication auth)
     {
-        return postService.getPostById(auth.getName(), id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
+        return postService.getPostById(auth.getName(), id);
     }
     
     @PostMapping("/create")

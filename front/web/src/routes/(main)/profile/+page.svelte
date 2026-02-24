@@ -1,11 +1,39 @@
 <script lang="ts">
+  import { enhance } from "$app/forms";
   import Back from "$lib/comp/Back.svelte";
+  import NameDisplay from "$lib/comp/NameDisplay.svelte";
   import PostList from "$lib/comp/PostList.svelte";
   import WritePost from "$lib/comp/WritePost.svelte";
 	import type { PageProps } from "./$types";
 	
-	const { data }: PageProps = $props();
-	const { postsPage, user } = $derived(data);
+	const { data, form }: PageProps = $props();
+	const { postsPage, user, profile } = $derived(data);
+
+	let profileImgInput = $state<HTMLInputElement>()
+	let coverImgInput = $state<HTMLInputElement>()
+
+	let profileImgDialog = $state<HTMLDialogElement>()
+	let coverImgDialog = $state<HTMLDialogElement>()
+
+	function onProfileChoose()
+	{
+		profileImgDialog?.showModal();
+	}
+
+	function onCoverChoose()
+	{
+		coverImgDialog?.showModal();
+	}
+
+	function onProfileSelect()
+	{
+		profileImgInput?.click();
+	}
+
+	function onCoverSelect()
+	{
+		coverImgInput?.click();
+	}
 
 </script>
 
@@ -18,22 +46,70 @@
 <div class="profile">
 	<div class="cover">
 		<img
-			src="/image/cover.png" 
-			alt="Cover"
-			draggable={false}
+			src={profile.coverPicture || "/image/cover.png"}
+			alt="{user.name} - Cover"
+			draggable=false
 		>
 	</div>
-	<div class="info">
-		<div class="profile-picture">
-			<img
-				src="/image/user.png" 
-				alt="User"
-				draggable={false}
-			>
-		</div>
-		<div class="title">{user.username}</div>
-	</div>
+	<NameDisplay {user} {profile} fontSize="1em"/>
 </div>
+
+<div class="actions">
+		<button onclick={onProfileChoose}>Change Profile Picture</button>
+		<button onclick={onCoverChoose}>Change Cover Picture</button>
+</div>
+
+<dialog bind:this={profileImgDialog}>
+
+	{#if form}
+		<div class="error">
+			{form}
+		</div>
+	{/if}
+	
+	<form
+		method="POST"
+		action="?/setProfilePicture"
+		enctype="multipart/form-data"
+		use:enhance
+	>
+		<button onclick={onProfileSelect}>Upload File</button>
+		<input
+			hidden
+			required
+			type="file"
+			name="file"
+			bind:this={profileImgInput}
+		/>
+		<button>Set Profile Picture</button>
+	</form>
+</dialog>
+
+<dialog bind:this={coverImgDialog}>
+
+	{#if form}
+		<div class="error">
+			{form}
+		</div>
+	{/if}
+
+	<form
+		method="POST"
+		action="?/setCoverPicture"
+		enctype="multipart/form-data"
+		use:enhance
+	>
+		<button onclick={onCoverSelect}>Upload File</button>
+		<input
+			hidden
+			required
+			type="file"
+			name="file"
+			bind:this={coverImgInput}
+		/>
+		<button>Set Cover Picture</button>
+	</form>
+</dialog>
 
 <WritePost />
 
@@ -43,11 +119,18 @@
 <style lang="less">
 	@import (reference) "../../../lib/styles/vars.less";
 	
+	.hide
+	{
+		display: none;
+	}
+
 	.profile
 	{
 		.card(false);
 
 		position: relative;
+
+		padding-top: 4em;
 
 		background: linear-gradient(10deg, 
 			@bg1, 
@@ -73,34 +156,11 @@
 				object-fit: cover;
 			}
 		}
+	}
 
-		.info
-		{
-			margin-top: 3em;
-			width: min-content;
-
-			.profile-picture
-			{
-				width: 50px;
-				height: 50px;
-
-				overflow: hidden;
-				border-radius: 50%;
-
-				img
-				{
-					width: 100%;
-					height: 100%;
-
-					object-fit: cover;
-				}
-			}
-
-			.title
-			{
-				text-align: center;
-			}
-		}
+	.actions
+	{
+		.card();
 	}
 
 </style>

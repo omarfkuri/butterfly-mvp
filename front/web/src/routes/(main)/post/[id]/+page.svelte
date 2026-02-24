@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>SO - {post.title}, by {post.username}</title>
+	<title>SO - {post.title}, by {post.author.username}</title>
 </svelte:head>
 
 <Back title={post.title}/>
@@ -38,7 +38,7 @@
 <Post {post} {user} />
 
 {#if user}
-	{#if post.username == user.username}
+	{#if post.author.username == user.username}
 		<div class="buttons">
 			<form method="POST" action="?/updatePost" use:enhance>
 				<button>Update</button>

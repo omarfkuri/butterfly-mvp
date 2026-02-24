@@ -35,7 +35,7 @@ export async function apiFetch(
 export async function onlyUserRoute(event: RequestEvent)
 : Promise<User>
 {
-  const res = await apiFetch(event, '/me');
+  const res = await apiFetch(event, '/user/me');
   
   if (res.status === 401)
     throw redirect(302, '/access');
@@ -46,7 +46,7 @@ export async function onlyUserRoute(event: RequestEvent)
 export async function onlyGuestRoute(event: RequestEvent)
 : Promise<void>
 {
-  const res = await apiFetch(event, '/me');
+  const res = await apiFetch(event, '/user/me');
 
   if (res.status !== 401)
     throw redirect(302, '/');

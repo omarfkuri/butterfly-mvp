@@ -97,6 +97,14 @@
 						<label>
 							<span class="material-icons icon">person</span>
 							<input
+								name="name"
+								type="text"
+								placeholder="Name"
+							>
+						</label>
+						<label>
+							<span class="material-icons icon">badge</span>
+							<input
 								name="username"
 								type="text"
 								placeholder="Username"
@@ -296,7 +304,7 @@
 
 				.icon
 				{
-					font-size: 1em;
+					font-size: .9em;
 					color: @fg3;
 				}
 			}

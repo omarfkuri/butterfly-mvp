@@ -1,7 +1,10 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
 	import type { Post, User } from '$lib';
+    import Handle from './Handle.svelte';
+    import ImageCircle from './ImageCircle.svelte';
     import Message from './Message.svelte';
+    import NameDisplay from './NameDisplay.svelte';
 	import This from "./Post.svelte"
 
 	interface Props
@@ -22,7 +25,7 @@
 	const {
 		title,
 		content,
-		username,
+		author,
 		id,
 		createdAt,
 		parentId,
@@ -117,54 +120,82 @@
 		onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
 	>
 		<div class="top">
-			<span class="title">{title}</span>
-			<span class="content">{content}</span>
+			<div class="side">
+				<ImageCircle
+					src={author.profilePictureURL || "/image/user.png"}
+					user={author}
+					height=1.5em
+				/>
+			</div>
+			<div class="content">
+				<div class="content-top">
+					<div class="author">
+						<a class="unset name"
+							data-sveltekit-preload-data=false
+							href="/user/{author.username}">
+							<b>{author.name}</b>
+						</a>
+						<Handle username={author.username}/>
+					</div>
+
+					<div class="info">
+						<div class="date">{date} {time}</div>	
+					</div>
+				</div>
+
+				<div class="content-bottom">
+					<span class="title">{title}</span>
+					<span class="content">{content}</span>
+				</div>
+			</div>
 		</div>
 
 		<div class="bottom">
-
-			<div class="top-bottom">
-				<span class="author" data-sveltekit-preload-data="off">
-					By
-					<a href="/user/{username}">
-						{#if user && username == user?.username}
-							me
-						{:else}
-							{username}
-						{/if}
-					</a>
-				</span>
-				<label class="likes">
-					<input
-						type="checkbox" 
-						bind:checked={likedByMe}
-						onclick={e =>  {
-							e.stopPropagation();
-						}}
-						oninput={toggleLike}
+			<label class="likes">
+				<input
+					type="checkbox" 
+					bind:checked={likedByMe}
+					onclick={e =>  {
+						e.stopPropagation();
+					}}
+					oninput={toggleLike}
+				>
+				<span 
+					class="like-icon material-icons"
+					role="button"
+					tabindex="0"
+					onclick={e => e.stopPropagation()}
+					onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
 					>
-					<span 
-						class="like-icon material-icons"
-						role="button"
-						tabindex="0"
-						onclick={e => e.stopPropagation()}
-						onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
-						>
-						favorite
-					</span>
-					<span 
-						class="like-count"
-						role="button"
-						tabindex="0"
-						onclick={e => e.stopPropagation()}
-						onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
-						>
-						{likeCount}
-					</span>
-				</label>
+					favorite
+				</span>
+				<span 
+					class="like-count"
+					role="button"
+					tabindex="0"
+					onclick={e => e.stopPropagation()}
+					onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
+					>
+					{likeCount}
+				</span>
+			</label>
+
+			<div class="icon-button">
+				<div class="icon material-icons">
+					chat_bubble
+				</div>
 			</div>
-			<div class="info">
-				<div class="date">{date} {time}</div>	
+
+			<div class="icon-button">
+				<div class="icon material-icons">
+					visibility
+				</div>
+			</div>
+
+			<div class="icon-button">
+				<div class="icon material-icons">
+					arrow_outward
+				</div>
 			</div>
 		</div>
 	</div>
@@ -175,132 +206,131 @@
 
 	.post
 	{
-		display: flex;
-		flex-direction: column;
-		gap: .75em;
-
-		width: 100%;
-
 		.card();
-
-		&.isChild
-		{
-			border: none;
-			border-left: 10px solid @primary;
-
-			background: @bg3;
-		}
+		cursor: pointer;
 	}
 
 	.main
 	{
 		display: flex;
 		flex-direction: column;
-
-		cursor: pointer;
+		gap: .75em;
 	}
 
 	.top
 	{
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		gap: .125em;
 
-		.title
-		{
-			font-weight: bold;
-			font-size: 1.1em;
-
-			word-break: break-all;
+		> * {
+			padding: .25em;
 		}
 
 		.content
 		{
-			font: .65em monospace;
-			padding-bottom: .5em;
+			display: flex;
+			flex-direction: column;
+			gap: .5em;
 
-			word-break: break-all;
+			width: 100%;
+
+			.content-top
+			{
+				display: flex;
+				flex-direction: column;
+
+				.author
+				{
+					display: flex;
+					align-items: center;
+					gap: .25em;
+
+					.name
+					{
+
+					}
+				}
+
+				.info
+				{
+					font-size: .7em;
+					color: @fg3;
+				}
+			}
+
+			.content-bottom
+			{
+				width: 100%;
+
+				.title
+				{
+					font-weight: bold;
+				}
+			}
 		}
 	}
 
 	.bottom
 	{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
+		gap: .5em;
+
+		padding-block: .5em;
+	}
+
+	.likes
+	{
+		display: flex;
 		align-items: center;
-		
+		gap: .1em;
+
 		font-size: .8em;
+		cursor: pointer;
 
-		.info
+		.no-select();
+
+		input
 		{
-			display: flex;
-			justify-content: end;
-			gap: .5em;
+			display: none;
 
-			width: 100%;
-			text-align: left;
-			font-size: .8em;
-			color: @fg2;
+			&:checked + .like-icon,
+			&:checked + .like-icon + .like-count
+			{
+				color: @primary;
+			}
 
-			.date
+			&:not(:checked) + .like-icon,
+			&:not(:checked) + .like-icon + .like-count
 			{
 				color: @fg3;
 			}
 		}
-	}
 
-	.top-bottom
-	{
-		display: flex;
-		align-items: center;
-		gap: .5em;
-
-		.author
+		.like-icon
 		{
-			font-size: .7em;
-			white-space: nowrap;
+			font-size: 1em;
+			line-height: 1;
 		}
 
-		.likes
+		.like-count
 		{
-			display: flex;
-			align-items: center;
-			gap: .1em;
-
 			font-size: .8em;
-			cursor: pointer;
+			line-height: 1;
+		}
+	}
 
-			.no-select();
+	.icon-button
+	{
+		color: @fg3;
+		
+		font-size: .8em;
+		line-height: 0;
+		
+		cursor: pointer;
 
-			input
-			{
-				display: none;
-
-				&:checked + .like-icon,
-				&:checked + .like-icon + .like-count
-				{
-					color: @primary;
-				}
-
-				&:not(:checked) + .like-icon,
-				&:not(:checked) + .like-icon + .like-count
-				{
-					color: @fg3;
-				}
-			}
-
-			.like-icon
-			{
-				font-size: 1em;
-				line-height: 1;
-			}
-
-			.like-count
-			{
-				font-size: .8em;
-				line-height: 1;
-			}
+		.icon
+		{
+			font-size: 1em;
 		}
 	}
 </style>

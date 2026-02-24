@@ -35,15 +35,21 @@ export const actions = {
   async register(event) {
     try {
       const data = await event.request.formData();
+      const name = data.get("name") as string;
       const username = data.get("username") as string;
       const password = data.get("password") as string;
-      const v = verifyParameters(username, password);
-      if (v != null)
-        return v;
+      const v1 = verifyName(name);
+      if (v1 != null)
+        return v1;
+
+      const v2 = verifyParameters(username, password);
+      if (v2 != null)
+        return v2;
       
       const res = await apiFetch(event, '/auth/register', {
         method: 'POST',
         body: new URLSearchParams({
+          name,
           username,
           password
         }),
@@ -64,10 +70,27 @@ export const actions = {
     catch(error)
     {
       if (error instanceof redirect) throw error;
-      return fail(400, { error: String(error) });
+      return fail(400, { error: JSON.stringify(error) });
     }
   }
 } satisfies Actions;
+
+function verifyName(name: string)
+{
+  if (name.length == 0)
+    return fail(400, { error: "No name provided" })
+
+  if (name.length < 4 || name.length > 24)
+    return fail(400, { error: "Name must be between 4 and 24 characters" })
+
+  if (!/^[a-zA-Z0-9 ]+$/.test(name))
+    return fail(400, { 
+      error: "Name must only contain numbers, letters, dot and underscore" 
+    })
+
+  return null;
+}
+
 
 function verifyParameters(username: string, password: string)
 {
@@ -89,7 +112,7 @@ function verifyParameters(username: string, password: string)
   if (password.length < 4 || password.length > 24)
     return fail(400, { error: "Password must be between 4 and 24 characters" })
 
-  if (!/^[a-zA-Z0-9#]+$/.test(username))
+  if (!/^[a-zA-Z0-9#]+$/.test(password))
     return fail(400, { 
       error: "Password must only contain numbers, letters and #" 
     })

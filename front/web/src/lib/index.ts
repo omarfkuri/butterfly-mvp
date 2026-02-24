@@ -1,18 +1,28 @@
 // place files you want to import through the `$lib` alias in this folder.
 
 export type User = {
+	id: string
+	name: string
 	username: string
+	createdAt: string
+	profilePictureURL: string
+}
+
+export type UserProfile = {
+	profilePicture: string | null
+	coverPicture: string | null
 }
 
 export type Post = {
 	id: string
 	title: string
 	content: string
-	username: string
+	author: User
 	parentId: number
 	createdAt: string
 	likeCount: number
 	likedByMe: boolean
+	images: string[]
 }
 
 export type Topic = (

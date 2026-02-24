@@ -35,6 +35,14 @@ public class Post
       orphanRemoval = true
   )
   private List<Post> children = new ArrayList<>();
+
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+    name = "post_images",
+    joinColumns = @JoinColumn(name = "post_id"),
+    inverseJoinColumns = @JoinColumn(name = "image_id")
+  )
+  private List<Image> images = new ArrayList<>();
   
   @Column(nullable = false)
   private String username;

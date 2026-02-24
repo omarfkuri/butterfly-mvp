@@ -1,6 +1,7 @@
 package com.social.api.repository;
 
 import com.social.api.dto.PostDto;
+import com.social.api.dto.PostImageDto;
 import com.social.api.entity.Post;
 import com.social.api.entity.User;
 
@@ -28,7 +29,13 @@ public interface PostRepository extends JpaRepository<Post, Long>
       p.id,
       p.title,
       p.content,
-      p.username,
+      new com.social.api.dto.UserDto(
+        user.id,
+        user.name,
+        user.username,
+        user.createdAt,
+        profImg.key
+      ),
       p.parent.id,
       p.createdAt,
       COUNT(pl),
@@ -36,6 +43,9 @@ public interface PostRepository extends JpaRepository<Post, Long>
     )
     FROM Post p
     LEFT JOIN PostLike pl ON pl.post = p
+    LEFT JOIN User user ON user.username = p.username
+    LEFT JOIN UserProfile prof ON prof.user = user
+    LEFT JOIN prof.profilePicture profImg
     GROUP BY p
     ORDER BY p.createdAt DESC
   """)
@@ -46,7 +56,13 @@ public interface PostRepository extends JpaRepository<Post, Long>
       p.id,
       p.title,
       p.content,
-      p.username,
+      new com.social.api.dto.UserDto(
+        user.id,
+        user.name,
+        user.username,
+        user.createdAt,
+        profImg.key
+      ),
       p.parent.id,
       p.createdAt,
       COUNT(pl),
@@ -54,6 +70,9 @@ public interface PostRepository extends JpaRepository<Post, Long>
     )
     FROM Post p
     LEFT JOIN PostLike pl ON pl.post = p
+    LEFT JOIN User user ON user.username = p.username
+    LEFT JOIN UserProfile prof ON prof.user = user
+    LEFT JOIN prof.profilePicture profImg
     WHERE p.username = :username
     GROUP BY p
     ORDER BY p.createdAt DESC
@@ -69,7 +88,13 @@ public interface PostRepository extends JpaRepository<Post, Long>
       p.id,
       p.title,
       p.content,
-      p.username,
+      new com.social.api.dto.UserDto(
+        user.id,
+        user.name,
+        user.username,
+        user.createdAt,
+        profImg.key
+      ),
       p.parent.id,
       p.createdAt,
       COUNT(pl),
@@ -77,6 +102,9 @@ public interface PostRepository extends JpaRepository<Post, Long>
     )
     FROM Post p
     LEFT JOIN PostLike pl ON pl.post = p
+    LEFT JOIN User user ON user.username = p.username
+    LEFT JOIN UserProfile prof ON prof.user = user
+    LEFT JOIN prof.profilePicture profImg
     WHERE p.parent = :parent
     GROUP BY p
     ORDER BY p.createdAt ASC
@@ -92,7 +120,13 @@ public interface PostRepository extends JpaRepository<Post, Long>
       p.id,
       p.title,
       p.content,
-      p.username,
+      new com.social.api.dto.UserDto(
+        user.id,
+        user.name,
+        user.username,
+        user.createdAt,
+        profImg.key
+      ),
       p.parent.id,
       p.createdAt,
       COUNT(pl),
@@ -101,6 +135,9 @@ public interface PostRepository extends JpaRepository<Post, Long>
     FROM Post p
     JOIN UserFollow f ON p.user = f.followed
     LEFT JOIN PostLike pl ON pl.post = p
+    LEFT JOIN User user ON user.username = p.username
+    LEFT JOIN UserProfile prof ON prof.user = user
+    LEFT JOIN prof.profilePicture profImg
     WHERE f.follower = :viewer
     GROUP BY p
     ORDER BY p.createdAt DESC
@@ -113,7 +150,13 @@ public interface PostRepository extends JpaRepository<Post, Long>
       p.id,
       p.title,
       p.content,
-      p.username,
+      new com.social.api.dto.UserDto(
+        user.id,
+        user.name,
+        user.username,
+        user.createdAt,
+        profImg.key
+      ),
       p.parent.id,
       p.createdAt,
       COUNT(pl),
@@ -121,6 +164,9 @@ public interface PostRepository extends JpaRepository<Post, Long>
     )
     FROM Post p
     LEFT JOIN PostLike pl ON pl.post = p
+    LEFT JOIN User user ON user.username = p.username
+    LEFT JOIN UserProfile prof ON prof.user = user
+    LEFT JOIN prof.profilePicture profImg
     WHERE p.id = :id
     GROUP BY p
   """)
@@ -128,4 +174,19 @@ public interface PostRepository extends JpaRepository<Post, Long>
     @Param("id") Long id,
     @Param("viewer") User viewer
   );
+
+  @Query("""
+    SELECT new com.social.api.dto.PostImageDto(
+      p.id,
+      i.id,
+      i.key
+    )
+    FROM Post p
+    JOIN p.images i
+    WHERE p.id IN :postIds
+  """)
+  List<PostImageDto> findPostImages(
+    @Param("postIds") List<Long> postIds
+  );
+
 }

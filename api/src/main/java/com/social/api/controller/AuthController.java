@@ -1,7 +1,6 @@
 package com.social.api.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,18 +16,21 @@ import jakarta.validation.constraints.Size;
 public class AuthController
 {
     private final UserService userService;
-    private final PasswordEncoder encoder;
     
-    public AuthController(UserService userService, PasswordEncoder encoder)
+    public AuthController(UserService userService)
     {
         this.userService = userService;
-        this.encoder = encoder;
     }
     
     @PostMapping("/register")
     public ResponseEntity<?> register(
         @RequestParam 
-        @Size(min = 3, max = 24)
+        @Size(min = 3, max = 48)
+        @Pattern(regexp = "^[a-zA-Z0-9 ]+$")
+        String name,
+
+        @RequestParam 
+        @Size(min = 3, max = 32)
         @Pattern(regexp = "^[a-z0-9._]+$")
         String username,
         
@@ -38,16 +40,7 @@ public class AuthController
         String password
     )
     {
-        if (userService.existsByUsername(username))
-        {
-            return ResponseEntity.status(409).body("User exists");
-        }
-        
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(encoder.encode(password));
-        userService.save(user);
-        
+        userService.createUser(name, username, password);
         return ResponseEntity.ok().build();
     }
 }
