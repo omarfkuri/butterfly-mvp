@@ -5,7 +5,8 @@ export type User = {
 	name: string
 	username: string
 	createdAt: string
-	profilePictureURL: string
+	profilePictureURL: string | null
+	coverPictureURL: string | null
 }
 
 export type UserProfile = {

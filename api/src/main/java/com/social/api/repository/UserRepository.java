@@ -20,11 +20,13 @@ public interface UserRepository extends JpaRepository<User, Long>
       user.name,
       user.username,
       user.createdAt,
-      profImg.key
+      profImg.key,
+      coverImg.key
     )
     FROM User user
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
+    LEFT JOIN prof.coverPicture coverImg
     WHERE user.username = :username
   """)
   Optional<UserDto> findDtoByUsername(

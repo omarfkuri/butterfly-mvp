@@ -34,7 +34,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
         user.name,
         user.username,
         user.createdAt,
-        profImg.key
+        profImg.key,
+        coverImg.key
       ),
       p.parent.id,
       p.createdAt,
@@ -46,6 +47,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN User user ON user.username = p.username
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
+    LEFT JOIN prof.coverPicture coverImg
     GROUP BY p
     ORDER BY p.createdAt DESC
   """)
@@ -61,7 +63,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
         user.name,
         user.username,
         user.createdAt,
-        profImg.key
+        profImg.key,
+        coverImg.key
       ),
       p.parent.id,
       p.createdAt,
@@ -73,6 +76,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN User user ON user.username = p.username
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
+    LEFT JOIN prof.coverPicture coverImg
     WHERE p.username = :username
     GROUP BY p
     ORDER BY p.createdAt DESC
@@ -93,7 +97,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
         user.name,
         user.username,
         user.createdAt,
-        profImg.key
+        profImg.key,
+        coverImg.key
       ),
       p.parent.id,
       p.createdAt,
@@ -105,6 +110,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN User user ON user.username = p.username
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
+    LEFT JOIN prof.coverPicture coverImg
     WHERE p.parent = :parent
     GROUP BY p
     ORDER BY p.createdAt ASC
@@ -125,7 +131,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
         user.name,
         user.username,
         user.createdAt,
-        profImg.key
+        profImg.key,
+        coverImg.key
       ),
       p.parent.id,
       p.createdAt,
@@ -138,6 +145,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN User user ON user.username = p.username
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
+    LEFT JOIN prof.coverPicture coverImg
     WHERE f.follower = :viewer
     GROUP BY p
     ORDER BY p.createdAt DESC
@@ -155,7 +163,8 @@ public interface PostRepository extends JpaRepository<Post, Long>
         user.name,
         user.username,
         user.createdAt,
-        profImg.key
+        profImg.key,
+        coverImg.key
       ),
       p.parent.id,
       p.createdAt,
@@ -167,6 +176,7 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN User user ON user.username = p.username
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
+    LEFT JOIN prof.coverPicture coverImg
     WHERE p.id = :id
     GROUP BY p
   """)

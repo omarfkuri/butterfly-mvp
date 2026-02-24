@@ -7,5 +7,6 @@ public record UserDto(
   String name,
   String username,
   LocalDateTime createdAt,
-  String profilePictureURL
+  String profilePictureURL,
+  String coverPictureURL
 ) {}

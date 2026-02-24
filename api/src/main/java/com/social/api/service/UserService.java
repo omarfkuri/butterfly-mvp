@@ -44,7 +44,10 @@ public class UserService
                 u.createdAt(),
                 u.profilePictureURL() == null
                 ? null
-                : storageService.getPublicUrl(u.profilePictureURL())
+                : storageService.getPublicUrl(u.profilePictureURL()),
+                u.coverPictureURL() == null
+                ? null
+                : storageService.getPublicUrl(u.coverPictureURL())
             );
         });
     }

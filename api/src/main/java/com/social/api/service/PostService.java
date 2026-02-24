@@ -243,7 +243,10 @@ public class PostService
         author.createdAt(),
         author.profilePictureURL() == null
         ? null
-        : storageService.getPublicUrl(author.profilePictureURL())
+        : storageService.getPublicUrl(author.profilePictureURL()),
+        author.coverPictureURL() == null
+        ? null
+        : storageService.getPublicUrl(author.coverPictureURL())
       ),
       post.getParentId(),
       post.getCreatedAt(),

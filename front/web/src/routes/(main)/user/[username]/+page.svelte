@@ -71,8 +71,8 @@
 <div class="user-profile">
 	<div class="cover">
 		<img
-			src="/image/cover.png" 
-			alt="Cover"
+			src={profile.coverPicture || "/image/cover.png"}
+			alt="{user.name} - Cover"
 			draggable=false
 		>
 	</div>
