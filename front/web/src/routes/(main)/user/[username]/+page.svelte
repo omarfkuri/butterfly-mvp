@@ -1,7 +1,7 @@
 <script lang="ts">
   import Back from "$lib/comp/Back.svelte";
-    import Message from "$lib/comp/Message.svelte";
-    import NameDisplay from "$lib/comp/NameDisplay.svelte";
+  import Message from "$lib/comp/Message.svelte";
+  import NameDisplay from "$lib/comp/NameDisplay.svelte";
   import PostList from "$lib/comp/PostList.svelte";
 	import type { PageProps } from "./$types";
 	
@@ -14,7 +14,6 @@
 		isSelf,
 		followerCount,
 		followingCount,
-		profile,
 	} = $derived(data);
 	const { username } = $derived(params);
 
@@ -71,12 +70,12 @@
 <div class="user-profile">
 	<div class="cover">
 		<img
-			src={profile.coverPicture || "/image/cover.png"}
+			src={user.coverPictureURL || "/image/cover.png"}
 			alt="{user.name} - Cover"
 			draggable=false
 		>
 	</div>
-	<NameDisplay user={author} {profile} fontSize="1em"/>
+	<NameDisplay user={author} fontSize="1em"/>
 </div>
 
 <div class="controls">

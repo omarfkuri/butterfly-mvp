@@ -7,11 +7,9 @@ export const load: PageServerLoad = async function(event)
 {
   const { user } = await event.parent();
   const res = await apiFetch(event, `/posts/user/${user.username}`);
-  const profile = await apiFetch(event, `/profile/get/${user.username}`);
 
   return {
     postsPage: await res.json() as Page<Post>,
-    profile: await profile.json() as UserProfile,
   };
 };
 

@@ -1,21 +1,20 @@
 <script lang="ts">
   import type { User, UserProfile } from "$lib";
-    import ImageCircle from "./ImageCircle.svelte";
+  import ImageCircle from "./ImageCircle.svelte";
 	
 	interface Props
 	{
 		user: User;
-		profile: UserProfile;
 		fontSize?: string;
 	}
 
-	const { user, profile, fontSize = "1em" } : Props = $props();
+	const { user, fontSize = "1em" } : Props = $props();
 
 </script>
 
 <div class="container" style:font-size={fontSize}>
 	<ImageCircle
-		src={profile.profilePicture || "/image/user.png"}
+		src={user.profilePictureURL || "/image/user.png"}
 		{user}
 		height="2.3em"
 	/>

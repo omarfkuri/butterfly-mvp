@@ -8,7 +8,6 @@ export const load: PageServerLoad = async function(event)
   const author = await apiFetch(event, `/user/get/${event.params.username}`);
   const userPosts = await apiFetch(event, `/posts/user/${event.params.username}`);
   const doesFollow = await apiFetch(event, `/follow/follows/${event.params.username}`);
-  const profile = await apiFetch(event, `/profile/get/${event.params.username}`);
   
   const followerCount = await apiFetch(event, `/follow/follower-count/${event.params.username}`);
   const followingCount = await apiFetch(event, `/follow/following-count/${event.params.username}`);
@@ -20,6 +19,5 @@ export const load: PageServerLoad = async function(event)
     isSelf: user.username == event.params.username,
     followerCount: await followerCount.json() as number,
     followingCount: await followingCount.json() as number,
-    profile: await profile.json() as UserProfile
   };
 };

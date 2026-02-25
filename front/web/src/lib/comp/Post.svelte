@@ -106,14 +106,6 @@
 	class="post"
 	class:isChild
 >
-	{#if !isComment && !isChild && parentId != null}
-		{#await getParent(`${parentId}`)}
-			Loading parent
-		{:then post}
-			<This {post} {user} isChild={true}/>
-		{/await}
-	{/if}
-
 	<div 
 		class="main"
 		role="link"
@@ -121,16 +113,27 @@
 		onclick={() => goto(`/post/${id}`)}
 		onkeydown={(e) => e.key === 'Enter' && goto(`/post/${id}`)}
 	>
-		<div class="side">
-			<ImageCircle
-				src={author.profilePictureURL || "/image/user.png"}
-				user={author}
-				height=1.5em
-			/>
-		</div>
+		{#if !isChild}
+			<div class="side">
+				<ImageCircle
+					src={author.profilePictureURL || "/image/user.png"}
+					user={author}
+					height=1.5em
+				/>
+			</div>
+		{/if}
+
 		<div class="content">
 			<div class="content-top">
 				<div class="author">
+					{#if isChild}
+						<ImageCircle
+							src={author.profilePictureURL || "/image/user.png"}
+							user={author}
+							height=1em
+						/>
+					{/if}
+
 					<a class="unset name"
 						data-sveltekit-preload-data=false
 						href="/user/{author.username}">
@@ -144,29 +147,44 @@
 				</div>
 			</div>
 
+			<div class="parent">
+				{#if !isComment && !isChild && parentId != null}
+				{#await getParent(`${parentId}`)}
+					Loading parent
+				{:then post}
+					<This {post} {user} isChild={true}/>
+				{/await}
+			{/if}
+			</div>
+
 			<div class="content-bottom">
 				<span class="title">{title}</span>
-				<span class="content">{content}</span>
+				<span class="post-content">{content}</span>
 			</div>
 		</div>
 	</div>
-	<div class="bottom">
-		<LikeButton {post} />
 
-		<div class="icon-button">
-			<div class="icon material-icons">
-				chat_bubble
+	{#if !isChild}
+		<div class="bottom">
+			<LikeButton {post} />
+
+			<div class="icon-button">
+				<div class="icon material-icons">
+					chat_bubble
+				</div>
 			</div>
+
+			<a 
+				data-sveltekit-preload-data=false
+				class="unset icon-button" href="/post/{id}">
+				<div class="icon material-icons">
+					visibility
+				</div>
+			</a>
+
+			<ShareButton {post}/>
 		</div>
-
-		<a class="unset icon-button" href="/post/{id}">
-			<div class="icon material-icons">
-				visibility
-			</div>
-		</a>
-
-		<ShareButton {post}/>
-	</div>
+	{/if}
 </article>
 
 <style lang="less">
@@ -178,6 +196,13 @@
 		
 		display: flex;
 		flex-direction: column;
+
+		gap: 1em;
+
+		&.isChild
+		{
+			border: 1px solid @bd1;
+		}
 	}
 
 	.main
@@ -219,6 +244,11 @@
 				}
 			}
 
+			.parent
+			{
+				margin-left: -.5em;
+			}
+
 			.content-bottom
 			{
 				display: flex;
@@ -239,20 +269,10 @@
 		}
 	}
 
-	.top
-	{
-		display: flex;
-
-		> * {
-			padding: .25em;
-		}
-	}
-
 	.bottom
 	{
 		display: flex;
 		justify-content: space-around;
-		gap: .5em;
 
 		padding-block: .5em;
 	}

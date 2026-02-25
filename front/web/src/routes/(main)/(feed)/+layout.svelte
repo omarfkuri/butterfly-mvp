@@ -15,7 +15,9 @@
 	{#each pages as [title, path]}
 		{@const current = path == page.url.pathname}
 
-		<a href={path} class:current>{title}</a>
+		<a
+			data-sveltekit-preload-data=false
+			href={path} class:current class="unset">{title}</a>
 	{/each}
 </div>
 
@@ -37,8 +39,6 @@
 
 	a
 	{
-		font-size: 1em;
-
 		padding-block: .25em;
 		padding-inline: .4em;
 

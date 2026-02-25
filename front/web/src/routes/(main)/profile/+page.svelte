@@ -7,7 +7,7 @@
 	import type { PageProps } from "./$types";
 	
 	const { data, form }: PageProps = $props();
-	const { postsPage, user, profile } = $derived(data);
+	const { postsPage, user } = $derived(data);
 
 	let profileImgInput = $state<HTMLInputElement>()
 	let coverImgInput = $state<HTMLInputElement>()
@@ -46,12 +46,12 @@
 <div class="profile">
 	<div class="cover">
 		<img
-			src={profile.coverPicture || "/image/cover.png"}
+			src={user.coverPictureURL || "/image/cover.png"}
 			alt="{user.name} - Cover"
 			draggable=false
 		>
 	</div>
-	<NameDisplay {user} {profile} fontSize="1em"/>
+	<NameDisplay {user} fontSize="1em"/>
 </div>
 
 <div class="actions">

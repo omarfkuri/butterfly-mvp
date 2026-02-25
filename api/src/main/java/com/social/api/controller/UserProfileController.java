@@ -21,9 +21,10 @@ public class UserProfileController
   }
 
   @GetMapping("/get/{username}")
-  public UserProfileDto getFollowing(Authentication auth)
+  public UserProfileDto getFollowing(
+    @PathVariable String username)
   {
-    return userProfileService.getUserProfile(auth.getName());
+    return userProfileService.getUserProfile(username);
   }
 
   @PostMapping("/set/profile-picture")

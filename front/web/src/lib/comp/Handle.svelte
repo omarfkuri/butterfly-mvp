@@ -25,8 +25,11 @@
 
 		.at
 		{
+			margin-top: .20em;
+			margin-right: -.06em;
+
+			font-size: .91em;
 			line-height: 0;
-			margin-top: .15em;
 		}
 	}
 

@@ -30,7 +30,7 @@ public class UserController
   }
 
   @GetMapping("/get/{username}")
-  public UserDto me(
+  public UserDto getUser(
     @PathVariable String username
   )
   {

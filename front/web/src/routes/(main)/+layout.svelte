@@ -99,17 +99,19 @@
 						person
 					</div>
 					<div class="account-menu-wrapper">
-						<div class="account-menu" data-sveltekit-preload-data="off">
-							<div class="account-menu-top">
+						<div class="account-menu">
+							<a
+							 	data-sveltekit-preload-data=false
+								class="unset account-menu-item"
+								href="/profile"
+							>
 								<ImageCircle
-									src={user.profilePictureURL || "images/user.png"}
+									src={user.profilePictureURL || "/images/user.png"}
 									{user} 
 									height=".8em" 
 								/>
-								<span class="account-menu-title">
-									{user.name}
-								</span>
-							</div>
+								<span class="account-menu-item-title">{user.name}</span>
+							</a>
 							<button 
 								class="unset account-menu-item not-dark"
 								onclick={onLogOut}
@@ -119,15 +121,6 @@
 								>logout</div>
 								<span class="account-menu-item-title">Log Out</span>
 							</button>
-							<a
-								class="unset account-menu-item"
-								href="/profile"
-							>
-								<div 
-									class="icon material-icons"
-								>account_circle</div>
-								<span class="account-menu-item-title">Profile</span>
-							</a>
 						</div>
 					</div>
 				</div>
@@ -282,22 +275,6 @@
 
 				background: @bg3;
 				box-shadow: 0 4px 8px #999;
-
-				.account-menu-top
-				{
-					display: flex;
-					align-items: center;
-					gap: .2em;
-
-					padding: .5em;
-
-					.account-menu-title
-					{
-						width: 100%;
-
-						text-align: left;
-					}
-				}
 
 				.account-menu-item
 				{
