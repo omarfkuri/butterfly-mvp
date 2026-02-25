@@ -4,6 +4,7 @@
     import Handle from './Handle.svelte';
     import ImageCircle from './ImageCircle.svelte';
     import LikeButton from './LikeButton.svelte';
+    import Loading from './Loading.svelte';
     import Message from './Message.svelte';
     import NameDisplay from './NameDisplay.svelte';
 	import This from "./Post.svelte"
@@ -66,36 +67,6 @@
 		return res.json();
 	}
 
-	async function toggleLike()
-	{
-		if (likedByMe)
-		{
-			const res = await fetch(`/server/like/rem/${id}`, {
-				method: "DELETE",
-				credentials: "include"
-			});
-
-			if (!res.ok)
-				return showMessage(await res.text());
-
-			likedByMe = false;
-			likeCount -= 1;
-		}
-		else
-		{
-			const res = await fetch(`/server/like/add/${id}`, {
-				method: "POST",
-				credentials: "include"
-			});
-
-			if (!res.ok)
-				return showMessage(await res.text());
-
-			likedByMe = true;
-			likeCount += 1;
-		}
-	}
-
 </script>
 
 <Message bind:this={errorComp}>
@@ -150,7 +121,7 @@
 			<div class="parent">
 				{#if !isComment && !isChild && parentId != null}
 				{#await getParent(`${parentId}`)}
-					Loading parent
+					<Loading text="parent"/>
 				{:then post}
 					<This {post} {user} isChild={true}/>
 				{/await}

@@ -11,6 +11,7 @@
   import type { Post } from "$lib";
   import LikeButton from "$lib/comp/LikeButton.svelte";
   import ShareButton from "$lib/comp/ShareButton.svelte";
+    import Loading from "$lib/comp/Loading.svelte";
 	
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
@@ -70,7 +71,7 @@
 >
 	{#if post.parentId != null}
 		{#await getParent(`${post.parentId}`)}
-			Loading parent...
+			<Loading text="parent"/>
 		{:then parent}
 			<PostView post={parent} {user} isChild={true}/>
 		{/await}
