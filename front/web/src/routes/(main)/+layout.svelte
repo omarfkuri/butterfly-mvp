@@ -5,7 +5,7 @@
   import { afterNavigate } from "$app/navigation";
   import Message from "$lib/comp/Message.svelte";
   import Confirm from "$lib/comp/Confirm.svelte";
-    import ImageCircle from "$lib/comp/ImageCircle.svelte";
+  import ImageCircle from "$lib/comp/ImageCircle.svelte";
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);

@@ -70,8 +70,8 @@
 <div class="user-profile">
 	<div class="cover">
 		<img
-			src={user.coverPictureURL || "/image/cover.png"}
-			alt="{user.name} - Cover"
+			src={author.coverPictureURL || "/image/cover.png"}
+			alt="{author.name} - Cover"
 			draggable=false
 		>
 	</div>

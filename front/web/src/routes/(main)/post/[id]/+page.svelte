@@ -8,9 +8,9 @@
 	import type { PageProps, SubmitFunction } from "./$types";
   import ImageCircle from "$lib/comp/ImageCircle.svelte";
   import Handle from "$lib/comp/Handle.svelte";
-    import type { Post } from "$lib";
-    import LikeButton from "$lib/comp/LikeButton.svelte";
-    import ShareButton from "$lib/comp/ShareButton.svelte";
+  import type { Post } from "$lib";
+  import LikeButton from "$lib/comp/LikeButton.svelte";
+  import ShareButton from "$lib/comp/ShareButton.svelte";
 	
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
