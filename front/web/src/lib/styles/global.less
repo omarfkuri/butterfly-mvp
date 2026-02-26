@@ -44,9 +44,13 @@ p
 	all: unset;
 }
 
-a:not(.unset)
+a:not(.unset),
+.link
 {
+	all: unset;
+
 	.doto(600);
+
 	color: @primary;
 	text-decoration: none;
 
@@ -56,9 +60,14 @@ a:not(.unset)
 	}
 }
 
-button:not(.unset)
+button:not(.unset),
+.btn
 {
+	all: unset;
+
+	padding: .25em .5em;
 	font-size: .6em;
+
 	background: none;
 	border: 1px solid @bd1;
 	color: @fg1;
@@ -86,6 +95,12 @@ button:not(.unset)
 	  background-color: @primary;
 	  color: white;
 	  border-color: @primary;
+	}
+
+	&:disabled
+	{
+	  color: @fg3;
+	  border-color: @bd1;
 	}
 }
 

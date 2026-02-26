@@ -1,9 +1,9 @@
 <script lang="ts">
   import { page } from "$app/state";
 	import type { LayoutProps } from "./$types";
-  import { enhance } from "$app/forms";
   import Back from "$lib/comp/Back.svelte";
   import NameDisplay from "$lib/comp/NameDisplay.svelte";
+    import UploadImage from "$lib/comp/UploadImage.svelte";
 	
 	const { children, data }: LayoutProps = $props();
 	const { user } = $derived(data);
@@ -12,32 +12,6 @@
 		["Profile", "/profile"],
 		["Images", "/profile/images"],
 	];
-
-	let profileImgInput = $state<HTMLInputElement>()
-	let coverImgInput = $state<HTMLInputElement>()
-
-	let profileImgDialog = $state<HTMLDialogElement>()
-	let coverImgDialog = $state<HTMLDialogElement>()
-
-	function onProfileChoose()
-	{
-		profileImgDialog?.showModal();
-	}
-
-	function onCoverChoose()
-	{
-		coverImgDialog?.showModal();
-	}
-
-	function onProfileSelect()
-	{
-		profileImgInput?.click();
-	}
-
-	function onCoverSelect()
-	{
-		coverImgInput?.click();
-	}
 
 </script>
 
@@ -55,47 +29,19 @@
 </div>
 
 <div class="actions">
-		<button onclick={onProfileChoose}>Change Profile Picture</button>
-		<button onclick={onCoverChoose}>Change Cover Picture</button>
+	<UploadImage
+		openText="Change Profile Picture"
+		cancelText="Cancel"
+		confirmText="Select Profile Picture"
+		action="/profile/?/setProfilePicture"
+	/>
+	<UploadImage
+		openText="Change Cover Picture"
+		cancelText="Cancel"
+		confirmText="Select Cover Picture"
+		action="/profile/?/setCoverPicture"
+	/>
 </div>
-
-<dialog bind:this={profileImgDialog}>
-	<form
-		method="POST"
-		action="?/setProfilePicture"
-		enctype="multipart/form-data"
-		use:enhance
-	>
-		<button onclick={onProfileSelect}>Upload File</button>
-		<input
-			hidden
-			required
-			type="file"
-			name="file"
-			bind:this={profileImgInput}
-		/>
-		<button>Set Profile Picture</button>
-	</form>
-</dialog>
-
-<dialog bind:this={coverImgDialog}>
-	<form
-		method="POST"
-		action="?/setCoverPicture"
-		enctype="multipart/form-data"
-		use:enhance
-	>
-		<button onclick={onCoverSelect}>Upload File</button>
-		<input
-			hidden
-			required
-			type="file"
-			name="file"
-			bind:this={coverImgInput}
-		/>
-		<button>Set Cover Picture</button>
-	</form>
-</dialog>
 
 <div class="menu">
 	{#each pages as [title, path]}

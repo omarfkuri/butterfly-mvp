@@ -320,10 +320,19 @@
 		position: absolute;
 		inset: auto .75em .75em auto;
 
+		font-size: .7em;
+
 		button
 		{
-			width: 50px;
-			height: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 2em;
+			height: 2em;
+			padding: 0;
+			font-size: 1.2em;
+
 			border-radius: 50%;
 
 			box-shadow: 0 0 10px #888;
