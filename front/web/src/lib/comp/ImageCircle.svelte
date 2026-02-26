@@ -33,6 +33,8 @@
 		overflow: hidden;
 		border-radius: 50%;
 
+		border: 1px solid @bd1;
+
 		img
 		{
 			width: 100%;
