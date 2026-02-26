@@ -118,11 +118,6 @@
 
 <style lang="less">
 	@import (reference) "../../../lib/styles/vars.less";
-	
-	.hide
-	{
-		display: none;
-	}
 
 	.profile
 	{
