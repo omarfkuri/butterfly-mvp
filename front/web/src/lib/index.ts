@@ -14,6 +14,10 @@ export type UserProfile = {
 	coverPicture: string | null
 }
 
+export type Image = {
+	url: string
+}
+
 export type Post = {
 	id: string
 	title: string
