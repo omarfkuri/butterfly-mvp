@@ -1,5 +1,7 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
+    import type { SubmitFunction } from "@sveltejs/kit";
+    import Loading from "./Loading.svelte";
 
 	interface Props
 	{
@@ -20,6 +22,17 @@
 	let form = $state<HTMLFormElement>();
 	let input = $state<HTMLInputElement>();
 	let file = $state<File | null>(null);
+	let loading = $state(false);
+
+	const formHandler: SubmitFunction = function()
+	{
+		loading = true;
+
+		return () => {
+			loading = false;
+			close();
+		}
+	}
 
 	function onSelect()
 	{
@@ -31,11 +44,6 @@
 		dialog?.showModal();
 	}
 
-	function onConfirm()
-	{
-		close();
-	}
-
 	function onCancel()
 	{
 		close();
@@ -44,7 +52,7 @@
 	function close()
 	{
 		file = null;
-		// form?.reset();
+		form?.reset();
 		dialog?.close();
 	}
 </script>
@@ -58,7 +66,7 @@
 		{action}
 		method="POST"
 		enctype="multipart/form-data"
-		use:enhance
+		use:enhance={formHandler}
 		bind:this={form}
 	>
 		<div class="top">
@@ -74,6 +82,7 @@
 					type="file"
 					onchange={onSelect}
 					bind:this={input}
+					disabled={loading}
 				>
 				{#if file}
 					Change image
@@ -82,14 +91,19 @@
 				{/if}
 			</label>
 		</div>
+
+		{#if loading}
+			<Loading />
+		{/if}
+
 		<div class="buttons">
 			<button
 				type="button"
 				onclick={onCancel}
+				disabled={loading}
 			>{cancelText}</button>
 			<button
-				disabled={file == null}
-
+				disabled={file == null || loading}
 			>{confirmText}</button>
 		</div>
 	</form>
