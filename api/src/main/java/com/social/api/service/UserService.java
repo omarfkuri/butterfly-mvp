@@ -7,6 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.social.api.dto.UserDto;
 import com.social.api.entity.User;
 import com.social.api.entity.UserProfile;
+import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
@@ -29,27 +30,31 @@ public class UserService
         this.encoder = encoder;
     }
     
-    public Optional<User> findByUsername(String username)
+    public User findByUsername(String username)
     {
-        return userRepository.findByUsername(username);
+        return userRepository.findByUsername(username)
+        .orElseThrow(() -> new ResourceNotFoundException(
+          "User not found"
+        ));
     }
     
-    public Optional<UserDto> findDtoByUsername(String username)
+    public UserDto findDtoByUsername(String username)
     {
-        return userRepository.findDtoByUsername(username).map((UserDto u) -> {
-            return new UserDto(
-                u.id(),
-                u.name(),
-                u.username(),
-                u.createdAt(),
-                u.profilePictureURL() == null
-                ? null
-                : storageService.getPublicUrl(u.profilePictureURL()),
-                u.coverPictureURL() == null
-                ? null
-                : storageService.getPublicUrl(u.coverPictureURL())
-            );
-        });
+        var u = userRepository.findDtoByUsername(username)
+        .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+        return new UserDto(
+            u.id(),
+            u.name(),
+            u.username(),
+            u.createdAt(),
+            u.profilePictureURL() == null
+            ? null
+            : storageService.getPublicUrl(u.profilePictureURL()),
+            u.coverPictureURL() == null
+            ? null
+            : storageService.getPublicUrl(u.coverPictureURL())
+        );
     }
     
     public Optional<User> findById(Long id)
@@ -60,6 +65,11 @@ public class UserService
     public List<User> findAll()
     {
         return userRepository.findAll();
+    }
+    
+    public void update(User user)
+    {
+        userRepository.save(user);
     }
     
     public void createUser(String name, String username, String password)

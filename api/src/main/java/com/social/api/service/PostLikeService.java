@@ -3,20 +3,20 @@ package com.social.api.service;
 import org.springframework.stereotype.Service;
 
 import com.social.api.entity.PostLike;
+import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.PostLikeRepository;
-import com.social.api.repository.PostRepository;
 import com.social.api.repository.UserRepository;
 
 @Service
 public class PostLikeService
 {
   private final UserRepository userRepository;
-  private final PostRepository postRepository;
+  private final PostService postRepository;
   private final PostLikeRepository postLikeRepository;
 
   public PostLikeService(
       UserRepository userRepository,
-      PostRepository postRepository,
+      PostService postRepository,
       PostLikeRepository postLikeRepository)
   {
     this.userRepository = userRepository;
@@ -27,10 +27,9 @@ public class PostLikeService
   public PostLike likePost(String username, Long postID)
   {
     var user = userRepository.findByUsername(username)
-    .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-    var post = postRepository.findById(postID)
-    .orElseThrow(() -> new IllegalArgumentException("Post not found"));
+    var post = postRepository.findById(postID);
 
     if (!postLikeRepository.findByUserAndPost(user, post).isEmpty())
       throw new IllegalArgumentException("Post already liked");
@@ -46,10 +45,9 @@ public class PostLikeService
   public PostLike dislikePost(String username, Long postID)
   {
     var user = userRepository.findByUsername(username)
-    .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-    var post = postRepository.findById(postID)
-    .orElseThrow(() -> new IllegalArgumentException("Post not found"));
+    var post = postRepository.findById(postID);
 
     var like = postLikeRepository.findByUserAndPost(user, post)
     .orElseThrow(() -> new IllegalArgumentException("Post not liked"));

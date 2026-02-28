@@ -5,34 +5,25 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import com.social.api.entity.User;
-import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.service.UserFollowService;
-import com.social.api.service.UserService;
 import java.util.List;
 
 @RestController
 @RequestMapping("/follow")
 public class UserFollowController
 {
-  private final UserService userService;
   private final UserFollowService userFollowService;
 
   public UserFollowController(
-    UserService userService, 
     UserFollowService userFollowService)
   {
-    this.userService = userService;
     this.userFollowService = userFollowService;
   }
 
   @GetMapping("/get")
   public List<User> getFollowing(Authentication auth)
   {
-    var user = userService.findByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException(
-      "Current user in get followers was not found"));
-
-    return userFollowService.getAllByFollower(user);
+    return userFollowService.getAllByFollower(auth.getName());
   }
 
   @PostMapping("/add/{followedID}")
@@ -40,17 +31,7 @@ public class UserFollowController
     @PathVariable String followedID,
     Authentication auth)
   {
-    var follower = userService.findByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + auth.getName()));
-
-    var followed = userService.findByUsername(followedID)
-    .orElseThrow(() -> new ResourceNotFoundException("Followed not found: " + followedID));
-
-    if (follower.getId() == followed.getId())
-      throw new RuntimeException(
-        "Cannot follow yourself");
-
-    userFollowService.followUser(follower, followed);
+    userFollowService.followUser(auth.getName(), followedID);
     return ResponseEntity.ok("Followed");
   }
 
@@ -59,17 +40,7 @@ public class UserFollowController
     @PathVariable String followedID,
     Authentication auth)
   {
-    var follower = userService.findByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + auth.getName()));
-
-    var followed = userService.findByUsername(followedID)
-    .orElseThrow(() -> new ResourceNotFoundException("Followed not found: " + followedID));
-
-    if (follower.getId() == followed.getId())
-      throw new RuntimeException(
-        "Cannot unfollow yourself");
-
-    userFollowService.unfollowUser(followed);
+    userFollowService.unfollowUser(followedID);
     return ResponseEntity.ok("Unfollowed");
   }
 
@@ -78,13 +49,7 @@ public class UserFollowController
     @PathVariable String followedID,
     Authentication auth)
   {
-    var follower = userService.findByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + auth.getName()));
-
-    var followed = userService.findByUsername(followedID)
-    .orElseThrow(() -> new ResourceNotFoundException("Followed not found: " + followedID));
-
-    var b = userFollowService.follows(follower, followed);
+    var b = userFollowService.follows(auth.getName(), followedID);
     return ResponseEntity.ok(b);
   }
 
@@ -92,10 +57,7 @@ public class UserFollowController
   public ResponseEntity<Long> getFollowerCount(
     @PathVariable String username)
   {
-    var follower = userService.findByUsername(username)
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + username));
-
-    var b = userFollowService.getFollowerCount(follower);
+    var b = userFollowService.getFollowerCount(username);
     return ResponseEntity.ok(b);
   }
 
@@ -103,10 +65,7 @@ public class UserFollowController
   public ResponseEntity<Long> getFollowingCount(
     @PathVariable String username)
   {
-    var follower = userService.findByUsername(username)
-    .orElseThrow(() -> new ResourceNotFoundException("Follower not found: " + username));
-
-    var b = userFollowService.getFollowingCount(follower);
+    var b = userFollowService.getFollowingCount(username);
     return ResponseEntity.ok(b);
   }
 }

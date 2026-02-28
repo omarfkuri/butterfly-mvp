@@ -38,7 +38,7 @@ public class FirebaseStorageService
     catch (Exception e)
     {
       e.printStackTrace();
-      throw new RuntimeException("File upload failed", e);
+      throw new IllegalStateException("File upload failed", e);
     }
   }
 

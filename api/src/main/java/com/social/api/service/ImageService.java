@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.social.api.dto.ImageDto;
 import com.social.api.entity.User;
+import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.ImageRepository;
 import com.social.api.repository.UserRepository;
 
@@ -32,7 +33,7 @@ public class ImageService
   public Page<ImageDto> getUserImages(String username, Pageable pageable)
   {
     User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
     return resolveImagePage(imageRepository.findAllByUser(user, pageable));
   }

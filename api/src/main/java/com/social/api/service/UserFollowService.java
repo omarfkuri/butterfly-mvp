@@ -7,25 +7,33 @@ import org.springframework.stereotype.Service;
 
 import com.social.api.entity.User;
 import com.social.api.entity.UserFollow;
+import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.UserFollowRepository;
 import com.social.api.repository.UserRepository;
 
 @Service
 public class UserFollowService
 {
-  private final UserRepository userRepository;
+  private final UserService userService;
   private final UserFollowRepository userFollowRepository;
 
   public UserFollowService(
-      UserRepository userRepository,
+      UserService userService,
       UserFollowRepository userFollowRepository)
   {
-    this.userRepository = userRepository;
+    this.userService = userService;
     this.userFollowRepository = userFollowRepository;
   }
 
-  public UserFollow followUser(User follower, User followed)
+  public UserFollow followUser(String followerName, String followedName)
   {
+    var follower = userService.findByUsername(followerName);
+    var followed = userService.findByUsername(followerName);
+
+    if (follower.getId() == followed.getId())
+      throw new IllegalArgumentException(
+        "Follower is same as followed");
+
     var follow = new UserFollow();
     follow.setFollower(follower);
     follow.setFollowed(followed);
@@ -34,34 +42,50 @@ public class UserFollowService
     return follow;
   }
 
-  public void unfollowUser(User followed)
+  public void unfollowUser(String followedName)
   {
+    var followed = userService.findByUsername(followedName);
     var follow = userFollowRepository.findByFollowed(followed);
+
     userFollowRepository.delete(follow);
   }
 
-  public long getFollowerCount(User follower)
+  public long getFollowerCount(String followerName)
   {
+    var follower = userService.findByUsername(followerName);
+
     return userFollowRepository.countByFollowed(follower);
   }
 
-  public long getFollowingCount(User follower)
+  public long getFollowingCount(String followerName)
   {
+    var follower = userService.findByUsername(followerName);
+
     return userFollowRepository.countByFollower(follower);
   }
 
-  public boolean follows(User follower, User followed)
+  public boolean follows(String followerName, String followedName)
   {
+    var follower = userService.findByUsername(followerName);
+
+    var followed = userService.findByUsername(followerName);
+
+    if (follower.getId() == followed.getId())
+      throw new IllegalArgumentException(
+        "Follower is same as followed");
+
     return userFollowRepository.existsByFollowerAndFollowed(follower, followed);
   }
 
-  public List<User> getAllByFollower(User follower)
+  public List<User> getAllByFollower(String followerName)
   {
+    var follower = userService.findByUsername(followerName);
+
     var l = new ArrayList<User>();
 
     for (var x : userFollowRepository.findAllByFollower(follower))
     {
-      var op = userRepository.findById(x.getFollowed().getId());
+      var op = userService.findById(x.getFollowed().getId());
       l.add(op.get());
     }
 

@@ -6,59 +6,50 @@ import org.springframework.web.multipart.MultipartFile;
 import com.social.api.dto.UserProfileDto;
 import com.social.api.entity.Image;
 import com.social.api.entity.User;
+import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.ImageRepository;
-import com.social.api.repository.UserRepository;
 
 @Service
 public class UserProfileService
 {
-    private final UserRepository userRepository;
+    private final UserService userService;
     private final ImageRepository imageRepository;
     private final FirebaseStorageService storageService;
     
     public UserProfileService(
         ImageRepository imageRepository,
         FirebaseStorageService storageService,
-        UserRepository userRepository
+        UserService userService
     )
     {  
         this.imageRepository = imageRepository;
         this.storageService = storageService;
-        this.userRepository = userRepository;
+        this.userService = userService;
     }
     
     public void setProfilePicture(String username, MultipartFile file)
     {
-        var user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new IllegalArgumentException(
-          "Failed to get user for profile"
-        ));
+        var user = userService.findByUsername(username);
 
         var img = uploadImage(user, file);
         user.getProfile().setProfilePicture(img);
 
-        userRepository.save(user);
+        userService.update(user);
     }
     
     public void setCoverPicture(String username, MultipartFile file)
     {
-        var user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new IllegalArgumentException(
-          "Failed to get user for profile"
-        ));
+        var user = userService.findByUsername(username);
 
         var img = uploadImage(user, file);
         user.getProfile().setCoverPicture(img);
 
-        userRepository.save(user);
+        userService.update(user);
     }
 
     public UserProfileDto getUserProfile(String username)
     {
-        var user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new IllegalArgumentException(
-          "Failed to get user for profile"
-        ));
+        var user = userService.findByUsername(username);
 
         var prof = user.getProfile();
 

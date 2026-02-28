@@ -12,8 +12,8 @@ import com.social.api.dto.UserDto;
 import com.social.api.entity.Post;
 import com.social.api.entity.User;
 import com.social.api.events.PostEventPublisher;
+import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.PostRepository;
-import com.social.api.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,27 +25,25 @@ import java.util.stream.Collectors;
 public class PostService
 {
   private final PostRepository postRepository;
-  private final UserRepository userRepository;
+  private final UserService userService;
   private final PostEventPublisher eventPublisher;
   private final FirebaseStorageService storageService;
 
   public PostService(
       FirebaseStorageService storageService,
       PostRepository postRepository,
-      UserRepository userRepository,
+      UserService userService,
       PostEventPublisher eventPublisher)
   {
     this.storageService = storageService;
     this.postRepository = postRepository;
-    this.userRepository = userRepository;
+    this.userService = userService;
     this.eventPublisher = eventPublisher;
   }
 
   public Page<PostDto> getAllPosts(String username, Pageable pageable)
   {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
-
+    User user = userService.findByUsername(username);
 
     return resolvePostPage(postRepository.findAllPostDtos(user, pageable));
   }
@@ -54,8 +52,7 @@ public class PostService
   public Page<PostDto> getFeedForUser(String username, 
     Pageable pageable)
   {
-    User user = userRepository.findByUsername(username)
-    .orElseThrow(() -> new RuntimeException("User not found"));
+    User user = userService.findByUsername(username);
 
     var page = postRepository.findFeedPostDtos(user, pageable);
 
@@ -83,8 +80,7 @@ public class PostService
     Pageable pageable
   )
   {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+    User user = userService.findByUsername(username);
 
     return resolvePostPage(postRepository
         .findPostDtosByUsername(targetUsername, user, pageable));
@@ -96,32 +92,33 @@ public class PostService
     Pageable pageable
   )
   {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+    User user = userService.findByUsername(username);
 
-    Post parent = postRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Post not found"));
+    Post parent = findById(id);
 
     return resolvePostPage(postRepository.findPostDtosByParent(parent, user, pageable));
   }
 
   public PostDto getPostById(String username, Long id)
   {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+    User user = userService.findByUsername(username);
 
     var post = postRepository.findPostDtoById(id, user)
-        .orElseThrow(() -> new RuntimeException("Post not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("Post not found"));
 
     return resolvePost(post);
   }
+
+  public Post findById(Long postID)
+  {
+    return findById(postID);
+  };
 
   @Transactional
   public Post createPost(String username, String title,
       String content)
   {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+    User user = userService.findByUsername(username);
 
     Post post = new Post();
     post.setUser(user);
@@ -140,12 +137,9 @@ public class PostService
       String content,
       Long parentId)
   {
-    Post parent = postRepository.findById(parentId)
-        .orElseThrow(
-          () -> new RuntimeException("Parent does not exist"));
+    Post parent = findById(parentId);
 
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new RuntimeException("User not found"));
+    User user = userService.findByUsername(username);
 
     Post comment = new Post();
     comment.setUser(user);
@@ -161,8 +155,7 @@ public class PostService
   @Transactional
   public Post updatePost(Long id, String title, String content)
   {
-    Post post = postRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Post not found"));
+    Post post = findById(id);
 
     if (content != null)
     {
@@ -182,8 +175,7 @@ public class PostService
   @Transactional
   public void deletePost(Long id)
   {
-    Post post = postRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Post not found"));
+    Post post = findById(id);
 
     var desc = new ArrayList<PostInfo>();
     getAllDescendants(post, desc);
@@ -198,9 +190,7 @@ public class PostService
 
   public boolean isPostOwner(Long postId, String username)
   {
-    return postRepository.findById(postId)
-        .map(post -> post.getUsername().equals(username))
-        .orElse(false);
+    return findById(postId).getUsername().equals(username);
   }
 
   public long getPostCount(String username)
@@ -255,5 +245,5 @@ public class PostService
     );
   }
 
-  record PostInfo(Long id, String username) {};
+  record PostInfo(Long id, String username) {}
 }

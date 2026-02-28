@@ -24,9 +24,7 @@ public class UserController
   @GetMapping("/me")
   public UserDto me(Authentication auth)
   {
-    return userService.findDtoByUsername(auth.getName())
-    .orElseThrow(() -> new ResourceNotFoundException(
-      "Current user in get followers was not found"));
+    return userService.findDtoByUsername(auth.getName());
   }
 
   @GetMapping("/get/{username}")
@@ -34,8 +32,6 @@ public class UserController
     @PathVariable String username
   )
   {
-    return userService.findDtoByUsername(username)
-    .orElseThrow(() -> new ResourceNotFoundException(
-      "Current user in get followers was not found"));
+    return userService.findDtoByUsername(username);
   }
 }
