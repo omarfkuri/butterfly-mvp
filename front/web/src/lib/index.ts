@@ -72,14 +72,7 @@ export type ApiArg = {
 } | number
 
 export type ApiError = {
-	objectName: string,
-	field: string,
-	rejectedValue: string,
-	codes: string[],
-	arguments: ApiArg[],
-	bindingFailure: boolean,
-	code: string,
-	defaultMessage: string
+	message: string
 }
 
 export type ApiErrorRes = {
