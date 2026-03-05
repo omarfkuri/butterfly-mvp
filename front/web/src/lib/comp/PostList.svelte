@@ -1,7 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
 	import type { Page, Post, Topic, User } from '$lib';
-    import Message from './Message.svelte';
+  import Message from './Message.svelte';
   import PostElem from './Post.svelte';
 
 	interface Props
@@ -24,14 +24,14 @@
 
 	}: Props = $props();
 
-	let posts = $state<Post[]>(page.content);
+	let posts = $derived<Post[]>(page.content);
 	let lastElement = $state<HTMLElement | null>(null);
 
 	let errorComp = $state<Message>();
 	let errorMsg = $state("");
 
-	// if (browser)
-	// 	$effect(() => {
+	if (browser)
+		$effect(() => {
 	// 		const path = `/server/events/posts/${topic}`;
 
 	// 		const source = new EventSource(path, {
@@ -70,24 +70,24 @@
 	// 			posts[i] = post;
 	// 		});
 
-	// 		if (lastElement)
-	// 		{
-	// 			const options = {
-	// 				root: null,
-	// 				rootMargin: '0px',
-	// 				threshold: 0.5
-	// 			};
+			if (lastElement)
+			{
+				const options = {
+					root: null,
+					rootMargin: '0px',
+					threshold: 0.5
+				};
 
-	// 			const observer = new IntersectionObserver(([e]) => {
-	// 				if (e?.isIntersecting)
-	// 					loadMorePosts();
-	// 			}, options);
+				const observer = new IntersectionObserver(([e]) => {
+					if (e?.isIntersecting)
+						loadMorePosts();
+				}, options);
 
-  //   		observer.observe(lastElement);
-  //   	}
+    		observer.observe(lastElement);
+    	}
 
 	// 		return () => source.close();
-	// 	});
+		});
 
 	async function showMessage(content: string)
 	{
