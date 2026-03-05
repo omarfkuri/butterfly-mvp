@@ -111,7 +111,8 @@ public class PostService
 
   public Post findById(Long postID)
   {
-    return findById(postID);
+    return postRepository.findById(postID)
+        .orElseThrow(() -> new ResourceNotFoundException("Post not found"));
   };
 
   @Transactional
