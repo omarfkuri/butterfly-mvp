@@ -5,6 +5,7 @@
 *::after
 {
 	box-sizing: border-box;
+	accent-color: @primary;
 }
 
 html {
@@ -79,6 +80,12 @@ button:not(.unset),
 	&:not(:disabled)
 	{
 		cursor: pointer;
+
+		&:focus
+		{
+			outline: 2px solid @primary;
+			outline-offset: 1px;
+		}
 	}
 
 	&.dark:not(:disabled),
