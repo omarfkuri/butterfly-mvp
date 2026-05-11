@@ -3,3 +3,5 @@
 nginx/default.conf/
 
 .DS_Store
+
+.env
