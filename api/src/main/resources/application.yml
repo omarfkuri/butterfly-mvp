@@ -1,23 +1,7 @@
 spring:
-  server:
-    # Dev only
-    shutdown: immediate
-
   application:
-    name: api
-    
-  datasource:
-    url: jdbc:h2:file:/data/socialdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ""
+    name: social.api
 
   jpa:
     hibernate:
-      # ddl-auto: create-drop
       ddl-auto: update
-    show-sql: true
-
-  h2:
-    console:
-      enabled: true

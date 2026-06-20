@@ -1,4 +1,22 @@
 services:
+  db:
+    container_name: social-db
+    build:
+      context: ./db
+      dockerfile: Dockerfile.dev
+    expose:
+      - ${DB_PORT}
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      MYSQL_PASSWORD: ${DB_PASS}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - ./db/my.cnf:/etc/mysql/conf.d/custom.cnf:ro
+    networks:
+      - internal
+    restart: on-failure
+    
   api:
     container_name: social-api
     build:
@@ -11,19 +29,21 @@ services:
     volumes:
       - ./api:/app
       - ~/.m2:/root/.m2
-      - h2_data:/data
     environment:
       - SERVER_PORT=${BACK_PORT}
       - SPRING_PROFILES_ACTIVE=dev
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION}
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:${DB_PORT}/${DB_NAME}
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASS}
 
   web:
     container_name: social-web
     build:
       context: ./front/web
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     expose:
       - ${WEB_PORT}
     networks:
@@ -33,7 +53,7 @@ services:
       - front_web_node_modules:/app/node_modules
     environment:
       - PORT=${WEB_PORT}
-      - BACK_URL=${BACK_URL}
+      # - BACK_URL=${BACK_URL}
     depends_on:
       - api
 
@@ -55,4 +75,3 @@ networks:
 
 volumes:
   front_web_node_modules:
-  h2_data:
