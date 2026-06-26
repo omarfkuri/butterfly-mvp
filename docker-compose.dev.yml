@@ -1,22 +1,4 @@
 services:
-  db:
-    container_name: social-db
-    build:
-      context: ./db
-      dockerfile: Dockerfile.dev
-    expose:
-      - ${DB_PORT}
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
-      MYSQL_PASSWORD: ${DB_PASS}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_DATABASE: ${DB_NAME}
-    volumes:
-      - ./db/my.cnf:/etc/mysql/conf.d/custom.cnf:ro
-    networks:
-      - internal
-    restart: on-failure
-    
   api:
     container_name: social-api
     build:
@@ -35,7 +17,7 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION}
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:${DB_PORT}/${DB_NAME}
+      - SPRING_DATASOURCE_URL=${DB_URL}
       - SPRING_DATASOURCE_USERNAME=${DB_USER}
       - SPRING_DATASOURCE_PASSWORD=${DB_PASS}
 

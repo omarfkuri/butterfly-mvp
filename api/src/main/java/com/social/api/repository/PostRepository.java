@@ -48,7 +48,18 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN UserProfile prof ON prof.user = user
     LEFT JOIN prof.profilePicture profImg
     LEFT JOIN prof.coverPicture coverImg
-    GROUP BY p
+    GROUP BY
+      p.id,
+      p.title,
+      p.content,
+      p.parent.id,
+      p.createdAt,
+      user.id,
+      user.name,
+      user.username,
+      user.createdAt,
+      profImg.key,
+      coverImg.key
     ORDER BY p.createdAt DESC
   """)
   Page<PostDto> findAllPostDtos(@Param("viewer") User viewer, Pageable pageable);
@@ -78,7 +89,18 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN prof.profilePicture profImg
     LEFT JOIN prof.coverPicture coverImg
     WHERE p.username = :username
-    GROUP BY p
+    GROUP BY
+      p.id,
+      p.title,
+      p.content,
+      p.parent.id,
+      p.createdAt,
+      user.id,
+      user.name,
+      user.username,
+      user.createdAt,
+      profImg.key,
+      coverImg.key
     ORDER BY p.createdAt DESC
   """)
   Page<PostDto> findPostDtosByUsername(
@@ -112,7 +134,18 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN prof.profilePicture profImg
     LEFT JOIN prof.coverPicture coverImg
     WHERE p.parent = :parent
-    GROUP BY p
+    GROUP BY
+      p.id,
+      p.title,
+      p.content,
+      p.parent.id,
+      p.createdAt,
+      user.id,
+      user.name,
+      user.username,
+      user.createdAt,
+      profImg.key,
+      coverImg.key
     ORDER BY p.createdAt ASC
   """)
   Page<PostDto> findPostDtosByParent(
@@ -147,7 +180,18 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN prof.profilePicture profImg
     LEFT JOIN prof.coverPicture coverImg
     WHERE f.follower = :viewer
-    GROUP BY p
+    GROUP BY
+      p.id,
+      p.title,
+      p.content,
+      p.parent.id,
+      p.createdAt,
+      user.id,
+      user.name,
+      user.username,
+      user.createdAt,
+      profImg.key,
+      coverImg.key
     ORDER BY p.createdAt DESC
   """)
   Page<PostDto> findFeedPostDtos(@Param("viewer") User viewer, 
@@ -178,7 +222,18 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN prof.profilePicture profImg
     LEFT JOIN prof.coverPicture coverImg
     WHERE p.id = :id
-    GROUP BY p
+    GROUP BY
+      p.id,
+      p.title,
+      p.content,
+      p.parent.id,
+      p.createdAt,
+      user.id,
+      user.name,
+      user.username,
+      user.createdAt,
+      profImg.key,
+      coverImg.key
   """)
   Optional<PostDto> findPostDtoById(
     @Param("id") Long id,
