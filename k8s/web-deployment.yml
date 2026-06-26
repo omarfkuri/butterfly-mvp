@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: social-web
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: social-web
+
+  template:
+    metadata:
+      labels:
+        app: social-web
+
+    spec:
+      containers:
+      - name: social-web
+
+        image: us-central1-docker.pkg.dev/omarfkuri/docker-repo/social-web:latest
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 3000
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+        env:
+        - name: PORT
+          value: "3000"

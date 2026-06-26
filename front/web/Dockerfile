@@ -1,9 +1,25 @@
-FROM node:22
+FROM node:22 AS build
 
 WORKDIR /app
+
 COPY package*.json ./
-RUN npm install
+
+RUN npm ci
+
 COPY . .
+
 RUN npm run build
 
-CMD ["npm", "run", "dev"]
+FROM node:22-slim
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm ci --omit=dev
+
+COPY --from=build /app/build ./build
+
+EXPOSE 3000
+
+CMD ["node","build"]

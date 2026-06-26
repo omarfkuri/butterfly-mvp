@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: social-proxy
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: social-proxy
+
+  template:
+    metadata:
+      labels:
+        app: social-proxy
+
+    spec:
+      containers:
+      - name: social-proxy
+
+        image: us-central1-docker.pkg.dev/omarfkuri/docker-repo/social-proxy:latest
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 80
+
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"

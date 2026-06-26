@@ -1,12 +1,14 @@
 import type { ApiError, User } from '$lib';
 import { redirect, type RequestEvent, error } from '@sveltejs/kit';
 
+const BACK = "http://10.65.128.44:8080"
+
 export async function apiFetch(
   event: RequestEvent, 
   path: string, 
   init: RequestInit = {}
 ) {
-  const response = await event.fetch(`http://social-api:8080${path}`, {
+  const response = await event.fetch(`${BACK}${path}`, {
     ...init,
     headers: {
       ...init.headers,
@@ -67,7 +69,9 @@ export async function apiRequest(
 {
   try
   {
-    const response = await event.fetch(`http://social-api:8080${path}`, {
+
+  console.log("looks like were getting the back part...")
+    const response = await event.fetch(`${BACK}${path}`, {
       ...init,
       headers: {
         ...init.headers,
@@ -97,6 +101,8 @@ export async function apiRequest(
         response,
       };
     }
+
+    console.log("Woop, this failed inside",)
     
     const hasError = response.headers.get("Content-Type")
     === "application/json";
@@ -112,6 +118,7 @@ export async function apiRequest(
 
   catch(error)
   {
+    console.log("Seems that this failed", error);
     return {
       ok: false,
       fail: true,
@@ -123,6 +130,7 @@ export async function apiRequest(
 export async function onlyUserRoute(event: RequestEvent)
 : Promise<User>
 {
+  console.log("Lets get only user route")
   const res = await apiRequest(event, '/user/me');
 
   if (res.fail)
@@ -146,6 +154,7 @@ export async function onlyUserRoute(event: RequestEvent)
 export async function onlyGuestRoute(event: RequestEvent)
 : Promise<void>
 {
+  console.log("Lets get only guest route")
   const res = await apiRequest(event, '/user/me');
 
   if (res.fail)
