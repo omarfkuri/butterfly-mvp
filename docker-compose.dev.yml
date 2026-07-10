@@ -1,6 +1,6 @@
 services:
   api:
-    container_name: social-api
+    container_name: social-api-service
     build:
       context: ./api
       dockerfile: Dockerfile.dev

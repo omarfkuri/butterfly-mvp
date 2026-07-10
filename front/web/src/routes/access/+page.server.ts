@@ -20,20 +20,22 @@ export const actions = {
         return v;
       
       const result = await login(username, password, event);
-      if (result.ok)
-        throw redirect(302, '/');
-
-      return fail(400, { error: "Failed to login" });
+      
+      if (!result.ok)
+        return fail(400, { error: "Failed to login" });
     }
 
     catch(error)
     {
-      if (error instanceof redirect) throw error;
       return { fail: true, error: String(error) };
     }
+
+    throw redirect(302, '/');
   },
   async register(event) {
     try {
+      console.log("Did reach register...")
+
       const data = await event.request.formData();
       const name = data.get("name") as string;
       const username = data.get("username") as string;
@@ -61,17 +63,17 @@ export const actions = {
       }
       
       const result = await login(username, password, event);
-      if (result.ok)
-        throw redirect(302, '/');
-      
-      return fail(400, { error: "Failed to login" });
+
+      if (!result.ok)
+        return fail(400, { error: "Failed to login" });
     }
 
     catch(error)
     {
-      if (error instanceof redirect) throw error;
       return fail(400, { error: JSON.stringify(error) });
     }
+    
+    throw redirect(302, '/');
   }
 } satisfies Actions;
 

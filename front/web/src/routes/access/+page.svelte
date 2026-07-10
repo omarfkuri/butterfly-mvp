@@ -19,7 +19,16 @@
 
     if (confirmed)
     {
-      return ({ update }) => update();
+    	console.log("Confirmed")
+      return ({ update }) => {
+      	try {
+      		update();
+      	}
+      	catch(err)
+      	{
+      		console.log("Err", err)
+      	}
+      };
     }
     else
     {
