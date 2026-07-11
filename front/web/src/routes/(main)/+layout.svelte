@@ -291,6 +291,8 @@
 					color: @fg1;
 					font-weight: normal;
 
+					cursor: pointer;
+
 					&:hover
 					{
 						background: @bg2;
