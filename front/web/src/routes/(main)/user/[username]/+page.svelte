@@ -63,7 +63,7 @@
 </Message>
 
 <svelte:head>
-	<title>SO - {username}</title>
+	<title>Butterfly - {username}</title>
 </svelte:head>
 
 <Back title={username}/>

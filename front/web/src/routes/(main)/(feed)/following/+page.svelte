@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>SO - Following</title>
+	<title>Butterfly - Following</title>
 </svelte:head>
 
 <PostList page={postsPage} {user} topic="all" path="following" 

@@ -63,7 +63,7 @@
 </script>
 
 <svelte:head>
-	<title>SO - {post.title}, by {post.author.username}</title>
+	<title>Butterfly - {post.title}, by {post.author.username}</title>
 </svelte:head>
 
 <Back title={post.title}/>

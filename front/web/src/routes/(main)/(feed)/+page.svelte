@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>SO - Home</title>
+	<title>Butterfly - Home</title>
 </svelte:head>
 
 <WritePost />

@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>SO - Profile</title>
+	<title>Butterfly - Profile</title>
 </svelte:head>
 
 <WritePost />
