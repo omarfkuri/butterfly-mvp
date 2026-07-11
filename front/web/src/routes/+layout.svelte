@@ -1,5 +1,5 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/image/brand/Icon.png';
 
 	import "$lib/styles/global.less";
 

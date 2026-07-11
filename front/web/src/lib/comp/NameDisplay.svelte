@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { User, UserProfile } from "$lib";
   import ImageCircle from "./ImageCircle.svelte";
+  import userImg from "$lib/assets/image/user.png"
 	
 	interface Props
 	{
@@ -14,7 +15,7 @@
 
 <div class="container" style:font-size={fontSize}>
 	<ImageCircle
-		src={user.profilePictureURL || "/image/user.png"}
+		src={user.profilePictureURL || userImg}
 		{user}
 		height="2.3em"
 	/>

@@ -3,7 +3,9 @@
 	import type { LayoutProps } from "./$types";
   import Back from "$lib/comp/Back.svelte";
   import NameDisplay from "$lib/comp/NameDisplay.svelte";
-    import UploadImage from "$lib/comp/UploadImage.svelte";
+  import UploadImage from "$lib/comp/UploadImage.svelte";
+	import cover from "$lib/assets/image/cover.png"
+  
 	
 	const { children, data }: LayoutProps = $props();
 	const { user } = $derived(data);
@@ -20,7 +22,7 @@
 <div class="profile">
 	<div class="cover">
 		<img
-			src={user.coverPictureURL || "/image/cover.png"}
+			src={user.coverPictureURL || cover}
 			alt="{user.name} - Cover"
 			draggable=false
 		>

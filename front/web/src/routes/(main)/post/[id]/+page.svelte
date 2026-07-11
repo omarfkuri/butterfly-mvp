@@ -11,7 +11,9 @@
   import type { Post } from "$lib";
   import LikeButton from "$lib/comp/LikeButton.svelte";
   import ShareButton from "$lib/comp/ShareButton.svelte";
-    import Loading from "$lib/comp/Loading.svelte";
+  import Loading from "$lib/comp/Loading.svelte";
+  import userImg from "$lib/assets/image/user.png"
+
 	
 	const { data }: PageProps = $props();
 	const { post, user, comments } = $derived(data);
@@ -86,7 +88,7 @@
 		<div class="content-bottom">
 			<div class="author">
 			<ImageCircle
-				src={post.author.profilePictureURL || "/image/user.png"}
+				src={post.author.profilePictureURL || userImg}
 				user={post.author}
 				height=1em
 			/>

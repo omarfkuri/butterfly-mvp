@@ -6,9 +6,9 @@
     import LikeButton from './LikeButton.svelte';
     import Loading from './Loading.svelte';
     import Message from './Message.svelte';
-    import NameDisplay from './NameDisplay.svelte';
 	import This from "./Post.svelte"
     import ShareButton from './ShareButton.svelte';
+  	import userImg from "$lib/assets/image/user.png"
 
 	interface Props
 	{
@@ -87,7 +87,7 @@
 		{#if !isChild}
 			<div class="side">
 				<ImageCircle
-					src={author.profilePictureURL || "/image/user.png"}
+					src={author.profilePictureURL || userImg}
 					user={author}
 					height=1.5em
 				/>

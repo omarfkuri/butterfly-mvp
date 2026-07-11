@@ -6,6 +6,8 @@
   import Message from "$lib/comp/Message.svelte";
   import Confirm from "$lib/comp/Confirm.svelte";
   import ImageCircle from "$lib/comp/ImageCircle.svelte";
+	import icon from "$lib/assets/image/brand/Icon.png"
+  import userImg from "$lib/assets/image/user.png"
 
 	const { data, children }: LayoutProps = $props();
 	const { user } = $derived(data);
@@ -86,7 +88,7 @@
 			<div class="title">
 				<a href="/" data-sveltekit-preload-data="off">
 					<img 
-						src="/image/brand/Icon.png" 
+						src={icon}
 						alt="Logo"
 						draggable="false"
 					/>
@@ -106,7 +108,7 @@
 								href="/profile"
 							>
 								<ImageCircle
-									src={user.profilePictureURL || "/images/user.png"}
+									src={user.profilePictureURL || userImg}
 									{user} 
 									height=".8em" 
 								/>

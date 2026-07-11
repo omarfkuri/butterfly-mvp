@@ -4,6 +4,7 @@
   import NameDisplay from "$lib/comp/NameDisplay.svelte";
   import PostList from "$lib/comp/PostList.svelte";
 	import type { PageProps } from "./$types";
+	import cover from "$lib/assets/image/cover.png"
 	
 	const { data, params }: PageProps = $props();
 	const {
@@ -70,7 +71,7 @@
 <div class="user-profile">
 	<div class="cover">
 		<img
-			src={author.coverPictureURL || "/image/cover.png"}
+			src={author.coverPictureURL || cover}
 			alt="{author.name} - Cover"
 			draggable=false
 		>

@@ -2,6 +2,7 @@
   import { enhance } from '$app/forms';
   import Confirm from '$lib/comp/Confirm.svelte';
 	import type { PageProps, SubmitFunction } from './$types';
+	import icon from "$lib/assets/image/brand/Icon.png"
 
 	let { form }: PageProps = $props();
 
@@ -43,7 +44,7 @@
 		<main class="brand-wrapper">
 			<div class="brand-name">
 				<img 
-					src="/image/brand/Icon.png"
+					src={icon}
 					alt="Icon"
 					draggable="false"
 				/>
