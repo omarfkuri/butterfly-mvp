@@ -36,7 +36,10 @@ export async function apiFetch(
   }
   catch(error)
   {
-    console.error(new Date, "API Fetch exception", error);
+    console.error(new Date, "API Fetch exception", {
+      path,
+      error: String(error)
+    });
 
     return new Response("Unexpected error", { status: 500 });
   }
@@ -140,7 +143,10 @@ export async function apiRequest(
 
   catch(error)
   {
-    console.error(new Date, "API Request exception", error);
+    console.error(new Date, "API Request exception", {
+      path,
+      error: String(error)
+    });
 
     return {
       ok: false,
