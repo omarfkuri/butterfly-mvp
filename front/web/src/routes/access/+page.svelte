@@ -211,6 +211,10 @@
 			width: 80%;
 
 			font-size: 1.5em;
+			
+			.smallWeb({
+				font-size: 1.1em;
+			});
 
 			img
 			{
@@ -306,6 +310,10 @@
 
 				width: 100%;
 
+				.smallWeb({
+					font-size: 2em;
+				});
+
 				input
 				{
 					width: 100%;
@@ -338,6 +346,11 @@
 		font-size: .8em;
 
 		padding-top: 1.5em;
+
+		.smallWeb({
+			font-size: 1.3em;
+			flex-direction: column;
+		});
 
 		.change-title
 		{

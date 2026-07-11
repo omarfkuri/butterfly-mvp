@@ -161,6 +161,11 @@
 		height: 100%;
 		max-width: 700px;
 		margin-inline: auto;
+
+		.smallWeb({
+			flex-direction: column-reverse;
+			overflow-y: hidden;
+		});
 	}
 
 	.side-wrapper
@@ -172,6 +177,15 @@
 			gap: .5em;
 
 			padding: .5em;
+			
+			.smallWeb({
+				flex-direction: row;
+				position: fixed;
+				inset: auto 0 0 0;
+
+				background-color: @bg3;
+				z-index: 999;
+			});
 
 			.title
 			{
@@ -221,6 +235,7 @@
 		
 		.smallWeb({
 			max-width: unset;
+			padding-bottom: 3em;
 		});
 
 		border-inline: 1px solid @bd1;
@@ -269,6 +284,11 @@
 			{
 				position: absolute;
 				z-index: 9999;
+
+				.smallWeb({
+					bottom: 0;
+					font-size: 1em;
+				});
 
 				display: flex;
 				flex-direction: column;
@@ -323,6 +343,11 @@
 	{
 		position: absolute;
 		inset: auto .75em .75em auto;
+
+
+		.smallWeb({
+			inset: auto .75em 4em auto;
+		});
 
 		font-size: .7em;
 

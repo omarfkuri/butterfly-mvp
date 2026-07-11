@@ -105,12 +105,14 @@
 						/>
 					{/if}
 
-					<a class="unset name"
-						data-sveltekit-preload-data=false
-						href="/user/{author.username}">
-						<b>{author.name}</b>
-					</a>
-					<Handle username={author.username}/>
+					<div class="author-info">
+						<a class="unset name"
+							data-sveltekit-preload-data=false
+							href="/user/{author.username}">
+							<b>{author.name}</b>
+						</a>
+						<Handle username={author.username}/>
+					</div>
 				</div>
 
 				<div class="info">
@@ -202,9 +204,24 @@
 					align-items: center;
 					gap: .25em;
 
-					.name
+					.author-info
 					{
+						display: flex;
+						align-items: center;
+						gap: .25em;
 
+						.smallWeb({
+							flex-direction: column;
+							align-items: start;
+							gap: 0;
+
+							font-size: 0.8em;
+						});
+
+						.name
+						{
+							font-size: 1.2em;
+						}
 					}
 				}
 
