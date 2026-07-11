@@ -1,14 +1,14 @@
 <script lang="ts">
-    import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	import type { Post, User } from '$lib';
-    import Handle from './Handle.svelte';
-    import ImageCircle from './ImageCircle.svelte';
-    import LikeButton from './LikeButton.svelte';
-    import Loading from './Loading.svelte';
-    import Message from './Message.svelte';
+	import Handle from './Handle.svelte';
+	import ImageCircle from './ImageCircle.svelte';
+	import LikeButton from './LikeButton.svelte';
+	import Loading from './Loading.svelte';
+	import Message from './Message.svelte';
 	import This from "./Post.svelte"
-    import ShareButton from './ShareButton.svelte';
-  	import userImg from "$lib/assets/image/user.png"
+	import ShareButton from './ShareButton.svelte';
+	import userImg from "$lib/assets/image/user.png"
 
 	interface Props
 	{
