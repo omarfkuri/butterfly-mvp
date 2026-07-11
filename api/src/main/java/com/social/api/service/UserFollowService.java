@@ -7,9 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.social.api.entity.User;
 import com.social.api.entity.UserFollow;
-import com.social.api.ex.ResourceNotFoundException;
 import com.social.api.repository.UserFollowRepository;
-import com.social.api.repository.UserRepository;
 
 @Service
 public class UserFollowService
@@ -28,7 +26,7 @@ public class UserFollowService
   public UserFollow followUser(String followerName, String followedName)
   {
     var follower = userService.findByUsername(followerName);
-    var followed = userService.findByUsername(followerName);
+    var followed = userService.findByUsername(followedName);
 
     if (follower.getId() == followed.getId())
       throw new IllegalArgumentException(
@@ -68,7 +66,7 @@ public class UserFollowService
   {
     var follower = userService.findByUsername(followerName);
 
-    var followed = userService.findByUsername(followerName);
+    var followed = userService.findByUsername(followedName);
 
     if (follower.getId() == followed.getId())
       throw new IllegalArgumentException(
