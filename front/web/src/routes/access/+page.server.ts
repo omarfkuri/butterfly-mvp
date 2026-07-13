@@ -34,8 +34,6 @@ export const actions = {
   },
   async register(event) {
     try {
-      console.log("Did reach register...")
-
       const data = await event.request.formData();
       const name = data.get("name") as string;
       const username = data.get("username") as string;
