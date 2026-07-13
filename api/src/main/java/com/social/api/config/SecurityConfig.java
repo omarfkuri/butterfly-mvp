@@ -3,12 +3,18 @@ package com.social.api.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+
+import com.social.api.dto.ApiError;
+
+import tools.jackson.databind.ObjectMapper;
 
 @Configuration
 @EnableWebSecurity
@@ -25,7 +31,22 @@ public class SecurityConfig
         .formLogin(form -> form
             .loginProcessingUrl("/auth/login")
             .successHandler((req, res, auth) -> res.setStatus(200))
-            .failureHandler((req, res, ex) -> res.sendError(401))
+            .failureHandler((req, res, ex) ->
+            {
+                String message = ex instanceof BadCredentialsException
+                    ? "Invalid username or password"
+                    : "Authentication failed";
+
+                res.setStatus(HttpStatus.BAD_REQUEST.value());
+                res.setContentType("application/json");
+
+                ObjectMapper mapper = new ObjectMapper();
+                mapper.writeValue(
+                    res.getOutputStream(),
+                    new ApiError(message)
+                );
+            }
+            )
         )
         .logout(logout -> logout
             .logoutUrl("/auth/logout")

@@ -8,6 +8,17 @@ export const load: PageServerLoad = async function(event)
   return {};
 };
 
+async function getApiError(res: Response)
+{
+  if (res.headers.get("Content-Type")?.startsWith("application/json"))
+  {
+    const { message } = await res.json();
+    return message;
+  }
+
+  return null;
+}
+
 export const actions = {
   async login(event)
   {
@@ -22,7 +33,9 @@ export const actions = {
       const result = await login(username, password, event);
       
       if (!result.ok)
-        return fail(400, { error: "Failed to login" });
+      {
+        return fail(400, { error: result.message });
+      }
     }
 
     catch(error)
@@ -56,14 +69,22 @@ export const actions = {
         credentials: 'include'
       });
       
-      if (!res.ok) {
-        return fail(400, { error: "Failed to register" });
+      if (!res.ok)
+      {
+        const msg = await getApiError(res);
+
+        if (msg == null)
+          return fail(500, { error: "Something went wrong." });
+
+        return fail(400, { error: msg });
       }
       
       const result = await login(username, password, event);
-
+      
       if (!result.ok)
-        return fail(400, { error: "Failed to login" });
+      {
+        return fail(400, { error: result.message });
+      }
     }
 
     catch(error)
@@ -132,7 +153,16 @@ async function login(username: string, password: string, event: RequestEvent)
   });
   
   if (!res.ok)
-    return { ok: false, message: await res.text() };
+  {
+    const msg = await getApiError(res);
+
+    if (!msg)
+    {
+      return { ok: false, message: "Something went wrong" };
+    }
+
+    return { ok: false, message: msg };
+  }
 
   return { ok: true };
 }
