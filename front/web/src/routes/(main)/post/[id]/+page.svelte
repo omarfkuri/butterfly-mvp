@@ -63,10 +63,10 @@
 </script>
 
 <svelte:head>
-	<title>Butterfly - {post.title}, by {post.author.username}</title>
+	<title>Butterfly - Post, by {post.author.username}</title>
 </svelte:head>
 
-<Back title={post.title}/>
+<Back title="Post"/>
 
 <article
 	class="post"
@@ -81,7 +81,6 @@
 
 	<div class="content">
 		<div class="content-top">
-			<span class="title">{post.title}</span>
 			<span class="post-content">{post.content}</span>
 		</div>
 
@@ -147,7 +146,7 @@
 
 <Confirm bind:this={confirmComp}>
 	<div class="delete-msg">
-		Delete "<b>{post.title}</b>" forever?
+		Delete post forever?
 	</div>
 </Confirm>
 
@@ -188,11 +187,6 @@
 
 				width: 100%;
 				font-size: 1.6em;
-
-				.title
-				{
-					font-weight: bold;
-				}
 
 				.post-content
 				{

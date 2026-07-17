@@ -26,7 +26,6 @@
 	}: Props = $props();
 
 	const {
-		title,
 		content,
 		author,
 		id,
@@ -131,7 +130,6 @@
 			</div>
 
 			<div class="content-bottom">
-				<span class="title">{title}</span>
 				<span class="post-content">{content}</span>
 			</div>
 		</div>
@@ -243,11 +241,6 @@
 				flex-direction: column;
 
 				width: 100%;
-
-				.title
-				{
-					font-weight: bold;
-				}
 
 				.post-content
 				{

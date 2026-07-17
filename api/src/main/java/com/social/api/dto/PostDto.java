@@ -7,7 +7,6 @@ import java.util.List;
 public class PostDto
 {
     public final Long id;
-    public final String title;
     public final String content;
     public final UserDto author;
     public final Long parentId;
@@ -19,7 +18,6 @@ public class PostDto
 
     public PostDto(
         Long id,
-        String title,
         String content,
         UserDto user,
         Long parentId,
@@ -29,7 +27,6 @@ public class PostDto
     )
     {
         this.id = id;
-        this.title = title;
         this.content = content;
         this.author = user;
         this.parentId = parentId;
@@ -41,11 +38,6 @@ public class PostDto
     public Long getId()
     {
       return id;
-    }
-
-    public String getTitle()
-    {
-        return title;
     }
 
     public String getContent()

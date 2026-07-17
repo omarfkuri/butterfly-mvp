@@ -116,14 +116,13 @@ public class PostService
   };
 
   @Transactional
-  public Post createPost(String username, String title,
+  public Post createPost(String username,
       String content)
   {
     User user = userService.findByUsername(username);
 
     Post post = new Post();
     post.setUser(user);
-    post.setTitle(title);
     post.setContent(content);
 
     Post saved = postRepository.save(post);
@@ -134,7 +133,6 @@ public class PostService
   @Transactional
   public Post createComment(
       String username,
-      String title,
       String content,
       Long parentId)
   {
@@ -144,7 +142,6 @@ public class PostService
 
     Post comment = new Post();
     comment.setUser(user);
-    comment.setTitle(title);
     comment.setContent(content);
     comment.setParent(parent);
 
@@ -154,18 +151,13 @@ public class PostService
   }
 
   @Transactional
-  public Post updatePost(Long id, String title, String content)
+  public Post updatePost(Long id, String content)
   {
     Post post = findById(id);
 
     if (content != null)
     {
       post.setContent(content);
-    }
-
-    if (title != null)
-    {
-      post.setTitle(title);
     }
 
     Post saved = postRepository.save(post);
@@ -225,7 +217,6 @@ public class PostService
 
     return new PostDto(
       post.getId(),
-      post.getTitle(),
       post.getContent(),
       new UserDto(
         author.id(),

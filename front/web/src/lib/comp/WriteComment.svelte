@@ -9,25 +9,15 @@
 
 	const { id }: Props = $props();
 
-	let title = $state("");
 	let content = $state("");
 
-	const disabled = $derived(title.length == 0 || content.length == 0);
+	const disabled = $derived(content.length == 0);
 
 	let errorComp = $state<Message>();
 	let errorMsg = $state("");
 
 	async function onPost()
 	{
-		if (title.length == 0)
-			return await showMessage("No title was provided");
-
-		if (title.length < 2 || title.length > 100)
-			return await showMessage("Title must be between 4 and 100 letters");
-
-		if (/^[\\p{L}\\p{N} .,'"\-!?()]+$/.test(title))
-			return await showMessage("Title did not match expected pattern");
-
 		if (content.length == 0)
 			return await showMessage("No content was provided");
 
@@ -40,7 +30,6 @@
 		const res = await fetch(`/server/posts/comments/create/${id}`, {
 			method: "POST",
 			body: JSON.stringify({
-				title,
 				content,
 			})
 		});
@@ -51,7 +40,7 @@
 		}
 		else
 		{
-			title = content = "";
+			content = "";
 		}
 	}
 
@@ -69,16 +58,6 @@
 
 <div class="form">
 	<div class="inputs">
-		<label>
-			<input
-				id=title-input
-				required
-				name="title" 
-				type="text" 
-				bind:value={title}
-				placeholder="Title"
-			/>
-		</label>
 		<label>
 			<textarea
 				required
@@ -127,12 +106,6 @@
 					padding: 0;
 					border: none;
 					outline: none;
-				}
-
-				input
-				{
-					font-size: 1.2em;
-					font-weight: bold;
 				}
 
 				textarea

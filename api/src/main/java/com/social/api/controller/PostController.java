@@ -68,7 +68,6 @@ public class PostController
     {
         Post post = postService.createComment(
             auth.getName(),
-            request.getTitle(),
             request.getContent(),
             parentID
         );
@@ -88,7 +87,6 @@ public class PostController
     {
         Post post = postService.createPost(
             auth.getName(),
-            request.getTitle(),
             request.getContent()
         );
         return ResponseEntity.ok(post);
@@ -107,7 +105,6 @@ public class PostController
         
         Post updated = postService.updatePost(
             id,
-            request.getTitle(),
             request.getContent()
         );
         return ResponseEntity.ok(updated);
@@ -130,30 +127,12 @@ public class PostController
     public static class CreatePostRequest
     {
         @NotBlank
-        @Size(min = 2, max = 100)
-        @Pattern(
-            regexp = "^[\\p{L}\\p{N} .,'\"\\-!?()]+$",
-            message = "Title contains invalid characters"
-        )
-        private String title;
-
-        @NotBlank
         @Size(min = 2, max = 512)
         @Pattern(
             regexp = "^[\\p{L}\\p{N}\\p{P}\\p{Zs}\\r\\n\\t]+$",
             message = "Body contains invalid characters"
         )
         private String content;
-        
-        public String getTitle()
-        {
-            return title;
-        }
-        
-        public void setTitle(String title)
-        {
-            this.title = title;
-        }
         
         public String getContent()
         {
@@ -168,14 +147,6 @@ public class PostController
     
     public static class UpdatePostRequest
     {
-        @NotBlank
-        @Size(min = 3, max = 100)
-        @Pattern(
-            regexp = "^[a-zA-Z0-9 _-]+$",
-            message = "Title contains invalid characters"
-        )
-        private String title;
-
         @NotBlank
         @Size(min = 3, max = 512)
         @Pattern(
@@ -192,16 +163,6 @@ public class PostController
         public void setContent(String content)
         {
             this.content = content;
-        }
-        
-        public String getTitle()
-        {
-            return title;
-        }
-        
-        public void setTitle(String title)
-        {
-            this.title = title;
         }
     }
 }

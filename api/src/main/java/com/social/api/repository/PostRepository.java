@@ -27,7 +27,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
-      p.title,
       p.content,
       new com.social.api.dto.UserDto(
         user.id,
@@ -50,7 +49,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
     LEFT JOIN prof.coverPicture coverImg
     GROUP BY
       p.id,
-      p.title,
       p.content,
       p.parent.id,
       p.createdAt,
@@ -67,7 +65,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
-      p.title,
       p.content,
       new com.social.api.dto.UserDto(
         user.id,
@@ -91,7 +88,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
     WHERE p.username = :username
     GROUP BY
       p.id,
-      p.title,
       p.content,
       p.parent.id,
       p.createdAt,
@@ -112,7 +108,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
-      p.title,
       p.content,
       new com.social.api.dto.UserDto(
         user.id,
@@ -136,7 +131,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
     WHERE p.parent = :parent
     GROUP BY
       p.id,
-      p.title,
       p.content,
       p.parent.id,
       p.createdAt,
@@ -157,7 +151,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
-      p.title,
       p.content,
       new com.social.api.dto.UserDto(
         user.id,
@@ -182,7 +175,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
     WHERE f.follower = :viewer
     GROUP BY
       p.id,
-      p.title,
       p.content,
       p.parent.id,
       p.createdAt,
@@ -200,7 +192,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
   @Query("""
     SELECT new com.social.api.dto.PostDto(
       p.id,
-      p.title,
       p.content,
       new com.social.api.dto.UserDto(
         user.id,
@@ -224,7 +215,6 @@ public interface PostRepository extends JpaRepository<Post, Long>
     WHERE p.id = :id
     GROUP BY
       p.id,
-      p.title,
       p.content,
       p.parent.id,
       p.createdAt,

@@ -47,9 +47,6 @@ public class Post
   @Column(nullable = false)
   private String username;
   
-  @Column(nullable = false, length = 128)
-  private String title;
-  
   @Column(nullable = false, length = 1024)
   private String content;
   
@@ -101,11 +98,6 @@ public class Post
     this.username = username;
   }
   
-  public String getTitle()
-  {
-    return title;
-  }
-  
   public String getContent()
   {
     return content;
@@ -114,11 +106,6 @@ public class Post
   public void setContent(String content)
   {
     this.content = content;
-  }
-  
-  public void setTitle(String title)
-  {
-    this.title = title;
   }
   
   public LocalDateTime getCreatedAt()
